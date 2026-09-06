@@ -100,7 +100,106 @@
       h1 {
         font-size: 3.2rem;
       }
-    }
+    }/* =========================
+   AVANT TOUTE CHOSE
+   ========================= */
+
+.avant-toute-chose {
+  background: #002b59;
+  color: #ffffff;
+  padding: 90px 8%;
+}
+
+.avant-conteneur {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.avant-toute-chose .titre-section {
+  margin: 0 0 55px 0;
+  color: #ffce3e;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.avant-grille {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 38px;
+}
+
+.avant-colonne {
+  border-top: 5px solid #ffce3e;
+  padding-top: 25px;
+}
+
+.avant-numero {
+  display: block;
+  margin-bottom: 18px;
+  color: #ffce3e;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.avant-colonne h3 {
+  margin: 0 0 22px 0;
+  color: #ffce3e;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.15;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.avant-colonne p {
+  margin: 0;
+  max-width: none;
+  color: #ffffff;
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.avant-colonne p + p {
+  margin-top: 18px;
+}
+
+.urgence-ferroviaire {
+  margin-top: 24px !important;
+  padding: 18px 20px;
+  border: 2px solid #ffce3e;
+}
+
+.urgence-ferroviaire strong {
+  color: #ffce3e;
+}
+
+@media (max-width: 950px) {
+  .avant-grille {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .avant-toute-chose {
+    padding: 70px 7%;
+  }
+
+  .avant-toute-chose .titre-section {
+    margin-bottom: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .avant-toute-chose {
+    padding: 60px 28px;
+  }
+
+  .avant-colonne p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
   </style>
 </head>
 
@@ -129,6 +228,123 @@
 
     </div>
   </header>
+<section class="avant-toute-chose">
 
+  <div class="avant-conteneur">
+
+    <h2 class="titre-section">Avant toute chose.</h2>
+
+    <div class="avant-grille">
+
+      <!-- COLONNE 1 -->
+      <article class="avant-colonne">
+
+        <span class="avant-numero">01</span>
+
+        <h3>Un objet défini</h3>
+
+        <p>
+          Lancée en mars 2023, la communauté en ligne
+          « Le train du ras-le-bol » est à but non lucratif.
+          Elle ne permet ni l’encaissement de sommes destinées
+          à financer son fonctionnement ou à permettre un enrichissement,
+          ni l’apport d’affaires par son intermédiaire.
+        </p>
+
+        <p>
+          Son fonctionnement repose néanmoins sur la mise à disposition
+          de moyens techniques, matériels et humains qui représentent
+          un coût. Cette mise à disposition répond à une raison d’être
+          précise, formalisée dans un objet défini.
+        </p>
+
+        <p>
+          Cet objet encadre la mise en place et le maintien de nos groupes
+          WhatsApp « Les reporters » et justifie les moyens qui leur sont
+          consacrés. Il implique le respect de conditions précises auxquelles
+          nous devons nous conformer et que nous devons également faire respecter.
+        </p>
+
+      </article>
+
+
+      <!-- COLONNE 2 -->
+      <article class="avant-colonne">
+
+        <span class="avant-numero">02</span>
+
+        <h3>Des espaces animés</h3>
+
+        <p>
+          Nos groupes WhatsApp « Les reporters » sont des espaces animés
+          par les équipiers du train du ras-le-bol. Professionnels des réseaux
+          sociaux, ils sont formés aux particularités des échanges qui se
+          déroulent dans nos groupes.
+        </p>
+
+        <p>
+          Salariés, ils sont mis à disposition sur leur temps de travail,
+          dans un cadre réglementé et selon les priorités liées à la charge
+          de travail de la société qui les emploie.
+        </p>
+
+        <p>
+          Leur présence régulière contribue à instaurer une véritable proximité
+          avec les membres de la communauté en ligne, favorise des échanges
+          directs et continus et permet de mieux comprendre les réalités relatées.
+          Elle permet également d’apporter des éclairages lorsque cela est
+          nécessaire et de préserver un environnement propice à l’expression,
+          à l’écoute et au partage.
+        </p>
+
+        <p>
+          En matière d’animation, lorsque le contexte s’y prête,
+          des contenus ironiques et inédits peuvent être publiés.
+        </p>
+
+      </article>
+
+
+      <!-- COLONNE 3 -->
+      <article class="avant-colonne">
+
+        <span class="avant-numero">03</span>
+
+        <h3>Un cadre professionnel</h3>
+
+        <p>
+          Les équipiers du train du ras-le-bol agissent dans un cadre
+          professionnel, uniquement en fonction de leur périmètre de compétences
+          et de leur champ d’intervention.
+        </p>
+
+        <p>
+          Ils ne sont pas personnels d’une société de transport ferroviaire
+          et ne sont pas habilités à fournir des informations relatives au trafic,
+          des informations commerciales ou des informations liées à la sécurité
+          ferroviaire.
+        </p>
+
+        <p>
+          Lorsqu’un sujet ou une situation dépasse leur périmètre de compétences
+          ou leur champ d’intervention, ils procèdent à votre réorientation
+          vers les services appropriés.
+        </p>
+
+        <p class="urgence-ferroviaire">
+          En cas de danger sur le réseau ferroviaire, les équipiers ne sont pas
+          habilités à vous assister directement. Ils ont toutefois l’obligation
+          de prévenir ou de faire prévenir les services compétents, notamment
+          via le <strong>3117</strong> par téléphone ou le
+          <strong>31177</strong> par SMS.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
 </body>
 </html>
