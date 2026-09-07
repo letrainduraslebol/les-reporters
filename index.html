@@ -76,7 +76,7 @@
       color: var(--jaune);
       font-size: 0.95rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
@@ -86,8 +86,8 @@
       color: var(--jaune);
       font-size: clamp(3rem, 7vw, 6.2rem);
       font-weight: 800;
-      line-height: 0.98;
-      letter-spacing: -0.04em;
+      line-height: 1.02;
+      letter-spacing: 0;
     }
 
     .sous-titre {
@@ -96,6 +96,7 @@
       color: var(--blanc);
       font-size: clamp(1.05rem, 2vw, 1.55rem);
       line-height: 1.6;
+      letter-spacing: 0;
     }
 
     .signature {
@@ -103,6 +104,31 @@
       color: var(--blanc);
       font-size: clamp(1.2rem, 2.3vw, 1.8rem);
       font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    /* ==================================================
+       INTRODUCTION
+       ================================================== */
+
+    .introduction {
+      background: var(--blanc);
+      padding: 64px 0 68px;
+    }
+
+    .introduction-contenu {
+      max-width: 1180px;
+    }
+
+    .intro-texte {
+      margin: 0;
+      color: var(--bleu);
+      font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+      font-weight: 600;
+      line-height: 1.72;
+      letter-spacing: 0;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     /* ==================================================
@@ -124,8 +150,8 @@
       color: var(--bleu);
       font-size: clamp(2.25rem, 5vw, 4.4rem);
       font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.035em;
+      line-height: 1.05;
+      letter-spacing: 0;
       text-transform: uppercase;
     }
 
@@ -187,7 +213,8 @@
       color: var(--bleu);
       font-size: clamp(1.55rem, 2.25vw, 2.25rem);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.15;
+      letter-spacing: 0;
     }
 
     /* Ordinateur et tablette large : texte justifié */
@@ -196,6 +223,7 @@
       color: var(--blanc);
       font-size: clamp(1rem, 1.35vw, 1.18rem);
       line-height: 1.62;
+      letter-spacing: 0;
       text-align: justify;
       text-justify: inter-word;
       hyphens: none;
@@ -232,6 +260,10 @@
     @media (max-width: 820px) {
       .conteneur {
         width: min(100% - 32px, 1440px);
+      }
+
+      .intro-texte {
+        text-align: left;
       }
 
       .bloc-info,
@@ -272,6 +304,16 @@
 
       h1 {
         font-size: clamp(2.65rem, 13vw, 4.2rem);
+        line-height: 1.04;
+      }
+
+      .introduction {
+        padding: 44px 0 48px;
+      }
+
+      .intro-texte {
+        font-size: 1rem;
+        line-height: 1.7;
       }
 
       .titre-zone {
@@ -335,6 +377,20 @@
 
     </div>
   </header>
+
+  <!-- ==================================================
+       INTRODUCTION
+       ================================================== -->
+
+  <section class="introduction">
+    <div class="conteneur introduction-contenu">
+
+      <p class="intro-texte">
+        Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol. Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les 3 200 membres « reporters » présents dans les 59 groupes répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant votre quotidien et en témoignant de votre réalité. Les équipiers du train du ras-le-bol se chargent de l’animation des groupes, de la coordination des actions de soutien et d’accompagnement et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
+      </p>
+
+    </div>
+  </section>
 
   <!-- ==================================================
        AVANT TOUTE CHOSE
