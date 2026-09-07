@@ -1,209 +1,279 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Les reporters — Le train du ras-le-bol</title>
 
+  <!-- Police Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bleu: #002b59;
       --jaune: #ffce3e;
       --blanc: #ffffff;
+      --fond-clair: #f4f6f8;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Poppins", Arial, sans-serif;
       background: var(--blanc);
       color: var(--bleu);
     }
 
+    /* ========================================
+       PAGE D'OUVERTURE
+       ======================================== */
+
     .hero {
-      min-height: 100vh;
+      min-height: 72vh;
       background: var(--bleu);
       color: var(--blanc);
-
       display: flex;
       align-items: center;
-
-      padding: 80px 8%;
-    }
-
-    .hero-contenu {
-      max-width: 1100px;
-    }
-
-    .sur-titre {
-      color: var(--jaune);
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      color: var(--jaune);
-      font-size: clamp(3rem, 8vw, 7rem);
-      line-height: 0.95;
-      margin: 0 0 30px 0;
-      max-width: 1000px;
-    }
-
-    .sous-titre {
-      font-size: clamp(1.2rem, 2.5vw, 2rem);
-      line-height: 1.4;
-      max-width: 850px;
-      margin: 0;
-    }
-
-    .signature {
-      margin-top: 50px;
-      font-size: clamp(1.3rem, 3vw, 2.2rem);
-      font-weight: 700;
-      color: var(--blanc);
-    }
-
-    section {
       padding: 90px 8%;
     }
 
-    section h2 {
-      font-size: clamp(2.2rem, 5vw, 4.5rem);
-      line-height: 1.05;
-      margin-top: 0;
-      color: var(--bleu);
+    .hero-contenu {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
-    section p {
+    .sur-titre {
+      margin-bottom: 24px;
+      color: var(--jaune);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 1000px;
+      margin: 0 0 30px;
+      color: var(--jaune);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .sous-titre {
+      max-width: 850px;
+      margin: 0;
+      color: var(--blanc);
+      font-size: clamp(1.05rem, 2vw, 1.6rem);
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .signature {
+      margin-top: 42px;
+      color: var(--blanc);
+      font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+      font-weight: 600;
+    }
+
+    /* ========================================
+       AVANT TOUTE CHOSE
+       ======================================== */
+
+    .avant-toute-chose {
+      background: var(--fond-clair);
+      padding: 0 0 100px;
+    }
+
+    .bandeau-section {
+      width: 100%;
+      background: var(--jaune);
+      padding: 28px 8%;
+    }
+
+    .bandeau-section h2 {
+      max-width: 1400px;
+      margin: 0 auto;
+      color: var(--bleu);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
+    }
+
+    .avant-conteneur {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 85px 6% 0;
+    }
+
+    .avant-grille {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 34px;
+    }
+
+    .avant-colonne {
+      position: relative;
+      display: flex;
+      height: 100%;
+      min-height: 650px;
+      padding: 58px 30px 34px;
+      border: 3px solid var(--jaune);
+      border-radius: 12px;
+      background: var(--bleu);
+      color: var(--blanc);
+    }
+
+    .avant-colonne h3 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      max-width: calc(100% - 34px);
+      margin: 0;
+      padding: 7px 14px 8px;
+      transform: translate(-50%, -50%);
+      border-radius: 6px;
+      background: var(--jaune);
+      color: var(--bleu);
+      font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .avant-colonne p {
+      width: 100%;
+      margin: 0;
+      color: var(--blanc);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.72;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .avant-colonne strong {
+      color: var(--jaune);
+      font-weight: 700;
+    }
+
+    /* ========================================
+       EXEMPLE DE ZONE CLAIRE POUR LA SUITE
+       Cette partie sert seulement à montrer
+       l'alternance possible des fonds.
+       ======================================== */
+
+    .zone-claire {
+      background: var(--blanc);
+      padding: 95px 8%;
+    }
+
+    .zone-claire-contenu {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .zone-claire h2 {
+      margin: 0 0 24px;
+      color: var(--bleu);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.08;
+    }
+
+    .zone-claire p {
       max-width: 900px;
-      font-size: 1.15rem;
+      margin: 0;
+      color: var(--bleu);
+      font-size: 1.05rem;
       line-height: 1.75;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+
+    @media (max-width: 1100px) {
+      .avant-grille {
+        grid-template-columns: 1fr;
+        gap: 62px;
+      }
+
+      .avant-colonne {
+        min-height: 0;
+      }
+
+      .avant-colonne h3 {
+        white-space: normal;
+      }
     }
 
     @media (max-width: 700px) {
       .hero {
         min-height: auto;
-        padding: 80px 28px;
-      }
-
-      section {
-        padding: 65px 28px;
+        padding: 75px 28px;
       }
 
       h1 {
-        font-size: 3.2rem;
+        font-size: clamp(2.7rem, 14vw, 4.4rem);
       }
-    }/* =========================
-   AVANT TOUTE CHOSE
-   ========================= */
 
-.avant-toute-chose {
-  background: #002b59;
-  color: #ffffff;
-  padding: 90px 8%;
-}
+      .bandeau-section {
+        padding: 24px 28px;
+      }
 
-.avant-conteneur {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+      .avant-toute-chose {
+        padding-bottom: 70px;
+      }
 
-.avant-toute-chose .titre-section {
-  margin: 0 0 55px 0;
-  color: #ffce3e;
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
-  line-height: 1;
-  font-weight: 800;
-}
+      .avant-conteneur {
+        padding: 70px 28px 0;
+      }
 
-.avant-grille {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 38px;
-}
+      .avant-colonne {
+        padding: 52px 23px 28px;
+      }
 
-.avant-colonne {
-  border-top: 5px solid #ffce3e;
-  padding-top: 25px;
-}
+      .avant-colonne p {
+        font-size: 0.98rem;
+        line-height: 1.68;
+      }
 
-.avant-numero {
-  display: block;
-  margin-bottom: 18px;
-  color: #ffce3e;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.avant-colonne h3 {
-  margin: 0 0 22px 0;
-  color: #ffce3e;
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
-  line-height: 1.15;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.avant-colonne p {
-  margin: 0;
-  max-width: none;
-  color: #ffffff;
-  font-size: 1.03rem;
-  line-height: 1.7;
-}
-
-.avant-colonne p + p {
-  margin-top: 18px;
-}
-
-.urgence-ferroviaire {
-  margin-top: 24px !important;
-  padding: 18px 20px;
-  border: 2px solid #ffce3e;
-}
-
-.urgence-ferroviaire strong {
-  color: #ffce3e;
-}
-
-@media (max-width: 950px) {
-  .avant-grille {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .avant-toute-chose {
-    padding: 70px 7%;
-  }
-
-  .avant-toute-chose .titre-section {
-    margin-bottom: 45px;
-  }
-}
-
-@media (max-width: 600px) {
-  .avant-toute-chose {
-    padding: 60px 28px;
-  }
-
-  .avant-colonne p {
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-}
+      .zone-claire {
+        padding: 70px 28px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- ========================================
+       OUVERTURE
+       ======================================== -->
 
   <header class="hero">
     <div class="hero-contenu">
@@ -218,8 +288,7 @@
       </h1>
 
       <p class="sous-titre">
-        Groupes appartenant à la communauté en ligne
-        « Le train du ras-le-bol »
+        Groupes appartenant à la communauté en ligne « Le train du ras-le-bol »
       </p>
 
       <div class="signature">
@@ -228,123 +297,70 @@
 
     </div>
   </header>
-<section class="avant-toute-chose">
 
-  <div class="avant-conteneur">
+  <!-- ========================================
+       AVANT TOUTE CHOSE
+       ======================================== -->
 
-    <h2 class="titre-section">Avant toute chose.</h2>
+  <section class="avant-toute-chose">
 
-    <div class="avant-grille">
+    <div class="bandeau-section">
+      <h2>Avant toute chose</h2>
+    </div>
 
-      <!-- COLONNE 1 -->
-      <article class="avant-colonne">
+    <div class="avant-conteneur">
 
-        <span class="avant-numero">01</span>
+      <div class="avant-grille">
 
-        <h3>Un objet défini</h3>
+        <!-- OBJET DÉFINI -->
+        <article class="avant-colonne">
 
-        <p>
-          Lancée en mars 2023, la communauté en ligne
-          « Le train du ras-le-bol » est à but non lucratif.
-          Elle ne permet ni l’encaissement de sommes destinées
-          à financer son fonctionnement ou à permettre un enrichissement,
-          ni l’apport d’affaires par son intermédiaire.
-        </p>
+          <h3>Objet défini</h3>
 
-        <p>
-          Son fonctionnement repose néanmoins sur la mise à disposition
-          de moyens techniques, matériels et humains qui représentent
-          un coût. Cette mise à disposition répond à une raison d’être
-          précise, formalisée dans un objet défini.
-        </p>
+          <p>
+            Lancée en mars 2023, la communauté en ligne « Le train du ras-le-bol » est à but non lucratif. Elle ne permet ni l’encaissement de sommes destinées à financer son fonctionnement ou à permettre un enrichissement, ni l’apport d’affaires par son intermédiaire. Son fonctionnement repose néanmoins sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût. Cette mise à disposition répond à une raison d’être précise, formalisée dans un objet défini. Cet objet encadre la mise en place et le maintien de nos groupes WhatsApp « Les reporters » et justifie les moyens qui leur sont consacrés. Il implique le respect de conditions précises auxquelles nous devons nous conformer et que nous devons également faire respecter.
+          </p>
 
-        <p>
-          Cet objet encadre la mise en place et le maintien de nos groupes
-          WhatsApp « Les reporters » et justifie les moyens qui leur sont
-          consacrés. Il implique le respect de conditions précises auxquelles
-          nous devons nous conformer et que nous devons également faire respecter.
-        </p>
+        </article>
 
-      </article>
+        <!-- ANIMATION DES GROUPES -->
+        <article class="avant-colonne">
 
+          <h3>Animation des groupes</h3>
 
-      <!-- COLONNE 2 -->
-      <article class="avant-colonne">
+          <p>
+            Nos groupes WhatsApp « Les reporters » sont des espaces animés par les équipiers du train du ras-le-bol. Professionnels des réseaux sociaux, ils sont formés aux particularités des échanges qui se déroulent dans nos groupes. Salariés, ils sont mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les priorités liées à la charge de travail de la société qui les emploie. Leur présence régulière contribue à instaurer une véritable proximité avec les membres de la communauté en ligne, favorise des échanges directs et continus et permet de mieux comprendre les réalités relatées. Elle permet également d’apporter des éclairages lorsque cela est nécessaire et de préserver un environnement propice à l’expression, à l’écoute et au partage. En matière d’animation, lorsque le contexte s’y prête, des contenus ironiques et inédits peuvent être publiés.
+          </p>
 
-        <span class="avant-numero">02</span>
+        </article>
 
-        <h3>Des espaces animés</h3>
+        <!-- CADRE DE FONCTIONNEMENT -->
+        <article class="avant-colonne">
 
-        <p>
-          Nos groupes WhatsApp « Les reporters » sont des espaces animés
-          par les équipiers du train du ras-le-bol. Professionnels des réseaux
-          sociaux, ils sont formés aux particularités des échanges qui se
-          déroulent dans nos groupes.
-        </p>
+          <h3>Cadre de fonctionnement</h3>
 
-        <p>
-          Salariés, ils sont mis à disposition sur leur temps de travail,
-          dans un cadre réglementé et selon les priorités liées à la charge
-          de travail de la société qui les emploie.
-        </p>
+          <p>
+            Les équipiers du train du ras-le-bol agissent dans un cadre professionnel, uniquement en fonction de leur périmètre de compétences et de leur champ d’intervention. Ils ne sont pas personnels d’une société de transport ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic, des informations commerciales ou des informations liées à la sécurité ferroviaire. Lorsqu’un sujet ou une situation dépasse leur périmètre de compétences ou leur champ d’intervention, ils procèdent à votre réorientation vers les services appropriés. En cas de danger sur le réseau ferroviaire, les équipiers ne sont pas habilités à vous assister directement, mais ont l’obligation de prévenir ou de faire prévenir les services compétents, notamment via le <strong>3117</strong> par téléphone ou le <strong>31177</strong> par SMS.
+          </p>
 
-        <p>
-          Leur présence régulière contribue à instaurer une véritable proximité
-          avec les membres de la communauté en ligne, favorise des échanges
-          directs et continus et permet de mieux comprendre les réalités relatées.
-          Elle permet également d’apporter des éclairages lorsque cela est
-          nécessaire et de préserver un environnement propice à l’expression,
-          à l’écoute et au partage.
-        </p>
+        </article>
 
-        <p>
-          En matière d’animation, lorsque le contexte s’y prête,
-          des contenus ironiques et inédits peuvent être publiés.
-        </p>
-
-      </article>
-
-
-      <!-- COLONNE 3 -->
-      <article class="avant-colonne">
-
-        <span class="avant-numero">03</span>
-
-        <h3>Un cadre professionnel</h3>
-
-        <p>
-          Les équipiers du train du ras-le-bol agissent dans un cadre
-          professionnel, uniquement en fonction de leur périmètre de compétences
-          et de leur champ d’intervention.
-        </p>
-
-        <p>
-          Ils ne sont pas personnels d’une société de transport ferroviaire
-          et ne sont pas habilités à fournir des informations relatives au trafic,
-          des informations commerciales ou des informations liées à la sécurité
-          ferroviaire.
-        </p>
-
-        <p>
-          Lorsqu’un sujet ou une situation dépasse leur périmètre de compétences
-          ou leur champ d’intervention, ils procèdent à votre réorientation
-          vers les services appropriés.
-        </p>
-
-        <p class="urgence-ferroviaire">
-          En cas de danger sur le réseau ferroviaire, les équipiers ne sont pas
-          habilités à vous assister directement. Ils ont toutefois l’obligation
-          de prévenir ou de faire prévenir les services compétents, notamment
-          via le <strong>3117</strong> par téléphone ou le
-          <strong>31177</strong> par SMS.
-        </p>
-
-      </article>
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!--
+    Ici viendront les sections suivantes.
+    Nous pourrons alterner :
+    - fond blanc
+    - fond bleu
+    - bandeaux jaunes
+    - textes + images
+    - images pleine largeur ou en deux colonnes
+  -->
+
 </body>
+
 </html>
