@@ -190,6 +190,7 @@
       line-height: 1.1;
     }
 
+    /* Ordinateur et tablette large : texte justifié */
     .bloc-texte p {
       margin: 0;
       color: var(--blanc);
@@ -227,6 +228,7 @@
       }
     }
 
+    /* Mobile : texte aligné à gauche */
     @media (max-width: 820px) {
       .conteneur {
         width: min(100% - 32px, 1440px);
@@ -254,8 +256,8 @@
       }
 
       .bloc-texte p {
-        text-align: justify;
-        text-justify: inter-word;
+        text-align: left;
+        text-justify: auto;
         hyphens: none;
         -webkit-hyphens: none;
         word-break: normal;
@@ -301,12 +303,7 @@
       .bloc-texte p {
         font-size: 0.98rem;
         line-height: 1.68;
-        text-align: justify;
-        text-justify: inter-word;
-        hyphens: none;
-        -webkit-hyphens: none;
-        word-break: normal;
-        overflow-wrap: normal;
+        text-align: left;
       }
     }
   </style>
