@@ -33,6 +33,19 @@
       color: var(--bleu);
     }
 
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
     img {
       display: block;
       width: 100%;
@@ -42,6 +55,10 @@
       width: min(1440px, calc(100% - 48px));
       margin: 0 auto;
     }
+
+    /* ==================================================
+       OUVERTURE
+       ================================================== */
 
     .hero {
       background: var(--bleu);
@@ -87,6 +104,10 @@
       font-size: clamp(1.2rem, 2.3vw, 1.8rem);
       font-weight: 700;
     }
+
+    /* ==================================================
+       AVANT TOUTE CHOSE
+       ================================================== */
 
     .avant-toute-chose {
       background: var(--bleu);
@@ -167,7 +188,6 @@
       font-size: clamp(1.55rem, 2.25vw, 2.25rem);
       font-weight: 800;
       line-height: 1.1;
-      overflow-wrap: break-word;
     }
 
     .bloc-texte p {
@@ -177,14 +197,20 @@
       line-height: 1.62;
       text-align: justify;
       text-justify: inter-word;
-      hyphens: auto;
-      -webkit-hyphens: auto;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
     }
 
     .bloc-texte strong {
       color: var(--jaune);
       font-weight: 700;
     }
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
 
     @media (max-width: 1050px) {
       .bloc-info,
@@ -277,6 +303,10 @@
 
 <body>
 
+  <!-- ==================================================
+       OUVERTURE
+       ================================================== -->
+
   <header class="hero">
     <div class="conteneur hero-contenu">
 
@@ -298,6 +328,10 @@
     </div>
   </header>
 
+  <!-- ==================================================
+       AVANT TOUTE CHOSE
+       ================================================== -->
+
   <section class="avant-toute-chose">
 
     <div class="titre-zone">
@@ -308,6 +342,7 @@
 
     <div class="conteneur blocs">
 
+      <!-- OBJET DÉFINI : IMAGE À GAUCHE -->
       <article class="bloc-info">
 
         <div class="bloc-image">
@@ -326,6 +361,7 @@
 
       </article>
 
+      <!-- ANIMATION DES GROUPES : IMAGE À DROITE -->
       <article class="bloc-info inverse">
 
         <div class="bloc-image">
@@ -344,6 +380,7 @@
 
       </article>
 
+      <!-- CADRE DE FONCTIONNEMENT : IMAGE À GAUCHE -->
       <article class="bloc-info">
 
         <div class="bloc-image">
