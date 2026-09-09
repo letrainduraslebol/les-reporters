@@ -7,14 +7,14 @@
   <title>Les reporters — Le train du ras-le-bol</title>
 
   <!-- Meta description and Open Graph / Twitter for SEO and social sharing -->
-  <meta name="description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol. Informations pratiques et règles de fonctionnem[...]>
+  <meta name="description" content="Rejoignez les groupes WhatsApp \"Les reporters\" : une communauté citoyenne pour donner un sens à votre ras-le-bol. Informations pratiques et règles de fonctionnement." />
   <meta property="og:title" content="Les reporters — Le train du ras-le-bol" />
-  <meta property="og:description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
+  <meta property="og:description" content="Rejoignez les groupes WhatsApp \"Les reporters\" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/71000-00750_LRPTR-VS001_bannière-index.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Les reporters — Le train du ras-le-bol" />
-  <meta name="twitter:description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
+  <meta name="twitter:description" content="Rejoignez les groupes WhatsApp \"Les reporters\" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
   <meta name="twitter:image" content="/71000-00750_LRPTR-VS001_bannière-index.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
       --ombre-legere: 0 2px 8px rgba(0, 43, 89, 0.08);
       --ombre-moyen: 0 8px 24px rgba(0, 43, 89, 0.12);
       --ombre-fort: 0 16px 48px rgba(0, 43, 89, 0.15);
-      
+
       --wrapper: 1720px;
       --side-gap: 46px;
       --block-gap: 34px;
@@ -40,14 +40,8 @@
       --border-card: 4px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: "Inter", "Poppins", sans-serif;
@@ -58,10 +52,7 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .site-wrap {
       width: min(var(--wrapper), calc(100% - (var(--side-gap) * 2)));
@@ -71,47 +62,14 @@
     }
 
     /* ===== BANNIÈRE HERO ===== */
-
-    .hero {
-      margin-top: 26px;
-      animation: slideDown 0.6s ease-out;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--ombre-moyen);
-    }
-
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease-out;
-      aspect-ratio: 16/6; /* reserve space to reduce layout shift */
-      object-fit: cover;
-    }
-
-    .hero:hover img {
-      transform: scale(1.02);
-    }
+    .hero { margin-top: 26px; animation: slideDown 0.6s ease-out; border-radius: 8px; overflow: hidden; box-shadow: var(--ombre-moyen); }
+    .hero img { width: 100%; height: auto; display: block; transition: transform 0.3s ease-out; aspect-ratio: 16/6; object-fit: cover; }
+    .hero:hover img { transform: scale(1.02); }
 
     /* ===== BLOC 1 - INTRODUCTION ===== */
 
-    .section-white {
-      padding-top: 60px;
-      padding-bottom: 60px;
-      background: var(--blanc);
-      position: relative;
-      border-bottom: 1px solid var(--gris-moyen);
-    }
-
-    .section-white::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gris-moyen) 50%, transparent);
-    }
+    .section-white { padding-top: 40px; padding-bottom: 40px; background: var(--blanc); position: relative; border-bottom: 1px solid var(--gris-moyen); }
+    .section-white::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gris-moyen) 50%, transparent); }
 
     .title-band {
       width: 100%;
@@ -121,262 +79,91 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      line-height: 1.25;
-      font-size: clamp(22px, 2.5vw, 38px);
-      padding: 32px 40px;
-      margin: 0;
+      line-height: 1.15;
+      font-size: clamp(16px, 2.2vw, 28px); /* reduced and responsive */
+      padding: 18px 14px;
+      margin: 0 0 8px 0;
       border-radius: 8px;
       box-shadow: var(--ombre-moyen);
       font-family: "Poppins", sans-serif;
       animation: fadeInUp 0.8s ease-out;
+      white-space: nowrap; /* keep on one line */
+      overflow: hidden;
     }
 
     .intro-text {
-      margin-top: 50px;
-      font-size: clamp(18px, 1.3vw, 24px);
-      line-height: 1.85;
+      margin-top: 18px;
+      font-size: clamp(15px, 1.8vw, 20px);
+      line-height: 1.7;
       font-weight: 400;
       color: var(--bleu);
-      text-align: center;
+      text-align: justify;
       max-width: 950px;
       margin-left: auto;
       margin-right: auto;
       animation: fadeInUp 0.8s ease-out 0.2s both;
-      word-spacing: 0.15em;
-      hyphens: none; /* avoid césures automatiques */
+      word-spacing: 0.06em;
+      hyphens: none; /* avoid césures */
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      word-break: normal;
+      overflow-wrap: anywhere;
     }
 
-    .intro-text p {
-      margin: 0;
-    }
-
-    .intro-text strong {
-      color: var(--bleu);
-      font-weight: 700;
-      white-space: nowrap;
-    }
+    .intro-text p { margin: 0; }
 
     /* ===== BLOC 2 - CARTES INFO ===== */
 
-    .section-blue {
-      background: var(--bleu);
-      padding-top: 80px;
-      padding-bottom: 80px;
-      position: relative;
-      overflow: hidden;
-    }
+    .section-blue { background: var(--bleu); padding: 48px 0; position: relative; overflow: hidden; }
+    .title-band-yellow { width: 100%; background: var(--jaune); color: var(--bleu); text-align: center; font-weight: 800; text-transform: uppercase; line-height: 1.25; font-size: clamp(18px, 2.5vw, 32px); padding: 20px 24px; margin: 0; border-radius: 8px; font-family: "Poppins", sans-serif; box-shadow: var(--ombre-moyen); animation: fadeInUp 0.8s ease-out; position: relative; z-index: 2; letter-spacing: -0.5px; }
 
-    .title-band-yellow {
-      width: 100%;
-      background: var(--jaune);
-      color: var(--bleu);
-      text-align: center;
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.25;
-      font-size: clamp(22px, 2.5vw, 38px);
-      padding: 32px 40px;
-      margin: 0;
-      border-radius: 8px;
-      font-family: "Poppins", sans-serif;
-      box-shadow: var(--ombre-moyen);
-      animation: fadeInUp 0.8s ease-out;
-      position: relative;
-      z-index: 2;
-      letter-spacing: -0.5px;
-    }
+    .cards-row { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; position: relative; z-index: 2; }
 
-    .cards-row {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 36px;
-      align-items: stretch;
-      position: relative;
-      z-index: 2;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
+    .info-card { border: var(--border-card) solid var(--jaune); border-radius: 12px; overflow: hidden; background: var(--blanc); display: flex; flex-direction: column; transition: all 0.25s ease; box-shadow: var(--ombre-moyen); }
+    .info-card:hover { transform: translateY(-8px); box-shadow: var(--ombre-fort); }
 
-    .info-card {
-      border: var(--border-card) solid var(--jaune);
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--blanc);
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--ombre-moyen);
-      transform: translateY(0);
-    }
+    .card-image { background: var(--bleu); height: 220px; display: flex; align-items: center; justify-content: center; padding: 18px; overflow: hidden; }
+    .card-image img { width: auto; max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.3s ease-out; }
+    .info-card:hover .card-image img { transform: scale(1.05); }
 
-    .info-card:hover {
-      transform: translateY(-12px);
-      box-shadow: var(--ombre-fort);
-      border-color: var(--jaune);
-    }
+    .card-content { padding: 20px; color: var(--bleu); display: flex; flex-direction: column; gap: 8px; background: var(--blanc); }
 
-    .card-image {
-      background: var(--bleu);
-      height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
+    .card-tag { display: inline-block; align-self: flex-start; background: var(--jaune); color: var(--bleu); font-weight: 700; font-size: 17px; text-transform: uppercase; line-height: 1.2; padding: 6px 14px; border-radius: 20px; margin-bottom: 6px; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 206, 62, 0.12); }
 
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.3s ease-out;
-      filter: brightness(0.9);
-    }
+    .card-content p { margin: 0; font-size: 15px; line-height: 1.65; color: var(--bleu); }
 
-    .info-card:hover .card-image img {
-      transform: scale(1.08);
-    }
-
-    .card-content {
-      padding: 32px 24px;
-      color: var(--bleu);
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      background: var(--blanc);
-      font-size: 15px; /* base font-size for card content so tags can be sized relative */
-    }
-
-    .card-tag {
-      display: inline-block;
-      align-self: flex-start;
-      background: var(--jaune);
-      color: var(--bleu);
-      font-weight: 700;
-      font-size: calc(100% + 2pt); /* 2pt larger than the card content font-size */
-      text-transform: uppercase;
-      line-height: 1.2;
-      padding: 8px 16px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 12px rgba(255, 206, 62, 0.2);
-    }
-
-    .card-content p {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--bleu);
-      flex: 1;
-    }
+    /* Prevent hyphenation / word breaks in card body */
+    .card-content, .card-content p { hyphens: none; -webkit-hyphens: none; -ms-hyphens: none; word-break: normal; overflow-wrap: break-word; }
 
     /* ===== ANIMATIONS ===== */
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
     /* ===== RESPONSIVE ===== */
-
     @media (max-width: 1200px) {
-      .cards-row {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .card-image {
-        height: 300px;
-      }
+      .cards-row { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .card-image { height: 200px; }
     }
 
     @media (max-width: 768px) {
-      :root {
-        --side-gap: 18px;
-        --block-gap: 24px;
-      }
+      :root { --side-gap: 18px; }
+      .site-wrap { width: calc(100% - 36px); }
+      .title-band { font-size: clamp(14px, 4.5vw, 22px); padding: 14px 10px; }
+      .intro-text { font-size: 15px; line-height: 1.55; text-align: left; }
 
-      .section-white {
-        padding-top: 40px;
-        padding-bottom: 40px;
-      }
-
-      .section-blue {
-        padding-top: 60px;
-        padding-bottom: 60px;
-      }
-
-      .title-band,
-      .title-band-yellow {
-        padding: 24px 20px;
-        font-size: 20px;
-      }
-
-      .intro-text {
-        font-size: 18px;
-        line-height: 1.65;
-        margin-top: 30px;
-        text-align: left;
-      }
-
-      .cards-row {
-        margin-top: 40px;
-        gap: 20px;
-      }
-
-      .card-image {
-        height: 240px;
-      }
-
-      .card-tag {
-        font-size: calc(100% + 2pt); /* continues to be 2pt larger on smaller screens */
-      }
-
-      .card-content {
-        padding: 24px 18px;
-        font-size: 14px; /* reduce base size on smaller screens */
-      }
-
-      .card-content p {
-        font-size: 14px;
-        line-height: 1.6;
-      }
+      .cards-row { grid-template-columns: 1fr; gap: 18px; }
+      .card-image { height: 160px; }
+      .card-content { padding: 16px; }
+      .card-tag { font-size: 16px; padding: 6px 12px; }
+      .card-content p { font-size: 14px; }
     }
 
-    /* Very small screens: reduce paddings and gaps */
     @media (max-width: 420px) {
-      .title-band, .title-band-yellow { padding: 18px 12px; font-size: 18px; }
-      .intro-text { font-size: 16px; line-height: 1.5; }
-      .card-content { padding: 16px 12px; }
+      .title-band { font-size: 14px; padding: 12px 10px; }
+      .intro-text { font-size: 14px; line-height: 1.5; }
+      .card-image { height: 140px; }
+      .card-content { padding: 12px; }
+      .card-tag { font-size: 15px; padding: 5px 10px; }
+      .card-content p { font-size: 13px; }
     }
 
   </style>
@@ -400,9 +187,7 @@
         <h1 class="title-band">INSCRIVEZ-VOUS DANS UNE DÉMARCHE UTILE EN DONNANT UN SENS À VOTRE RAS-LE-BOL</h1>
 
         <div class="intro-text">
-          <p>
-            Avec nos groupes WhatsApp « Les reporters », <strong>tout commence avec vous</strong>, et avec les <strong>3 700 membres</strong> « reporters » présents dans les <strong>59 groupes WhatsApp</strong> répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en <strong>relatant votre quotidien</strong> et en <strong>témoignant de votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l'<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d'accompagnement et du <strong>recueil</strong> de vos participations afin de rassembler les arguments visant à plaider en faveur de l'<strong>amélioration des mobilités ferroviaires publiques</strong> dans l'intérêt de tous.
-          </p>
+          <p>Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol. Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les 3 700 membres « reporters » présents dans les 59 groupes WhatsApp répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant votre quotidien et en témoignant de votre réalité. Les équipiers du train du ras-le-bol se chargent de l'animation des groupes, de la coordination des actions de soutien et d'accompagnement et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.</p>
         </div>
       </div>
     </section>
