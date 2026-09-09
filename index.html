@@ -42,14 +42,15 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: "Inter", "Poppins", sans-serif;
-      background: var(--blanc);
+      background: var(--bleu);
       color: var(--bleu);
       line-height: 1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     img { max-width: 100%; display: block; }
@@ -62,14 +63,45 @@
     }
 
     /* ===== BANNIÈRE HERO ===== */
-    .hero { margin-top: 26px; animation: slideDown 0.6s ease-out; border-radius: 8px; overflow: hidden; box-shadow: var(--ombre-moyen); }
-    .hero img { width: 100%; height: auto; display: block; transition: transform 0.3s ease-out; aspect-ratio: 16/6; object-fit: cover; }
-    .hero:hover img { transform: scale(1.02); }
+    .hero {
+      margin-top: 26px;
+      animation: slideDown 0.6s ease-out;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--ombre-moyen);
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease-out;
+      aspect-ratio: 16/6;
+      object-fit: cover;
+    }
+
+    .hero:hover img {
+      transform: scale(1.02);
+    }
 
     /* ===== BLOC 1 - INTRODUCTION ===== */
+    .section-white {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background: var(--blanc);
+      position: relative;
+      border-bottom: 1px solid var(--gris-moyen);
+    }
 
-    .section-white { padding-top: 40px; padding-bottom: 40px; background: var(--blanc); position: relative; border-bottom: 1px solid var(--gris-moyen); }
-    .section-white::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gris-moyen) 50%, transparent); }
+    .section-white::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gris-moyen) 50%, transparent);
+    }
 
     .title-band {
       width: 100%;
@@ -80,14 +112,14 @@
       text-transform: uppercase;
       letter-spacing: -0.5px;
       line-height: 1.15;
-      font-size: clamp(16px, 2.2vw, 28px); /* reduced and responsive */
+      font-size: clamp(16px, 2.2vw, 28px);
       padding: 18px 14px;
       margin: 0 0 8px 0;
       border-radius: 8px;
       box-shadow: var(--ombre-moyen);
       font-family: "Poppins", sans-serif;
       animation: fadeInUp 0.8s ease-out;
-      white-space: nowrap; /* keep on one line */
+      white-space: nowrap;
       overflow: hidden;
     }
 
@@ -103,7 +135,7 @@
       margin-right: auto;
       animation: fadeInUp 0.8s ease-out 0.2s both;
       word-spacing: 0.06em;
-      hyphens: none; /* avoid césures */
+      hyphens: none;
       -webkit-hyphens: none;
       -ms-hyphens: none;
       word-break: normal;
@@ -113,57 +145,214 @@
     .intro-text p { margin: 0; }
 
     /* ===== BLOC 2 - CARTES INFO ===== */
+    .section-blue {
+      background: var(--bleu);
+      padding: 48px 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-    .section-blue { background: var(--bleu); padding: 48px 0; position: relative; overflow: hidden; }
-    .title-band-yellow { width: 100%; background: var(--jaune); color: var(--bleu); text-align: center; font-weight: 800; text-transform: uppercase; line-height: 1.25; font-size: clamp(18px, 2.5vw, 32px); padding: 20px 24px; margin: 0; border-radius: 8px; font-family: "Poppins", sans-serif; box-shadow: var(--ombre-moyen); animation: fadeInUp 0.8s ease-out; position: relative; z-index: 2; letter-spacing: -0.5px; }
+    .title-band-yellow {
+      width: 100%;
+      background: var(--jaune);
+      color: var(--bleu);
+      text-align: center;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.25;
+      font-size: clamp(18px, 2.5vw, 32px);
+      padding: 20px 24px;
+      margin: 0;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      box-shadow: var(--ombre-moyen);
+      animation: fadeInUp 0.8s ease-out;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -0.5px;
+    }
 
-    .cards-row { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; position: relative; z-index: 2; }
+    .cards-row {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+      position: relative;
+      z-index: 2;
+    }
 
-    .info-card { border: var(--border-card) solid var(--jaune); border-radius: 12px; overflow: hidden; background: var(--blanc); display: flex; flex-direction: column; transition: all 0.25s ease; box-shadow: var(--ombre-moyen); }
-    .info-card:hover { transform: translateY(-8px); box-shadow: var(--ombre-fort); }
+    .info-card {
+      border: var(--border-card) solid var(--jaune);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--blanc);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+      box-shadow: var(--ombre-moyen);
+    }
 
-    .card-image { background: var(--bleu); height: 220px; display: flex; align-items: center; justify-content: center; padding: 18px; overflow: hidden; }
-    .card-image img { width: auto; max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.3s ease-out; }
-    .info-card:hover .card-image img { transform: scale(1.05); }
+    .info-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--ombre-fort);
+    }
 
-    .card-content { padding: 20px; color: var(--bleu); display: flex; flex-direction: column; gap: 8px; background: var(--blanc); }
+    .card-image {
+      background: var(--bleu);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      overflow: hidden;
+    }
 
-    .card-tag { display: inline-block; align-self: flex-start; background: var(--jaune); color: var(--bleu); font-weight: 700; font-size: 17px; text-transform: uppercase; line-height: 1.2; padding: 6px 14px; border-radius: 20px; margin-bottom: 6px; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 206, 62, 0.12); }
+    .card-image img {
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease-out;
+    }
 
-    .card-content p { margin: 0; font-size: 15px; line-height: 1.65; color: var(--bleu); }
+    .info-card:hover .card-image img {
+      transform: scale(1.05);
+    }
 
-    /* Prevent hyphenation / word breaks in card body */
-    .card-content, .card-content p { hyphens: none; -webkit-hyphens: none; -ms-hyphens: none; word-break: normal; overflow-wrap: break-word; }
+    .card-content {
+      padding: 20px;
+      color: var(--bleu);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--blanc);
+    }
 
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--jaune);
+      color: var(--bleu);
+      font-weight: 700;
+      font-size: 17px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(255, 206, 62, 0.12);
+    }
 
-    /* ===== RESPONSIVE ===== */
+    .card-content p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--bleu);
+    }
+
+    .card-content,
+    .card-content p {
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 1200px) {
-      .cards-row { grid-template-columns: 1fr 1fr; gap: 20px; }
-      .card-image { height: 200px; }
+      .cards-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .card-image {
+        height: 200px;
+      }
     }
 
     @media (max-width: 768px) {
-      :root { --side-gap: 18px; }
-      .site-wrap { width: calc(100% - 36px); }
-      .title-band { font-size: clamp(14px, 4.5vw, 22px); padding: 14px 10px; }
-      .intro-text { font-size: 15px; line-height: 1.55; text-align: left; }
+      :root {
+        --side-gap: 18px;
+      }
 
-      .cards-row { grid-template-columns: 1fr; gap: 18px; }
-      .card-image { height: 160px; }
-      .card-content { padding: 16px; }
-      .card-tag { font-size: 16px; padding: 6px 12px; }
-      .card-content p { font-size: 14px; }
+      .site-wrap {
+        width: calc(100% - 36px);
+      }
+
+      .title-band {
+        font-size: clamp(14px, 4.5vw, 22px);
+        padding: 14px 10px;
+      }
+
+      .intro-text {
+        font-size: 15px;
+        line-height: 1.55;
+        text-align: left;
+      }
+
+      .cards-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card-image {
+        height: 160px;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .card-tag {
+        font-size: 16px;
+        padding: 6px 12px;
+      }
+
+      .card-content p {
+        font-size: 14px;
+      }
     }
 
     @media (max-width: 420px) {
-      .title-band { font-size: 14px; padding: 12px 10px; }
-      .intro-text { font-size: 14px; line-height: 1.5; }
-      .card-image { height: 140px; }
-      .card-content { padding: 12px; }
-      .card-tag { font-size: 15px; padding: 5px 10px; }
-      .card-content p { font-size: 13px; }
+      .title-band {
+        font-size: 14px;
+        padding: 12px 10px;
+      }
+
+      .intro-text {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .card-image {
+        height: 140px;
+      }
+
+      .card-content {
+        padding: 12px;
+      }
+
+      .card-tag {
+        font-size: 15px;
+        padding: 5px 10px;
+      }
+
+      .card-content p {
+        font-size: 13px;
+      }
     }
 
   </style>
@@ -181,6 +370,7 @@
   </header>
 
   <main role="main">
+
     <!-- BLOC 1 - INTRODUCTION -->
     <section class="section-white">
       <div class="site-wrap">
@@ -188,13 +378,17 @@
         <div class="intro-text">
           <p> Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol. Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les 3 700 membres « reporters » présents dans les 59 groupes WhatsApp répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant votre quotidien et en témoignant de votre réalité. Les équipiers du train du ras-le-bol se chargent de l'animation des groupes, de la coordination des actions de soutien et d'accompagnement et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.</p>
         </div>
+
       </div>
     </section>
 
     <!-- BLOC 2 - CARTES INFO -->
     <section class="section-blue" aria-labelledby="avant-toute-chose">
       <div class="site-wrap">
-        <h1 id="avant-toute-chose" class="title-band-yellow">Avant toute chose</h1>
+
+        <h1 id="avant-toute-chose" class="title-band-yellow">
+          Avant toute chose
+        </h1>
 
         <div class="cards-row">
 
@@ -207,8 +401,10 @@
                 loading="lazy"
               />
             </div>
+
             <div class="card-content">
               <div id="tag-objet-defini" class="card-tag">Objet défini</div>
+
               <p>
                 Lancée en mars 2023, la communauté en ligne « Le train du ras-le-bol » est à but non lucratif.
                 Elle ne permet ni l'encaissement de sommes destinées à financer son fonctionnement ou à permettre
@@ -227,8 +423,10 @@
                 loading="lazy"
               />
             </div>
+
             <div class="card-content">
               <div id="tag-animation-groupes" class="card-tag">Animation des groupes</div>
+
               <p>
                 Nous tenons à vous préciser que nos groupes WhatsApp « Les reporters » sont des espaces animés par
                 des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les
@@ -248,8 +446,10 @@
                 loading="lazy"
               />
             </div>
+
             <div class="card-content">
               <div id="tag-cadre-fonctionnement" class="card-tag">Cadre de fonctionnement</div>
+
               <p>
                 Les équipiers du train du ras-le-bol agissent dans un cadre professionnel et maîtrisent leur périmètre
                 de compétences et leur champ d'intervention. Ils ne sont pas personnels d'une société de transport
@@ -262,6 +462,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
 </body>
