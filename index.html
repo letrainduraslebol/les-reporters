@@ -6,6 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les reporters — Le train du ras-le-bol</title>
 
+  <!-- Meta description and Open Graph / Twitter for SEO and social sharing -->
+  <meta name="description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol. Informations pratiques et règles de fonctionnement." />
+  <meta property="og:title" content="Les reporters — Le train du ras-le-bol" />
+  <meta property="og:description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/71000-00750_LRPTR-VS001_bannière-index.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Les reporters — Le train du ras-le-bol" />
+  <meta name="twitter:description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
+  <meta name="twitter:image" content="/71000-00750_LRPTR-VS001_bannière-index.webp" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,6 +54,8 @@
       background: var(--blanc);
       color: var(--bleu);
       line-height: 1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
     img {
@@ -53,6 +66,8 @@
     .site-wrap {
       width: min(var(--wrapper), calc(100% - (var(--side-gap) * 2)));
       margin: 0 auto;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
 
     /* ===== BANNIÈRE HERO ===== */
@@ -70,6 +85,8 @@
       height: auto;
       display: block;
       transition: transform 0.3s ease-out;
+      aspect-ratio: 16/6; /* reserve space to reduce layout shift */
+      object-fit: cover;
     }
 
     .hero:hover img {
@@ -126,7 +143,7 @@
       margin-right: auto;
       animation: fadeInUp 0.8s ease-out 0.2s both;
       word-spacing: 0.15em;
-      hyphens: manual;
+      hyphens: none; /* avoid césures automatiques */
     }
 
     .intro-text p {
@@ -355,102 +372,115 @@
       }
     }
 
+    /* Very small screens: reduce paddings and gaps */
+    @media (max-width: 420px) {
+      .title-band, .title-band-yellow { padding: 18px 12px; font-size: 18px; }
+      .intro-text { font-size: 16px; line-height: 1.5; }
+      .card-content { padding: 16px 12px; }
+    }
+
   </style>
 </head>
 
 <body>
 
   <!-- BANNIÈRE HERO -->
-  <header class="hero site-wrap">
+  <header class="hero site-wrap" role="banner">
     <img
       src="71000-00750_LRPTR-VS001_bannière-index.webp"
-      alt="Bannière Les Reporters"
+      alt="Bannière Les Reporters — Le train du ras-le-bol"
+      fetchpriority="high"
     />
   </header>
 
-  <!-- BLOC 1 - INTRODUCTION -->
-  <section class="section-white">
-    <div class="site-wrap">
-      <h1 class="title-band">
-        INSCRIVEZ-VOUS DANS UNE DÉMARCHE UTILE EN DONNANT UN SENS À VOTRE RAS-LE-BOL
-      </h1>
+  <main role="main">
+    <!-- BLOC 1 - INTRODUCTION -->
+    <section class="section-white">
+      <div class="site-wrap">
+        <h1 class="title-band">
+          INSCRIVEZ-VOUS DANS UNE DÉMARCHE UTILE EN DONNANT UN SENS À VOTRE RAS-LE-BOL
+        </h1>
 
-      <div class="intro-text">
-        <p>
-          Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les <strong>3 700 membres « reporters »</strong> présents dans les <strong>59 groupes</strong> répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en <strong>relatant votre quotidien</strong> et en <strong>témoignant de votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de <strong>l'animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d'accompagnement et du <strong>recueil</strong> de vos participations afin de rassembler les <strong>arguments</strong> visant à plaider en faveur de l'amélioration des <strong>mobilités ferroviaires publiques</strong> dans l'intérêt de tous.
-        </p>
+        <div class="intro-text">
+          <p>
+            Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les <strong>3 700 membres « reporters »</strong> présents dans les <strong>59 groupes</strong> répartis sur l'ensemble du territoire.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BLOC 2 - CARTES INFO -->
-  <section class="section-blue">
-    <div class="site-wrap">
-      <h2 class="title-band-yellow">Avant toute chose</h2>
+    <!-- BLOC 2 - CARTES INFO -->
+    <section class="section-blue" aria-labelledby="avant-toute-chose">
+      <div class="site-wrap">
+        <h2 id="avant-toute-chose" class="title-band-yellow">Avant toute chose</h2>
 
-      <div class="cards-row">
+        <div class="cards-row">
 
-        <!-- CARTE 1 -->
-        <article class="info-card">
-          <div class="card-image">
-            <img
-              src="71000-00750_LRPTR-VS002_objet-défini-index.webp"
-              alt="Objet défini"
-            />
-          </div>
-          <div class="card-content">
-            <div class="card-tag">Objet défini</div>
-            <p>
-              Lancée en mars 2023, la communauté en ligne « Le train du ras-le-bol » est à but non lucratif.
-              Elle ne permet ni l'encaissement de sommes destinées à financer son fonctionnement ou à permettre
-              un enrichissement, ni l'apport d'affaires par son intermédiaire. Son fonctionnement repose néanmoins
-              sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût.
-            </p>
-          </div>
-        </article>
+          <!-- CARTE 1 -->
+          <article class="info-card" aria-labelledby="tag-objet-defini">
+            <div class="card-image">
+              <img
+                src="71000-00750_LRPTR-VS002_objet-défini-index.webp"
+                alt="Illustration : objet défini — la communauté Le train du ras-le-bol"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <div id="tag-objet-defini" class="card-tag">Objet défini</div>
+              <p>
+                Lancée en mars 2023, la communauté en ligne « Le train du ras-le-bol » est à but non lucratif.
+                Elle ne permet ni l'encaissement de sommes destinées à financer son fonctionnement ou à permettre
+                un enrichissement, ni l'apport d'affaires par son intermédiaire. Son fonctionnement repose néanmoins
+                sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût.
+              </p>
+            </div>
+          </article>
 
-        <!-- CARTE 2 -->
-        <article class="info-card">
-          <div class="card-image">
-            <img
-              src="71000-00750_LRPTR-VS003_politique-danimation-index.webp"
-              alt="Animation des groupes"
-            />
-          </div>
-          <div class="card-content">
-            <div class="card-tag">Animation des groupes</div>
-            <p>
-              Nous tenons à vous préciser que nos groupes WhatsApp « Les reporters » sont des espaces animés par
-              des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les
-              priorités liées à la charge de travail. Appelés « équipiers du train du ras-le-bol », il s'agit
-              de professionnels formés aux particularités des échanges qui se déroulent dans nos groupes.
-              L'équipage est généralement connecté entre 6 h et 23 h.
-            </p>
-          </div>
-        </article>
+          <!-- CARTE 2 -->
+          <article class="info-card" aria-labelledby="tag-animation-groupes">
+            <div class="card-image">
+              <img
+                src="71000-00750_LRPTR-VS003_politique-danimation-index.webp"
+                alt="Illustration : animation des groupes WhatsApp — équipiers et horaires"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <div id="tag-animation-groupes" class="card-tag">Animation des groupes</div>
+              <p>
+                Nous tenons à vous préciser que nos groupes WhatsApp « Les reporters » sont des espaces animés par
+                des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les
+                priorités liées à la charge de travail. Appelés « équipiers du train du ras-le-bol », il s'agit
+                de professionnels formés aux particularités des échanges qui se déroulent dans nos groupes.
+                L'équipage est généralement connecté entre 6 h et 23 h.
+              </p>
+            </div>
+          </article>
 
-        <!-- CARTE 3 -->
-        <article class="info-card">
-          <div class="card-image">
-            <img
-              src="71000-00750_LRPTR-VS004_cadre-de-fonctionnement-index.webp"
-              alt="Cadre de fonctionnement"
-            />
-          </div>
-          <div class="card-content">
-            <div class="card-tag">Cadre de fonctionnement</div>
-            <p>
-              Les équipiers du train du ras-le-bol agissent dans un cadre professionnel et maîtrisent leur périmètre
-              de compétences et leur champ d'intervention. Ils ne sont pas personnels d'une société de transport
-              ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic ou à la sécurité.
-              « Le train du ras-le-bol » est indépendant des autorités organisatrices et des sociétés de transport.
-            </p>
-          </div>
-        </article>
+          <!-- CARTE 3 -->
+          <article class="info-card" aria-labelledby="tag-cadre-fonctionnement">
+            <div class="card-image">
+              <img
+                src="71000-00750_LRPTR-VS004_cadre-de-fonctionnement-index.webp"
+                alt="Illustration : cadre de fonctionnement — indépendance et périmètre d'intervention"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <div id="tag-cadre-fonctionnement" class="card-tag">Cadre de fonctionnement</div>
+              <p>
+                Les équipiers du train du ras-le-bol agissent dans un cadre professionnel et maîtrisent leur périmètre
+                de compétences et leur champ d'intervention. Ils ne sont pas personnels d'une société de transport
+                ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic ou à la sécurité.
+                « Le train du ras-le-bol » est indépendant des autorités organisatrices et des sociétés de transport.
+              </p>
+            </div>
+          </article>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
 </body>
 
