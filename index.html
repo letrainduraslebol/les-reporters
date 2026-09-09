@@ -4,16 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Les reporters — Le train du ras-le-bol</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -21,9 +16,12 @@
       --jaune: #ffce3e;
       --blanc: #ffffff;
 
-      /* MARGE STANDARD DES SITES LETRAINDURASLEBOL.FR */
-      --marge-page: 80px;
-      --largeur-max: 1760px;
+      --marge-page: 96px;
+      --largeur-max: 1720px;
+
+      --rayon: 18px;
+      --rayon-capsule: 999px;
+      --contour: 5px;
     }
 
     * {
@@ -42,254 +40,419 @@
       color: var(--bleu);
     }
 
-    p {
-      margin: 0;
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    p {
       hyphens: none;
       -webkit-hyphens: none;
-
       word-break: normal;
       overflow-wrap: normal;
     }
 
-    /*
-    ==================================================
-    CONTENEUR STANDARD
-    ==================================================
-    */
-
     .conteneur-page {
-      width: min(
-        calc(100% - (var(--marge-page) * 2)),
-        var(--largeur-max)
-      );
-
+      width: min(calc(100% - (var(--marge-page) * 2)), var(--largeur-max));
       margin-left: auto;
       margin-right: auto;
     }
 
-    /*
-    ==================================================
-    BANNIÈRE
-    ==================================================
-    */
+    /* ==================================================
+       BANNIÈRE
+       ================================================== */
 
     .zone-banniere {
-      width: 100%;
       background: var(--bleu);
-
-      padding-top: 24px;
-      padding-bottom: 56px;
+      padding: 24px 0 56px;
     }
 
     .banniere img {
-      display: block;
-
       width: 100%;
       height: auto;
-
-      margin: 0;
-      padding: 0;
+      border: 0;
     }
 
-    /*
-    ==================================================
-    INTRODUCTION
-    ==================================================
-    */
+    /* ==================================================
+       INTRODUCTION
+       ================================================== */
 
     .introduction {
-      width: 100%;
-
       background: var(--blanc);
-
-      padding-top: 48px;
-      padding-bottom: 72px;
+      padding: 48px 0 64px;
     }
 
-    /*
-    ==================================================
-    TITRE
-    ==================================================
-    */
-
-    .intro-titre {
-      width: 100%;
-
-      margin: 0 0 34px;
-
-      padding: 24px 40px 26px;
-
+    .bloc-titre-principal {
       background: var(--bleu);
       color: var(--blanc);
-
-      font-size: clamp(1.35rem, 1.7vw, 1.9rem);
-      font-weight: 800;
-      line-height: 1.3;
-
-      letter-spacing: 0;
-
       text-align: center;
       text-transform: uppercase;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 1.55vw, 1.85rem);
+      line-height: 1.35;
+      padding: 26px 40px 28px;
+      margin-bottom: 34px;
+      border-radius: 0;
     }
 
-    /*
-    ==================================================
-    TEXTE
-    ==================================================
-    */
-
-    .intro-texte {
+    .texte-introduction {
       color: var(--bleu);
-
-      font-size: clamp(1.05rem, 1.4vw, 1.42rem);
+      font-size: clamp(1.02rem, 1.15vw, 1.28rem);
+      line-height: 1.72;
       font-weight: 400;
-
-      line-height: 1.58;
-      letter-spacing: 0;
-
       text-align: justify;
       text-justify: inter-word;
     }
 
-    .intro-texte strong {
-      color: var(--bleu);
+    .texte-introduction strong {
       font-weight: 800;
     }
 
-    /*
-    ==================================================
-    TABLETTE
-    ==================================================
-    */
+    /* ==================================================
+       AVANT TOUTE CHOSE
+       ================================================== */
 
-    @media (max-width: 1000px) {
+    .section-avant {
+      background: var(--bleu);
+      padding: 0 0 88px;
+    }
 
+    .bloc-titre-section {
+      background: var(--jaune);
+      color: var(--bleu);
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 1.55vw, 1.85rem);
+      line-height: 1.35;
+      padding: 26px 40px 28px;
+      margin-bottom: 34px;
+      border-radius: 0;
+    }
+
+    .grille-cartes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .carte {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: var(--contour) solid var(--jaune);
+      border-radius: var(--rayon);
+      overflow: hidden;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+    }
+
+    .carte-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+      border-bottom: var(--contour) solid var(--jaune);
+      flex-shrink: 0;
+    }
+
+    .carte-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carte-contenu {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 26px 24px 28px;
+    }
+
+    .capsule-titre {
+      align-self: flex-start;
+      display: inline-block;
+      background: var(--jaune);
+      color: var(--bleu);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 10px 16px;
+      border-radius: var(--rayon-capsule);
+      margin-bottom: 22px;
+    }
+
+    .texte-carte {
+      color: var(--blanc);
+      font-size: 1rem;
+      line-height: 1.74;
+      font-weight: 400;
+      text-align: justify;
+      text-justify: inter-word;
+      flex: 1;
+    }
+
+    /* ==================================================
+       TABLETTE
+       ================================================== */
+
+    @media (max-width: 1180px) {
       :root {
-        --marge-page: 48px;
+        --marge-page: 56px;
       }
 
       .zone-banniere {
-        padding-top: 20px;
-        padding-bottom: 42px;
+        padding: 20px 0 42px;
       }
 
       .introduction {
-        padding-top: 42px;
-        padding-bottom: 56px;
+        padding: 42px 0 54px;
       }
 
-      .intro-titre {
-        margin-bottom: 30px;
+      .section-avant {
+        padding: 0 0 64px;
+      }
 
-        padding: 22px 30px 24px;
+      .bloc-titre-principal,
+      .bloc-titre-section {
+        padding: 22px 26px 24px;
+        margin-bottom: 28px;
+      }
+
+      .grille-cartes {
+        gap: 26px;
+      }
+
+      .carte-contenu {
+        padding: 22px 20px 24px;
+      }
+
+      .texte-carte {
+        font-size: 0.98rem;
       }
     }
 
-    /*
-    ==================================================
-    MOBILE
-    ==================================================
-    */
+    /* ==================================================
+       MOBILE
+       ================================================== */
 
-    @media (max-width: 700px) {
-
+    @media (max-width: 820px) {
       :root {
-        --marge-page: 20px;
+        --marge-page: 22px;
       }
 
       .zone-banniere {
-        padding-top: 14px;
-        padding-bottom: 28px;
+        padding: 14px 0 28px;
       }
 
       .introduction {
-        padding-top: 30px;
-        padding-bottom: 42px;
+        padding: 32px 0 40px;
       }
 
-      .intro-titre {
-        margin-bottom: 24px;
+      .section-avant {
+        padding: 0 0 40px;
+      }
 
-        padding: 18px 18px 20px;
-
-        font-size: 1.18rem;
+      .bloc-titre-principal,
+      .bloc-titre-section {
+        font-size: 1.14rem;
         line-height: 1.4;
-
-        text-align: center;
+        padding: 18px 16px 20px;
+        margin-bottom: 22px;
       }
 
-      .intro-texte {
+      .texte-introduction,
+      .texte-carte {
         font-size: 1rem;
         line-height: 1.7;
-
         text-align: left;
         text-justify: auto;
       }
-    }
 
+      .grille-cartes {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .carte {
+        border-radius: 16px;
+      }
+
+      .carte-contenu {
+        padding: 20px 18px 22px;
+      }
+
+      .capsule-titre {
+        font-size: 0.98rem;
+        padding: 10px 14px;
+        margin-bottom: 18px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!--
-  ==================================================
-  BANNIÈRE
-  ==================================================
-  -->
+  <!-- ==================================================
+       BANNIÈRE
+       ================================================== -->
 
   <header class="zone-banniere">
-
     <div class="conteneur-page banniere">
-
       <img
-        src="71000-00750.01_Les-reporters-banniere-index.webp"
+        src="71000-00750_LRPTR-VS001_bannière-index.webp"
         alt="Groupes WhatsApp Les reporters — Tout commence avec vous."
         width="2048"
         height="746"
         fetchpriority="high"
       >
-
     </div>
-
   </header>
 
-  <!--
-  ==================================================
-  INTRODUCTION
-  ==================================================
-  -->
+  <!-- ==================================================
+       INTRODUCTION
+       ================================================== -->
 
   <main>
 
     <section class="introduction">
-
       <div class="conteneur-page">
 
-        <div class="intro-titre">
+        <div class="bloc-titre-principal">
           INSCRIVEZ-VOUS DANS UNE DÉMARCHE UTILE EN DONNANT UN SENS À VOTRE RAS-LE-BOL.
         </div>
 
-        <p class="intro-texte">
+        <p class="texte-introduction">
           Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les
-          <strong>3 700 membres</strong> « reporters » présents dans les
-          <strong>59 groupes WhatsApp</strong> répartis sur l’ensemble du Grand-sud, du Centre
-          et du Grand-ouest. Participez en <strong>relatant votre quotidien</strong> et en
-          <strong>témoignant de votre réalité.</strong> Les équipiers du train du ras-le-bol
-          se chargent de <strong>l’animation</strong> des groupes, de la
-          <strong>coordination</strong> des actions de soutien et d’accompagnement et du
-          <strong>recueil</strong> de vos participations afin de rassembler
-          <strong>les arguments</strong> visant à plaider en faveur de l’amélioration des
-          <strong>mobilités ferroviaires publiques</strong> dans l’intérêt de tous.
+          <strong>3 700 membres « reporters »</strong> présents dans les
+          <strong>59 groupes</strong> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest.
+          Participez en <strong>relatant votre quotidien</strong> et en
+          <strong>témoignant de votre réalité</strong>. Les équipiers du train du ras-le-bol
+          se chargent de l’animation des groupes, de la coordination des actions de soutien
+          et d’accompagnement et du recueil de vos participations afin de rassembler les
+          arguments visant à plaider en faveur de l’amélioration des mobilités ferroviaires
+          publiques dans l’intérêt de tous.
         </p>
 
       </div>
+    </section>
 
+    <!-- ==================================================
+         AVANT TOUTE CHOSE
+         ================================================== -->
+
+    <section class="section-avant">
+      <div class="conteneur-page">
+
+        <div class="bloc-titre-section">
+          AVANT TOUTE CHOSE
+        </div>
+
+        <div class="grille-cartes">
+
+          <!-- CARTE 1 -->
+          <article class="carte">
+            <div class="carte-image">
+              <img
+                src="71000-00750_LRPTR-VS002_objet-défini-index.webp"
+                alt="Illustration de l’objet défini"
+                width="1200"
+                height="750"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="carte-contenu">
+              <div class="capsule-titre">Objet défini</div>
+
+              <p class="texte-carte">
+                Lancée en mars 2023, la communauté en ligne « Le train du ras-le-bol » est à but non lucratif.
+                Elle ne permet ni l’encaissement de sommes destinées à financer son fonctionnement ou à permettre
+                un enrichissement, ni l’apport d’affaires par son intermédiaire. Son fonctionnement repose néanmoins
+                sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût.
+                Ce coût est supporté par les dirigeants des sociétés de l’UES qui sont à l’initiative de la communauté
+                en ligne « Le train du ras-le-bol ». Cette mise à disposition répond à une raison d’être précise,
+                formalisée dans un objet défini. Cet objet encadre la mise en place et le maintien de nos groupes
+                WhatsApp « Les reporters » et justifie les moyens qui leur sont consacrés. Il implique le respect
+                de conditions précises auxquelles nous devons nous conformer et que nous devons également faire respecter.
+              </p>
+            </div>
+          </article>
+
+          <!-- CARTE 2 -->
+          <article class="carte">
+            <div class="carte-image">
+              <img
+                src="71000-00750_LRPTR-VS003_politique-danimation-index.webp"
+                alt="Illustration de l’animation des groupes"
+                width="1200"
+                height="750"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="carte-contenu">
+              <div class="capsule-titre">Animation des groupes</div>
+
+              <p class="texte-carte">
+                Nous tenons à vous préciser que nos groupes WhatsApp « Les reporters » sont des espaces animés par
+                des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les
+                priorités liées à la charge de travail de la société qui les emploie. Appelés « équipiers du train
+                du ras-le-bol », il s’agit de professionnels des réseaux sociaux formés aux particularités des échanges
+                qui se déroulent dans nos groupes. Leur présence régulière contribue à instaurer une véritable proximité
+                avec les membres de la communauté en ligne, favorise des échanges directs et continus et permet de mieux
+                comprendre les réalités relatées. Elle permet également d’apporter des éclairages lorsque cela est
+                nécessaire et de préserver un environnement propice à l’expression, à l’écoute et au partage.
+                L’équipage est généralement connecté entre 6 h et 23 h.
+              </p>
+            </div>
+          </article>
+
+          <!-- CARTE 3 -->
+          <article class="carte">
+            <div class="carte-image">
+              <img
+                src="71000-00750_LRPTR-VS004_cadre-de-fonctionnement-index.webp"
+                alt="Illustration du cadre de fonctionnement"
+                width="1200"
+                height="750"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="carte-contenu">
+              <div class="capsule-titre">Cadre de fonctionnement</div>
+
+              <p class="texte-carte">
+                Les équipiers du train du ras-le-bol agissent dans un cadre professionnel et maîtrisent leur périmètre
+                de compétences et leur champ d’intervention. Ils ne sont pas personnels d’une société de transport
+                ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic, des informations
+                commerciales ou des informations liées à la sécurité ferroviaire. Lorsqu’un sujet ou une situation
+                dépasse leur périmètre de compétences ou leur champ d’intervention, ils procèdent à votre réorientation
+                vers les services appropriés. Aussi, les équipiers du train du ras-le-bol ne sont pas habilités à vous
+                assister directement en cas de danger sur le réseau ferroviaire, mais ont l’obligation de prévenir ou
+                de faire prévenir les services compétents. Enfin, veuillez noter que « Le train du ras-le-bol » est
+                indépendant des autorités organisatrices, des sociétés de transport ferroviaire et ne dépend pas de
+                leurs avis ou de leurs souhaits.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
     </section>
 
   </main>
 
 </body>
-
 </html>
