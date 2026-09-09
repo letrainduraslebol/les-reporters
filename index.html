@@ -7,9 +7,15 @@
 
   <title>Les reporters — Le train du ras-le-bol</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bleu: #002b59;
+      --jaune: #ffce3e;
+      --blanc: #ffffff;
     }
 
     * {
@@ -20,30 +26,141 @@
     body {
       margin: 0;
       padding: 0;
-      background: var(--bleu);
     }
 
     body {
-      min-height: 100vh;
+      font-family: "Poppins", Arial, sans-serif;
+      background: var(--blanc);
+      color: var(--bleu);
+    }
+
+    p {
+      margin: 0;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    /* ==================================================
+       ZONE BANNIÈRE
+       ================================================== */
+
+    .zone-banniere {
+      background: var(--bleu);
+      padding: 32px 0 36px;
     }
 
     .banniere {
       width: min(1920px, calc(100% - 72px));
-      margin: 32px auto 36px;
+      margin: 0 auto;
     }
 
     .banniere img {
       display: block;
       width: 100%;
       height: auto;
-      margin: 0;
-      padding: 0;
     }
 
-    @media (max-width: 700px) {
+    /* ==================================================
+       INTRODUCTION
+       ================================================== */
+
+    .introduction {
+      background: var(--blanc);
+      padding: 54px 0 60px;
+    }
+
+    .introduction-contenu {
+      width: min(1220px, calc(100% - 72px));
+      margin: 0 auto;
+    }
+
+    .intro-chapeau {
+      max-width: 1080px;
+      margin-bottom: 24px;
+      color: var(--bleu);
+      font-size: clamp(1.55rem, 2.15vw, 1.9rem);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .intro-texte {
+      color: var(--bleu);
+      font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+      font-weight: 500;
+      line-height: 1.72;
+      letter-spacing: 0;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .intro-texte strong {
+      font-weight: 700;
+    }
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media (max-width: 820px) {
+
+      .zone-banniere {
+        padding: 18px 0 24px;
+      }
+
       .banniere {
         width: calc(100% - 32px);
-        margin: 16px auto 24px;
+      }
+
+      .introduction {
+        padding: 40px 0 46px;
+      }
+
+      .introduction-contenu {
+        width: calc(100% - 32px);
+      }
+
+      .intro-chapeau {
+        margin-bottom: 20px;
+        font-size: 1.45rem;
+        line-height: 1.4;
+      }
+
+      .intro-texte {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: left;
+        text-justify: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .zone-banniere {
+        padding-top: 14px;
+        padding-bottom: 18px;
+      }
+
+      .banniere {
+        width: calc(100% - 24px);
+      }
+
+      .introduction {
+        padding: 34px 0 40px;
+      }
+
+      .introduction-contenu {
+        width: calc(100% - 28px);
+      }
+
+      .intro-chapeau {
+        font-size: 1.3rem;
+      }
+
+      .intro-texte {
+        font-size: 0.98rem;
       }
     }
   </style>
@@ -51,14 +168,46 @@
 
 <body>
 
-  <main class="banniere">
-    <img
-      src="71000-00750.01_Les-reporters-banniere-index.webp"
-      alt="Groupes WhatsApp Les reporters — Tout commence avec vous."
-      width="2048"
-      height="746"
-      fetchpriority="high"
-    >
+  <!-- ==================================================
+       BANNIÈRE
+       ================================================== -->
+
+  <header class="zone-banniere">
+    <div class="banniere">
+
+      <img
+        src="71000-00750.01_Les-reporters-banniere-index.webp"
+        alt="Groupes WhatsApp Les reporters — Tout commence avec vous."
+        width="2048"
+        height="746"
+        fetchpriority="high"
+      >
+
+    </div>
+  </header>
+
+  <!-- ==================================================
+       INTRODUCTION
+       ================================================== -->
+
+  <main>
+
+    <section class="introduction">
+
+      <div class="introduction-contenu">
+
+        <p class="intro-chapeau">
+          Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol.
+        </p>
+
+        <p class="intro-texte">
+          Avec nos groupes WhatsApp « Les reporters », <strong>tout commence avec vous</strong>, et avec les <strong>3 700 membres « reporters »</strong> présents dans les <strong>59 groupes</strong> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien et en témoignant de votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’animation des groupes, de la coordination des actions de soutien et d’accompagnement et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
 
 </body>
