@@ -7,7 +7,7 @@
   <title>Les reporters — Le train du ras-le-bol</title>
 
   <!-- Meta description and Open Graph / Twitter for SEO and social sharing -->
-  <meta name="description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol. Informations pratiques et règles de fonctionnem[...]
+  <meta name="description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol. Informations pratiques et règles de fonctionnem[...]>
   <meta property="og:title" content="Les reporters — Le train du ras-le-bol" />
   <meta property="og:description" content="Rejoignez les groupes WhatsApp "Les reporters" : une communauté citoyenne pour donner un sens à votre ras-le-bol." />
   <meta property="og:type" content="website" />
@@ -131,19 +131,30 @@
       animation: fadeInUp 0.8s ease-out;
     }
 
+    /* Improved intro text styling:
+       - align justified on wider screens for even edges
+       - keep left alignment on small screens (already present in media query)
+       - explicitly prevent hyphenation and avoid forced breaks
+       - preserve font and color (do not change them)
+    */
     .intro-text {
       margin-top: 50px;
       font-size: clamp(18px, 1.3vw, 24px);
       line-height: 1.85;
       font-weight: 400;
       color: var(--bleu);
-      text-align: center;
+      text-align: justify; /* changed from center to justify for better alignment */
+      text-justify: inter-word;
       max-width: 950px;
       margin-left: auto;
       margin-right: auto;
       animation: fadeInUp 0.8s ease-out 0.2s both;
       word-spacing: 0.15em;
       hyphens: none; /* avoid césures automatiques */
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
     }
 
     .intro-text p {
@@ -340,6 +351,7 @@
         font-size: 20px;
       }
 
+      /* keep left alignment on small screens for readability */
       .intro-text {
         font-size: 18px;
         line-height: 1.65;
@@ -403,7 +415,7 @@
 
         <div class="intro-text">
           <p>
-            Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol. Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les <strong>3 700 membres « reporters »</strong> présents dans les <strong>59 groupes WhatsApp</strong> répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant votre quotidien et en témoignant de votre réalité. Les équipiers du train du ras-le-bol se chargent de l'animation des groupes, de la coordination des actions de soutien et d'accompagnement et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.
+            Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol. Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les 3 700 membres « reporters » présents dans les 59 groupes WhatsApp répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant votre quotidien et en témoignant de votre réalité. Les équipiers du train du ras-le-bol se chargent de l'animation des groupes, de la coordination des actions de soutien et d'accompagnement et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.
           </p>
         </div>
       </div>
