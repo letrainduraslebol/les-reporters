@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Les Reporters — Le train du ras-le-bol</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les reporters — Le train du ras-le-bol</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --blue: #002b59;
-      --blue-dark: #001f43;
-      --yellow: #ffce3e;
-      --white: #ffffff;
-      --page: #f3f3f1;
-
+      --bleu-fonce: #002b59;
+      --bleu-clair: #0d4a8f;
+      --jaune: #ffce3e;
+      --jaune-fonce: #ffc107;
+      --blanc: #ffffff;
+      --gris-clair: #f8f9fa;
+      --gris-moyen: #e9ecef;
+      --gris-fonce: #495057;
+      --ombre-legere: 0 2px 8px rgba(0, 43, 89, 0.08);
+      --ombre-moyen: 0 8px 24px rgba(0, 43, 89, 0.12);
+      --ombre-fort: 0 16px 48px rgba(0, 43, 89, 0.15);
+      
       --wrapper: 1720px;
       --side-gap: 46px;
       --block-gap: 34px;
@@ -34,9 +41,10 @@
 
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--page);
-      color: var(--blue);
+      font-family: "Inter", "Poppins", sans-serif;
+      background: linear-gradient(180deg, var(--blanc) 0%, var(--gris-clair) 100%);
+      color: var(--bleu-fonce);
+      line-height: 1.6;
     }
 
     img {
@@ -49,46 +57,88 @@
       margin: 0 auto;
     }
 
-    /* ===== BANNIÈRE ===== */
+    /* ===== BANNIÈRE HERO ===== */
 
     .hero {
       margin-top: 26px;
+      animation: slideDown 0.6s ease-out;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--ombre-moyen);
     }
 
     .hero img {
       width: 100%;
       height: auto;
       display: block;
+      transition: transform 0.3s ease-out;
     }
 
-    /* ===== BLOC 1 ===== */
+    .hero:hover img {
+      transform: scale(1.02);
+    }
+
+    /* ===== BLOC 1 - INTRODUCTION ===== */
 
     .section-white {
-      padding-top: var(--block-gap);
-      padding-bottom: 42px;
-      background: var(--page);
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background: var(--blanc);
+      position: relative;
+      border-bottom: 1px solid var(--gris-moyen);
+    }
+
+    .section-white::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gris-moyen) 50%, transparent);
     }
 
     .title-band {
       width: 100%;
-      background: var(--blue);
-      color: var(--white);
+      background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu-clair) 100%);
+      color: var(--blanc);
       text-align: center;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0;
+      letter-spacing: -0.5px;
       line-height: 1.25;
-      font-size: clamp(22px, 2vw, 33px);
-      padding: 26px 34px;
+      font-size: clamp(22px, 2.5vw, 38px);
+      padding: 32px 40px;
       margin: 0;
+      border-radius: 8px;
+      box-shadow: var(--ombre-moyen);
+      font-family: "Poppins", sans-serif;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .title-band::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--jaune), var(--jaune-fonce));
+      margin: 16px auto 0;
+      border-radius: 2px;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out 0.3s forwards;
     }
 
     .intro-text {
-      margin-top: var(--block-gap);
-      font-size: clamp(18px, 1.2vw, 22px);
-      line-height: 1.7;
+      margin-top: 50px;
+      font-size: clamp(16px, 1.1vw, 20px);
+      line-height: 1.8;
       font-weight: 400;
-      color: var(--blue);
+      color: var(--gris-fonce);
+      text-align: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
     }
 
     .intro-text p {
@@ -96,90 +146,195 @@
     }
 
     .intro-text strong {
-      font-weight: 800;
+      color: var(--bleu-fonce);
+      font-weight: 700;
+      background: linear-gradient(120deg, var(--jaune) 0%, var(--jaune-fonce) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    /* ===== BLOC 2 ===== */
+    /* ===== BLOC 2 - CARTES INFO ===== */
 
     .section-blue {
-      background: var(--blue);
-      padding-top: var(--block-gap);
-      padding-bottom: 44px;
+      background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu-clair) 100%);
+      padding-top: 80px;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-blue::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 206, 62, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .section-blue::after {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 206, 62, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .title-band-yellow {
       width: 100%;
-      background: var(--yellow);
-      color: var(--blue);
+      background: var(--jaune);
+      color: var(--bleu-fonce);
       text-align: center;
       font-weight: 800;
       text-transform: uppercase;
       line-height: 1.25;
-      font-size: clamp(22px, 2vw, 33px);
-      padding: 26px 34px;
+      font-size: clamp(22px, 2.5vw, 38px);
+      padding: 32px 40px;
       margin: 0;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      box-shadow: 0 10px 30px rgba(255, 206, 62, 0.3);
+      animation: fadeInUp 0.8s ease-out;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -0.5px;
     }
 
     .cards-row {
-      margin-top: var(--block-gap);
+      margin-top: 60px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
+      gap: 36px;
       align-items: stretch;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
     }
 
     .info-card {
-      border: var(--border-card) solid var(--yellow);
-      border-radius: var(--radius);
+      border: var(--border-card) solid var(--jaune);
+      border-radius: 12px;
       overflow: hidden;
-      background: var(--blue);
+      background: var(--blanc);
       display: flex;
       flex-direction: column;
       min-height: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--ombre-moyen);
+      transform: translateY(0);
+    }
+
+    .info-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--ombre-fort);
+      border-color: var(--jaune-fonce);
     }
 
     .card-image {
-      background: #f7f7f7;
-      height: 255px;
+      background: linear-gradient(135deg, var(--gris-clair) 0%, var(--gris-moyen) 100%);
+      height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(255, 206, 62, 0.05) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .info-card:hover .card-image::before {
+      opacity: 1;
     }
 
     .card-image img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* image entière, non tronquée */
+      object-fit: contain;
+      transition: transform 0.3s ease-out;
+    }
+
+    .info-card:hover .card-image img {
+      transform: scale(1.08);
     }
 
     .card-content {
-      padding: 22px 22px 24px;
-      color: var(--white);
+      padding: 32px 24px;
+      color: var(--bleu-fonce);
       display: flex;
       flex-direction: column;
       flex: 1;
+      background: var(--blanc);
     }
 
     .card-tag {
       display: inline-block;
       align-self: flex-start;
-      background: var(--yellow);
-      color: var(--blue);
+      background: linear-gradient(135deg, var(--jaune) 0%, var(--jaune-fonce) 100%);
+      color: var(--bleu-fonce);
       font-weight: 700;
-      font-size: 22px;
+      font-size: 13px;
+      text-transform: uppercase;
       line-height: 1.2;
-      padding: 10px 16px;
-      border-radius: 12px;
-      margin-bottom: 18px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(255, 206, 62, 0.2);
     }
 
     .card-content p {
       margin: 0;
-      font-size: 17px;
-      line-height: 1.65;
-      color: var(--white);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gris-fonce);
       flex: 1;
+    }
+
+    /* ===== ANIMATIONS ===== */
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ===== RESPONSIVE ===== */
@@ -187,6 +342,7 @@
     @media (max-width: 1200px) {
       .cards-row {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .card-image {
@@ -200,33 +356,66 @@
         --block-gap: 24px;
       }
 
+      .section-white {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .section-blue {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
       .title-band,
       .title-band-yellow {
-        padding: 20px 18px;
-      }
-
-      .intro-text {
-        font-size: 17px;
-        line-height: 1.65;
-      }
-
-      .card-tag {
+        padding: 24px 20px;
         font-size: 20px;
       }
 
-      .card-content p {
+      .title-band::after {
+        width: 50px;
+        height: 3px;
+        margin-top: 12px;
+      }
+
+      .intro-text {
         font-size: 16px;
+        line-height: 1.65;
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .cards-row {
+        margin-top: 40px;
+        gap: 20px;
       }
 
       .card-image {
         height: 240px;
       }
+
+      .card-tag {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin-bottom: 16px;
+      }
+
+      .card-content {
+        padding: 24px 18px;
+      }
+
+      .card-content p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
     }
+
   </style>
 </head>
+
 <body>
 
-  <!-- BANNIÈRE -->
+  <!-- BANNIÈRE HERO -->
   <header class="hero site-wrap">
     <img
       src="71000-00750_LRPTR-VS001_bannière-index.webp"
@@ -234,29 +423,29 @@
     />
   </header>
 
-  <!-- BLOC 1 -->
+  <!-- BLOC 1 - INTRODUCTION -->
   <section class="section-white">
     <div class="site-wrap">
       <h1 class="title-band">
-        INSCRIVEZ-VOUS DANS UNE DÉMARCHE UTILE EN DONNANT UN SENS À VOTRE RAS-LE-BOL
+        Inscrivez-vous dans une démarche utile en donnant un sens à votre ras-le-bol
       </h1>
 
       <div class="intro-text">
         <p>
           Avec nos groupes WhatsApp « Les reporters », tout commence avec vous, et avec les
           <strong>3 700 membres « reporters »</strong> présents dans les
-          <strong>59 groupes</strong> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest.
+          <strong>59 groupes</strong> répartis sur l'ensemble du Grand-sud, du Centre et du Grand-ouest.
           Participez en <strong>relatant votre quotidien</strong> et en
           <strong>témoignant de votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent
-          de l’animation des groupes, de la coordination des actions de soutien et d’accompagnement
+          de l'animation des groupes, de la coordination des actions de soutien et d'accompagnement
           et du recueil de vos participations afin de rassembler les arguments visant à plaider en faveur
-          de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
+          de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- BLOC 2 -->
+  <!-- BLOC 2 - CARTES INFO -->
   <section class="section-blue">
     <div class="site-wrap">
       <h2 class="title-band-yellow">Avant toute chose</h2>
@@ -275,14 +464,9 @@
             <div class="card-tag">Objet défini</div>
             <p>
               Lancée en mars 2023, la communauté en ligne « Le train du ras-le-bol » est à but non lucratif.
-              Elle ne permet ni l’encaissement de sommes destinées à financer son fonctionnement ou à permettre
-              un enrichissement, ni l’apport d’affaires par son intermédiaire. Son fonctionnement repose néanmoins
+              Elle ne permet ni l'encaissement de sommes destinées à financer son fonctionnement ou à permettre
+              un enrichissement, ni l'apport d'affaires par son intermédiaire. Son fonctionnement repose néanmoins
               sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût.
-              Ce coût est supporté par les dirigeants des sociétés de l’UES qui sont à l’initiative de la communauté
-              en ligne « Le train du ras-le-bol ». Cette mise à disposition répond à une raison d’être précise,
-              formalisée dans un objet défini. Cet objet encadre la mise en place et le maintien de nos groupes
-              WhatsApp « Les reporters » et justifie les moyens qui leur sont consacrés. Il implique le respect
-              de conditions précises auxquelles nous devons nous conformer et que nous devons également faire respecter.
             </p>
           </div>
         </article>
@@ -300,13 +484,9 @@
             <p>
               Nous tenons à vous préciser que nos groupes WhatsApp « Les reporters » sont des espaces animés par
               des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les
-              priorités liées à la charge de travail de la société qui les emploie. Appelés « équipiers du train
-              du ras-le-bol », il s’agit de professionnels des réseaux sociaux formés aux particularités des échanges
-              qui se déroulent dans nos groupes. Leur présence régulière contribue à instaurer une véritable proximité
-              avec les membres de la communauté en ligne, favorise des échanges directs et continus et permet de mieux
-              comprendre les réalités relatées. Elle permet également d’apporter des éclairages lorsque cela est
-              nécessaire et de préserver un environnement propice à l’expression, à l’écoute et au partage.
-              L’équipage est généralement connecté entre 6 h et 23 h.
+              priorités liées à la charge de travail. Appelés « équipiers du train du ras-le-bol », il s'agit
+              de professionnels formés aux particularités des échanges qui se déroulent dans nos groupes.
+              L'équipage est généralement connecté entre 6 h et 23 h.
             </p>
           </div>
         </article>
@@ -323,15 +503,9 @@
             <div class="card-tag">Cadre de fonctionnement</div>
             <p>
               Les équipiers du train du ras-le-bol agissent dans un cadre professionnel et maîtrisent leur périmètre
-              de compétences et leur champ d’intervention. Ils ne sont pas personnels d’une société de transport
-              ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic, des informations
-              commerciales ou des informations liées à la sécurité ferroviaire. Lorsqu’un sujet ou une situation
-              dépasse leur périmètre de compétences ou leur champ d’intervention, ils procèdent à votre réorientation
-              vers les services appropriés. Aussi, les équipiers du train du ras-le-bol ne sont pas habilités à vous
-              assister directement en cas de danger sur le réseau ferroviaire, mais ont l’obligation de prévenir ou
-              de faire prévenir les services compétents. Enfin, veuillez noter que « Le train du ras-le-bol » est
-              indépendant des autorités organisatrices, des sociétés de transport ferroviaire et ne dépend pas de
-              leurs avis ou de leurs souhaits.
+              de compétences et leur champ d'intervention. Ils ne sont pas personnels d'une société de transport
+              ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic ou à la sécurité.
+              « Le train du ras-le-bol » est indépendant des autorités organisatrices et des sociétés de transport.
             </p>
           </div>
         </article>
@@ -341,4 +515,5 @@
   </section>
 
 </body>
+
 </html>
