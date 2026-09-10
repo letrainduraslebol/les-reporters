@@ -570,6 +570,10 @@
     }
 
     .avant-card {
+      display: grid;
+      grid-template-columns: minmax(240px, 30%) 1fr;
+      align-items: center;
+
       background: #ffffff;
 
       border-radius: 16px;
@@ -585,9 +589,9 @@
       display: block;
 
       width: 100%;
-      height: 250px;
+      height: auto;
 
-      object-fit: cover;
+      align-self: center;
     }
 
     .avant-card-content {
@@ -646,8 +650,13 @@
         padding-inline: 14px;
       }
 
+      .avant-card {
+        grid-template-columns: 1fr;
+      }
+
       .avant-card-image {
-        height: 190px;
+        width: 100%;
+        height: auto;
       }
 
       .avant-card-content {
