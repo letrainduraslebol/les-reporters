@@ -79,8 +79,7 @@
     }
 
     /* ==================================================
-       CADRE COMMUN :
-       TRAIT BLANC HAUT + BAS
+       CADRE COMMUN
        ================================================== */
 
     .header-brand {
@@ -104,7 +103,6 @@
       right: 0;
 
       height: 4px;
-
       background: #ffffff;
 
       box-shadow:
@@ -121,7 +119,7 @@
     }
 
     /* ==================================================
-       TYPOGRAPHIE COMMUNE
+       TYPOGRAPHIE ENTÊTE
        ================================================== */
 
     .header-text {
@@ -147,38 +145,18 @@
       color: var(--jaune-entete);
     }
 
-    /* ==================================================
-       GAUCHE :
-       LE TRAIN DU RAS-LE-BOL
-       ================================================== */
-
     .brand-main {
       font-size: 15px;
     }
-
-    /* ==================================================
-       CENTRE :
-       LES REPORTERS
-       volontairement plus grand
-       ================================================== */
 
     .brand-reporters {
       font-size: 25px;
       letter-spacing: 0.5px;
     }
 
-    /* ==================================================
-       DROITE :
-       NOUS CONTACTER
-       ================================================== */
-
     .brand-contact {
       font-size: 15px;
     }
-
-    /* ==================================================
-       EFFET TRÈS LÉGER AU SURVOL
-       ================================================== */
 
     .header-link .header-brand {
       transition:
@@ -189,6 +167,95 @@
     .header-link:hover .header-brand {
       transform: translateY(-1px);
       filter: brightness(1.06);
+    }
+
+    /* ==================================================
+       TRANSITION JAUNE
+       ================================================== */
+
+    .header-transition {
+      width: calc(100% - 84px);
+      max-width: none;
+      height: 3px;
+      margin: 0 auto;
+
+      background: #ffce3e;
+
+      box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.30),
+        0 4px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    /* ==================================================
+       BLOC INTRODUCTION
+       ================================================== */
+
+    .intro-reporters {
+      background: #002b59;
+
+      padding-top: 72px;
+      padding-right: 24px;
+      padding-bottom: 52px;
+      padding-left: 24px;
+    }
+
+    .intro-reporters-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .intro-signature {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .intro-signature img {
+      display: block;
+      width: min(100%, 500px);
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .intro-reporters-text {
+      margin: 0;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.8;
+
+      color: #ffffff;
+
+      text-align: left;
+
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    .intro-reporters-text strong {
+      font-weight: 700;
+    }
+
+    .no-break,
+    .stat-capsule {
+      white-space: nowrap;
+    }
+
+    .stat-capsule {
+      display: inline-block;
+
+      padding: 2px 8px;
+
+      background: #ffce3e;
+      color: #002b59;
+
+      border-radius: 5px;
+
+      font-weight: 700;
     }
 
     /* ==================================================
@@ -253,6 +320,26 @@
       .header-brand {
         padding: 11px 12px;
       }
+
+      .header-transition {
+        width: calc(100% - 36px);
+      }
+
+      .intro-reporters {
+        padding-top: 50px;
+        padding-right: 18px;
+        padding-bottom: 42px;
+        padding-left: 18px;
+      }
+
+      .intro-reporters-text {
+        font-size: 15px;
+        line-height: 1.72;
+      }
+
+      .intro-signature img {
+        width: min(100%, 430px);
+      }
     }
 
     /* ==================================================
@@ -270,84 +357,6 @@
         font-size: 19px;
       }
     }
-.header-transition{
-  width:calc(100% - 84px);
-  max-width:none;
-  height:3px;
-  margin:0 auto;
-  background:#ffce3e;
-  box-shadow:0 2px 3px rgba(0,0,0,.30),0 4px 8px rgba(0,0,0,.16);
-  
-}
-}
-
-.intro-reporters{
-  background:#002b59;
-  padding:68px 24px 52px;
-}
-
-.intro-reporters-inner{
-  max-width:1050px;
-  margin:0 auto;
-}
-
-.intro-signature{
-  text-align:center;
-  margin-bottom:28px;
-}
-
-.intro-signature img{
-  width:min(100%,500px);
-  height:auto;
-}
-
-.intro-reporters-text{
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  font-size:17px;
-  line-height:1.8;
-  color:#fff;
-  hyphens:none;
-  word-break:normal;
-  overflow-wrap:normal;
-}
-
-.intro-reporters-text strong{
-  font-weight:700;
-}
-
-.no-break,
-.stat-capsule{
-  white-space:nowrap;
-}
-
-.stat-capsule{
-  display:inline-block;
-  padding:2px 8px;
-  background:#ffce3e;
-  color:#002b59;
-  border-radius:5px;
-  font-weight:700;
-}
-
-@media(max-width:700px){
-  .header-transition{
-  width:calc(100% - 36px);
-  }
-
-  .intro-reporters{
-    padding:32px 18px 42px;
-  }
-
-  .intro-reporters-text{
-    font-size:15px;
-    line-height:1.72;
-  }
-
-  .intro-signature img{
-    width:min(100%,430px);
-  }
-}
   </style>
 </head>
 
@@ -355,9 +364,7 @@
 
   <header class="site-header">
 
-    <!-- ================================================
-         GAUCHE : LE TRAIN DU RAS-LE-BOL
-         ================================================ -->
+    <!-- GAUCHE -->
 
     <a
       class="header-link header-left"
@@ -365,26 +372,19 @@
       aria-label="Accueil Le train du ras-le-bol"
     >
       <div class="header-brand">
-
         <div class="header-text brand-main">
 
           <span class="white">LE</span>
-
           <span class="yellow">TRAIN</span>
-
           <span class="white">DU</span>
-
           <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
 
         </div>
-
       </div>
     </a>
 
 
-    <!-- ================================================
-         CENTRE : LES REPORTERS
-         ================================================ -->
+    <!-- CENTRE -->
 
     <a
       class="header-link header-center"
@@ -392,22 +392,17 @@
       aria-label="Accueil Les reporters"
     >
       <div class="header-brand">
-
         <div class="header-text brand-reporters">
 
           <span class="white">LES</span>
-
           <span class="yellow-header">REPORTERS</span>
 
         </div>
-
       </div>
     </a>
 
 
-    <!-- ================================================
-         DROITE : NOUS CONTACTER
-         ================================================ -->
+    <!-- DROITE -->
 
     <a
       class="header-link header-right"
@@ -415,38 +410,40 @@
       aria-label="Nous contacter"
     >
       <div class="header-brand">
-
         <div class="header-text brand-contact">
 
           <span class="white">NOUS</span>
-
           <span class="yellow-header">CONTACTER</span>
 
         </div>
-
       </div>
     </a>
 
   </header>
-<div class="header-transition" aria-hidden="true"></div>
 
-<section class="intro-reporters">
-  <div class="intro-reporters-inner">
 
-    <div class="intro-signature">
-      <img
-        src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
-        alt="Tout commence avec vous."
-      >
+  <div class="header-transition" aria-hidden="true"></div>
+
+
+  <section class="intro-reporters">
+
+    <div class="intro-reporters-inner">
+
+      <div class="intro-signature">
+        <img
+          src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
+          alt="Tout commence avec vous."
+        >
+      </div>
+
+      <p class="intro-reporters-text">
+        Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
+      </p>
+
     </div>
 
-    <p class="intro-reporters-text">
-      Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
-    </p>
+  </section>
 
-  </div>
-</section>
-  
 </body>
 
 </html>
