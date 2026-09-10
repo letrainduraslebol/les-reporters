@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -19,6 +19,7 @@
     :root {
       --bleu: #002b59;
       --jaune: #ffce3e;
+      --jaune-entete: #ffcd3c;
       --blanc: #ffffff;
     }
 
@@ -37,111 +38,236 @@
       background: var(--bleu);
     }
 
-    /* ===== ENTÊTE GÉNÉRAL ===== */
+    /* ==================================================
+       ENTÊTE GÉNÉRALE
+       ================================================== */
 
     .site-header {
       width: 100%;
-      min-height: 92px;
       background: var(--bleu);
 
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
 
-      padding: 14px 42px;
+      min-height: 110px;
+      padding: 20px 42px;
+      gap: 40px;
     }
 
-    /* ===== LOGO GAUCHE ===== */
+    /* ==================================================
+       BLOCS DE L'ENTÊTE
+       ================================================== */
 
-    .header-home {
-      justify-self: start;
+    .header-link {
+      text-decoration: none;
+      color: inherit;
       display: flex;
       align-items: center;
-      text-decoration: none;
     }
 
-    .header-home img {
-      display: block;
-      width: 185px;
-      height: auto;
+    .header-left {
+      justify-content: flex-start;
     }
 
-    /* ===== LES REPORTERS AU CENTRE ===== */
+    .header-center {
+      justify-content: center;
+    }
 
-    .header-reporters {
-      justify-self: center;
+    .header-right {
+      justify-content: flex-end;
+    }
 
+    /* ==================================================
+       CADRE COMMUN :
+       TRAIT BLANC HAUT + BAS
+       ================================================== */
+
+    .header-brand {
       position: relative;
-      top: -3px;
 
       display: inline-flex;
       align-items: center;
+      justify-content: center;
 
-      text-decoration: none;
-
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      padding: 13px 13px;
 
       white-space: nowrap;
     }
 
-    .header-reporters .les {
+    .header-brand::before,
+    .header-brand::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      height: 4px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.34),
+        0 4px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    .header-brand::before {
+      top: 0;
+    }
+
+    .header-brand::after {
+      bottom: 0;
+    }
+
+    /* ==================================================
+       TYPOGRAPHIE COMMUNE
+       ================================================== */
+
+    .header-text {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.35px;
+
+      text-shadow:
+        1px 2px 0 rgba(0, 0, 0, 0.58),
+        2px 3px 3px rgba(0, 0, 0, 0.28);
+    }
+
+    .white {
       color: var(--blanc);
     }
 
-    .header-reporters .reporters {
+    .yellow {
       color: var(--jaune);
-      margin-left: 8px;
     }
 
-    /* ===== ESPACE DROIT RÉSERVÉ ===== */
-
-    .header-right {
-      justify-self: end;
+    .yellow-header {
+      color: var(--jaune-entete);
     }
 
-    /* ===== MOBILE ===== */
+    /* ==================================================
+       GAUCHE :
+       LE TRAIN DU RAS-LE-BOL
+       ================================================== */
 
-    @media (max-width: 768px) {
+    .brand-main {
+      font-size: 15px;
+    }
+
+    /* ==================================================
+       CENTRE :
+       LES REPORTERS
+       volontairement plus grand
+       ================================================== */
+
+    .brand-reporters {
+      font-size: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ==================================================
+       DROITE :
+       NOUS CONTACTER
+       ================================================== */
+
+    .brand-contact {
+      font-size: 15px;
+    }
+
+    /* ==================================================
+       EFFET TRÈS LÉGER AU SURVOL
+       ================================================== */
+
+    .header-link .header-brand {
+      transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    .header-link:hover .header-brand {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+    }
+
+    /* ==================================================
+       TABLETTE
+       ================================================== */
+
+    @media (max-width: 1000px) {
 
       .site-header {
-        min-height: 78px;
-        padding: 12px 18px;
+        padding: 18px 24px;
+        gap: 20px;
       }
 
-      .header-home img {
-        width: 135px;
+      .brand-main,
+      .brand-contact {
+        font-size: 12px;
       }
 
-      .header-reporters {
+      .brand-reporters {
+        font-size: 21px;
+      }
+
+      .header-brand {
+        padding: 11px 9px;
+      }
+
+      .header-brand::before,
+      .header-brand::after {
+        height: 3px;
+      }
+    }
+
+    /* ==================================================
+       MOBILE
+       ================================================== */
+
+    @media (max-width: 700px) {
+
+      .site-header {
+        grid-template-columns: 1fr;
+        gap: 14px;
+
+        min-height: auto;
+        padding: 18px;
+      }
+
+      .header-left,
+      .header-center,
+      .header-right {
+        justify-content: center;
+      }
+
+      .brand-main,
+      .brand-contact {
+        font-size: 13px;
+      }
+
+      .brand-reporters {
         font-size: 22px;
-        top: -2px;
       }
 
-      .header-reporters .reporters {
-        margin-left: 6px;
+      .header-brand {
+        padding: 11px 12px;
       }
     }
 
-    @media (max-width: 480px) {
+    /* ==================================================
+       PETITS ÉCRANS
+       ================================================== */
 
-      .site-header {
-        min-height: 70px;
-        padding: 10px 12px;
+    @media (max-width: 380px) {
+
+      .brand-main,
+      .brand-contact {
+        font-size: 11px;
       }
 
-      .header-home img {
-        width: 105px;
-      }
-
-      .header-reporters {
-        font-size: 18px;
-      }
-
-      .header-reporters .reporters {
-        margin-left: 5px;
+      .brand-reporters {
+        font-size: 19px;
       }
     }
   </style>
@@ -151,30 +277,77 @@
 
   <header class="site-header">
 
-    <!-- LOGO LE TRAIN DU RAS-LE-BOL -->
+    <!-- ================================================
+         GAUCHE : LE TRAIN DU RAS-LE-BOL
+         ================================================ -->
+
     <a
-      class="header-home"
+      class="header-link header-left"
       href="https://accueil.letrainduraslebol.fr/"
       aria-label="Accueil Le train du ras-le-bol"
     >
-      <img
-        src="20260608_logo-ecrit.webp"
-        alt="Le train du ras-le-bol"
-      >
+      <div class="header-brand">
+
+        <div class="header-text brand-main">
+
+          <span class="white">LE</span>
+
+          <span class="yellow">TRAIN</span>
+
+          <span class="white">DU</span>
+
+          <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
+
+        </div>
+
+      </div>
     </a>
 
-    <!-- LES REPORTERS -->
+
+    <!-- ================================================
+         CENTRE : LES REPORTERS
+         ================================================ -->
+
     <a
-      class="header-reporters"
+      class="header-link header-center"
       href="https://lesreporters.letrainduraslebol.fr/"
       aria-label="Accueil Les reporters"
     >
-      <span class="les">LES</span>
-      <span class="reporters">REPORTERS</span>
+      <div class="header-brand">
+
+        <div class="header-text brand-reporters">
+
+          <span class="white">LES</span>
+
+          <span class="yellow-header">REPORTERS</span>
+
+        </div>
+
+      </div>
     </a>
 
-    <!-- ESPACE RÉSERVÉ AU FUTUR BOUTON -->
-    <div class="header-right"></div>
+
+    <!-- ================================================
+         DROITE : NOUS CONTACTER
+         ================================================ -->
+
+    <a
+      class="header-link header-right"
+      href="https://contact.letrainduraslebol.fr/"
+      aria-label="Nous contacter"
+    >
+      <div class="header-brand">
+
+        <div class="header-text brand-contact">
+
+          <span class="white">NOUS</span>
+
+          <span class="yellow-header">CONTACTER</span>
+
+        </div>
+
+      </div>
+    </a>
 
   </header>
 
