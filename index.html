@@ -225,9 +225,24 @@
       padding-bottom: 52px;
     }
 
+    .intro-reporters-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) clamp(240px, 22vw, 340px);
+      grid-template-areas:
+        "signature visual"
+        "text visual";
+      align-items: center;
+      column-gap: clamp(28px, 3.5vw, 58px);
+      row-gap: 28px;
+
+      padding-inline: clamp(18px, 2.5vw, 42px);
+    }
+
     .intro-signature {
+      grid-area: signature;
+
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 0;
     }
 
     .intro-signature img {
@@ -238,9 +253,10 @@
     }
 
     .intro-reporters-text {
-      margin: 0;
+      grid-area: text;
 
-      padding-inline: clamp(18px, 2.5vw, 42px);
+      margin: 0;
+      padding-inline: 0;
 
       font-family: "Poppins", sans-serif;
       font-size: 17px;
@@ -258,6 +274,22 @@
 
       word-break: normal;
       overflow-wrap: normal;
+    }
+
+    .intro-reporters-visual {
+      grid-area: visual;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .intro-reporters-visual img {
+      display: block;
+      width: min(100%, 340px);
+      height: auto;
+
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.18));
     }
 
     .intro-reporters-text strong {
@@ -471,10 +503,21 @@
         padding-bottom: 42px;
       }
 
+      .intro-reporters-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "signature"
+          "visual"
+          "text";
+        row-gap: 24px;
+
+        padding-inline: 14px;
+      }
+
       .intro-reporters-text {
         font-size: 14px;
         line-height: 1.75;
-        padding-inline: 14px;
+        padding-inline: 0;
         text-align: left;
 
         hyphens: none;
@@ -485,6 +528,10 @@
 
       .intro-signature img {
         width: min(100%, 430px);
+      }
+
+      .intro-reporters-visual img {
+        width: min(78%, 290px);
       }
     }
 
@@ -791,16 +838,27 @@
 
     <div class="intro-reporters-inner">
 
-      <div class="intro-signature">
-        <img
-          src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
-          alt="Tout commence avec vous."
-        >
-      </div>
+      <div class="intro-reporters-layout">
 
-      <p class="intro-reporters-text">
-        Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
-      </p>
+        <div class="intro-signature">
+          <img
+            src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
+            alt="Tout commence avec vous."
+          >
+        </div>
+
+        <p class="intro-reporters-text">
+          Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
+        </p>
+
+        <div class="intro-reporters-visual" aria-hidden="true">
+          <img
+            src="71000-00750_LRPTR-VS001_pictures-index.svg"
+            alt=""
+          >
+        </div>
+
+      </div>
 
     </div>
 
