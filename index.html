@@ -123,96 +123,96 @@
       overflow: hidden;
     }
 
-.intro-layout {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
-  gap: 34px;
-  align-items: stretch;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
+    .intro-layout {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 34px;
+      align-items: stretch;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
 
-.intro-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-}
+    .intro-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
 
-.intro-logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
+    .intro-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
 
-.intro-text {
-  align-self: center;
-  min-width: 0;
-  font-size: clamp(15px, 1.8vw, 20px);
-  line-height: 1.7;
-  font-weight: 400;
-  color: var(--bleu);
-  text-align: justify;
-  word-spacing: 0.06em;
+    .intro-text {
+      align-self: center;
+      min-width: 0;
+      font-size: clamp(15px, 1.8vw, 20px);
+      line-height: 1.7;
+      font-weight: 400;
+      color: var(--bleu);
+      text-align: justify;
+      word-spacing: 0.06em;
 
-  hyphens: none;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  word-break: normal;
-  overflow-wrap: normal;
-}
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
 
-.intro-text p {
-  margin: 0;
-}
+    .intro-text p {
+      margin: 0;
+    }
 
-.intro-text strong {
-  font-weight: 800;
-}
+    .intro-text strong {
+      font-weight: 800;
+    }
 
-.intro-text .nowrap {
-  white-space: nowrap;
-}
+    .intro-text .nowrap {
+      white-space: nowrap;
+    }
 
-@media (max-width: 900px) {
-  .intro-layout {
-    grid-template-columns: 170px minmax(0, 1fr);
-    gap: 26px;
-  }
-}
+    @media (max-width: 900px) {
+      .intro-layout {
+        grid-template-columns: 170px minmax(0, 1fr);
+        gap: 26px;
+      }
+    }
 
-@media (max-width: 768px) {
-  .intro-layout {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
+    @media (max-width: 768px) {
+      .intro-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
 
-  .intro-logo {
-    width: min(220px, 55%);
-    margin: 0 auto;
-  }
+      .intro-logo {
+        width: min(220px, 55%);
+        margin: 0 auto;
+      }
 
-  .intro-logo img {
-    width: 100%;
-    height: auto;
-  }
+      .intro-logo img {
+        width: 100%;
+        height: auto;
+      }
 
-  .intro-text {
-    font-size: 15px;
-    line-height: 1.55;
-    text-align: left;
-  }
-}
+      .intro-text {
+        font-size: 15px;
+        line-height: 1.55;
+        text-align: left;
+      }
+    }
 
-@media (max-width: 420px) {
-  .intro-text {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-}
+    @media (max-width: 420px) {
+      .intro-text {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
 
     /* ===== BLOC 2 - CARTES INFO ===== */
     .section-blue {
@@ -245,7 +245,8 @@
     .cards-row {
       margin-top: 28px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
       gap: 24px;
       align-items: stretch;
       position: relative;
@@ -257,8 +258,10 @@
       border-radius: 6px;
       overflow: hidden;
       background: var(--blanc);
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 32% minmax(0, 1fr);
+      align-items: stretch;
+      height: 100%;
       transition: all 0.25s ease;
       box-shadow: var(--ombre-moyen);
     }
@@ -270,7 +273,8 @@
 
     .card-image {
       background: var(--bleu);
-      height: 220px;
+      min-height: 340px;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -279,10 +283,12 @@
     }
 
     .card-image img {
-      width: auto;
+      width: 100%;
+      height: 100%;
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+      object-position: center;
       transition: transform 0.3s ease-out;
     }
 
@@ -291,12 +297,14 @@
     }
 
     .card-content {
-      padding: 20px;
+      padding: 28px 30px;
       color: var(--bleu);
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 0;
       background: var(--blanc);
+      min-width: 0;
     }
 
     .card-tag {
@@ -322,18 +330,19 @@
       color: var(--bleu);
     }
 
-  .card-content,
-.card-content p {
-  hyphens: none;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  word-break: normal;
-  overflow-wrap: normal;
-  
+    .card-content,
+    .card-content p {
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
     }
-.nowrap {
-  white-space: nowrap;
-}
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -347,12 +356,18 @@
 
     @media (max-width: 1200px) {
       .cards-row {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
         gap: 20px;
       }
 
+      .info-card {
+        grid-template-columns: 34% minmax(0, 1fr);
+      }
+
       .card-image {
-        height: 200px;
+        min-height: 320px;
+        height: 100%;
       }
     }
 
@@ -378,15 +393,21 @@
 
       .cards-row {
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
         gap: 18px;
       }
 
+      .info-card {
+        grid-template-columns: 1fr;
+      }
+
       .card-image {
-        height: 160px;
+        height: 220px;
+        min-height: 220px;
       }
 
       .card-content {
-        padding: 16px;
+        padding: 20px;
       }
 
       .card-tag {
@@ -411,7 +432,8 @@
       }
 
       .card-image {
-        height: 140px;
+        height: 180px;
+        min-height: 180px;
       }
 
       .card-content {
@@ -450,21 +472,21 @@
 
         <div class="intro-layout">
 
-  <div class="intro-logo">
-    <img
-      src="20260608_Logo-général.webp"
-      alt="Le train du ras-le-bol"
-      loading="lazy"
-    />
-  </div>
+          <div class="intro-logo">
+            <img
+              src="20260608_Logo-général.webp"
+              alt="Le train du ras-le-bol"
+              loading="lazy"
+            />
+          </div>
 
-  <div class="intro-text">
-    <p>
-      Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre <span class="nowrap">ras-le-bol.</span></strong> Avec nos groupes WhatsApp <span class="nowrap">« Les reporters »</span>, tout commence avec vous, et avec les <strong><span class="nowrap">3 700 membres « reporters »</span></strong> présents dans les <strong>59 groupes WhatsApp</strong> répartis sur l'ensemble du <span class="nowrap">Grand-sud</span>, du Centre et du <span class="nowrap">Grand-ouest</span>. Participez en <strong>relatant votre quotidien</strong> et en <strong>témoignant de votre réalité</strong>. Les équipiers du train du <span class="nowrap">ras-le-bol</span> se chargent de l'<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de <strong>soutien</strong> et d'<strong>accompagnement</strong> et du <strong>recueil</strong> de vos participations afin de rassembler les arguments visant à plaider en faveur de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.
-    </p>
-  </div>
+          <div class="intro-text">
+            <p>
+              Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre <span class="nowrap">ras-le-bol.</span></strong> Avec nos groupes WhatsApp <span class="nowrap">« Les reporters »</span>, tout commence avec vous, et avec les <strong><span class="nowrap">3 700 membres « reporters »</span></strong> présents dans les <strong>59 groupes WhatsApp</strong> répartis sur l'ensemble du <span class="nowrap">Grand-sud</span>, du Centre et du <span class="nowrap">Grand-ouest</span>. Participez en <strong>relatant votre quotidien</strong> et en <strong>témoignant de votre réalité</strong>. Les équipiers du train du <span class="nowrap">ras-le-bol</span> se chargent de l'<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de <strong>soutien</strong> et d'<strong>accompagnement</strong> et du <strong>recueil</strong> de vos participations afin de rassembler les arguments visant à plaider en faveur de l'amélioration des mobilités ferroviaires publiques dans l'intérêt de tous.
+            </p>
+          </div>
 
-</div>
+        </div>
 
       </div>
     </section>
@@ -481,6 +503,7 @@
 
           <!-- CARTE 1 -->
           <article class="info-card" aria-labelledby="tag-objet-defini">
+
             <div class="card-image">
               <img
                 src="71000-00750_LRPTR-VS002_objet-défini-index.webp"
@@ -490,18 +513,22 @@
             </div>
 
             <div class="card-content">
-              <div id="tag-objet-defini" class="card-tag">Objet défini</div>
+
+              <div id="tag-objet-defini" class="card-tag">
+                Objet défini
+              </div>
 
               <p>
-                <p>
-  Lancée en mars 2023, la communauté en ligne <span class="nowrap">« Le train du ras-le-bol »</span> est à but non lucratif. Elle ne permet ni l’encaissement de sommes destinées à financer son fonctionnement ou à permettre un enrichissement, ni l’apport d’affaires par son intermédiaire. Son fonctionnement repose néanmoins sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût. Ce coût est supporté par les dirigeants des sociétés de l’UES qui sont à l’initiative de la communauté en ligne « Le train du ras-le-bol ». Cette mise à disposition répond à une raison d’être précise, formalisée dans un objet défini. Cet objet encadre la mise en place et le maintien de nos groupes WhatsApp <span class="nowrap">« Les reporters »</span> et justifie les moyens qui leur sont consacrés. Il implique le respect de conditions précises auxquelles nous devons nous conformer et que nous devons également faire respecter.
-</p>
+                Lancée en mars 2023, la communauté en ligne <span class="nowrap">« Le train du ras-le-bol »</span> est à but non lucratif. Elle ne permet ni l’encaissement de sommes destinées à financer son fonctionnement ou à permettre un enrichissement, ni l’apport d’affaires par son intermédiaire. Son fonctionnement repose néanmoins sur la mise à disposition de moyens techniques, matériels et humains qui représentent un coût. Ce coût est supporté par les dirigeants des sociétés de l’UES qui sont à l’initiative de la communauté en ligne <span class="nowrap">« Le train du ras-le-bol »</span>. Cette mise à disposition répond à une raison d’être précise, formalisée dans un objet défini. Cet objet encadre la mise en place et le maintien de nos groupes WhatsApp <span class="nowrap">« Les reporters »</span> et justifie les moyens qui leur sont consacrés. Il implique le respect de conditions précises auxquelles nous devons nous conformer et que nous devons également faire respecter.
               </p>
+
             </div>
+
           </article>
 
           <!-- CARTE 2 -->
           <article class="info-card" aria-labelledby="tag-animation-groupes">
+
             <div class="card-image">
               <img
                 src="71000-00750_LRPTR-VS003_politique-danimation-index.webp"
@@ -511,17 +538,22 @@
             </div>
 
             <div class="card-content">
-              <div id="tag-animation-groupes" class="card-tag">Animation des groupes</div>
+
+              <div id="tag-animation-groupes" class="card-tag">
+                Animation des groupes
+              </div>
 
               <p>
-<p>
-Nous tenons à vous préciser que nos groupes WhatsApp <span class="nowrap">« Les reporters »</span> sont des espaces animés par des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les priorités liées à la charge de travail de la société qui les emploie. Appelés <span class="nowrap">« équipiers du train du ras-le-bol »</span>, il s’agit de professionnels des réseaux sociaux formés aux particularités des échanges qui se déroulent dans nos groupes. Leur présence régulière contribue à instaurer une véritable proximité avec les membres de la communauté en ligne, favorise des échanges directs et continus et permet de mieux comprendre les réalités relatées. Elle permet également d’apporter des éclairages lorsque cela est nécessaire et de préserver un environnement propice à l’expression, à l’écoute et au partage. L’équipage est généralement connecté entre 6 h et 23 h.  </p>
+                Nous tenons à vous préciser que nos groupes WhatsApp <span class="nowrap">« Les reporters »</span> sont des espaces animés par des salariés mis à disposition sur leur temps de travail, dans un cadre réglementé et selon les priorités liées à la charge de travail de la société qui les emploie. Appelés <span class="nowrap">« équipiers du train du ras-le-bol »</span>, il s’agit de professionnels des réseaux sociaux formés aux particularités des échanges qui se déroulent dans nos groupes. Leur présence régulière contribue à instaurer une véritable proximité avec les membres de la communauté en ligne, favorise des échanges directs et continus et permet de mieux comprendre les réalités relatées. Elle permet également d’apporter des éclairages lorsque cela est nécessaire et de préserver un environnement propice à l’expression, à l’écoute et au partage. L’équipage est généralement connecté entre 6 h et 23 h.
               </p>
+
             </div>
+
           </article>
 
           <!-- CARTE 3 -->
           <article class="info-card" aria-labelledby="tag-cadre-fonctionnement">
+
             <div class="card-image">
               <img
                 src="71000-00750_LRPTR-VS004_cadre-de-fonctionnement-index.webp"
@@ -531,17 +563,21 @@ Nous tenons à vous préciser que nos groupes WhatsApp <span class="nowrap">« L
             </div>
 
             <div class="card-content">
-              <div id="tag-cadre-fonctionnement" class="card-tag">Cadre de fonctionnement</div>
+
+              <div id="tag-cadre-fonctionnement" class="card-tag">
+                Cadre de fonctionnement
+              </div>
 
               <p>
-<p>
-  Les équipiers du train du ras-le-bol agissent dans un cadre professionnel et maîtrisent leur périmètre de compétences et leur champ d’intervention. Ils ne sont pas personnels d’une société de transport ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic, des informations commerciales ou des informations liées à la sécurité ferroviaire. Lorsqu’un sujet ou une situation dépasse leur périmètre de compétences ou leur champ d’intervention, ils procèdent à votre réorientation vers les services appropriés. Aussi, les équipiers du train du ras-le-bol ne sont pas habilités à vous assister directement en cas de danger sur le réseau ferroviaire, mais ont l’obligation de prévenir ou de faire prévenir les services compétents. Enfin, veuillez noter que « Le train du ras-le-bol » est indépendant des autorités organisatrices, des sociétés de transport ferroviaire et ne dépend pas de leurs avis ou de leurs souhaits.
-</p>
+                Les équipiers du train du <span class="nowrap">ras-le-bol</span> agissent dans un cadre professionnel et maîtrisent leur périmètre de compétences et leur champ d’intervention. Ils ne sont pas personnels d’une société de transport ferroviaire et ne sont pas habilités à fournir des informations relatives au trafic, des informations commerciales ou des informations liées à la sécurité ferroviaire. Lorsqu’un sujet ou une situation dépasse leur périmètre de compétences ou leur champ d’intervention, ils procèdent à votre réorientation vers les services appropriés. Aussi, les équipiers du train du <span class="nowrap">ras-le-bol</span> ne sont pas habilités à vous assister directement en cas de danger sur le réseau ferroviaire, mais ont l’obligation de prévenir ou de faire prévenir les services compétents. Enfin, veuillez noter que <span class="nowrap">« Le train du ras-le-bol »</span> est indépendant des autorités organisatrices, des sociétés de transport ferroviaire et ne dépend pas de leurs avis ou de leurs souhaits.
               </p>
+
             </div>
+
           </article>
 
         </div>
+
       </div>
     </section>
 
