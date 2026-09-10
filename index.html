@@ -507,6 +507,163 @@
         right: 14px;
       }
     }
+
+    /* ==================================================
+       AVANT TOUTE CHOSE
+       ================================================== */
+
+    .avant-toute-chose {
+      background: #ffffff;
+
+      padding-right: var(--page-margin);
+      padding-left: var(--page-margin);
+    }
+
+    .avant-toute-chose-inner {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+
+      background: #002b59;
+
+      padding-bottom: 60px;
+    }
+
+    .avant-title-wrap {
+      text-align: center;
+
+      padding: 10px 24px 34px;
+    }
+
+    .avant-title {
+      margin: 0;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.2;
+
+      color: #ffffff;
+    }
+
+    .avant-title-line {
+      width: 96px;
+      height: 4px;
+
+      margin: 14px auto 0;
+
+      background: #ffce3e;
+
+      border-radius: 999px;
+
+      box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.25),
+        0 4px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .avant-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+
+      padding-inline: clamp(18px, 2.5vw, 42px);
+    }
+
+    .avant-card {
+      background: #ffffff;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.16),
+        0 3px 8px rgba(0, 0, 0, 0.10);
+    }
+
+    .avant-card-image {
+      display: block;
+
+      width: 100%;
+      height: 250px;
+
+      object-fit: cover;
+    }
+
+    .avant-card-content {
+      padding: 22px 22px 24px;
+
+      border-left: 5px solid #ffce3e;
+    }
+
+    .avant-card-title {
+      margin: 0 0 14px 0;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+
+      color: #002b59;
+    }
+
+    .avant-card-text {
+      margin: 0;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+
+      color: #002b59;
+
+      text-align: left;
+
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    @media (max-width: 700px) {
+
+      .avant-toute-chose-inner {
+        padding-bottom: 42px;
+      }
+
+      .avant-title-wrap {
+        padding: 8px 18px 28px;
+      }
+
+      .avant-title {
+        font-size: 24px;
+      }
+
+      .avant-cards {
+        gap: 20px;
+        padding-inline: 14px;
+      }
+
+      .avant-card-image {
+        height: 190px;
+      }
+
+      .avant-card-content {
+        padding: 18px 18px 20px;
+      }
+
+      .avant-card-title {
+        font-size: 21px;
+      }
+
+      .avant-card-text {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+    }
+
   </style>
 </head>
 
@@ -633,6 +790,87 @@
       <p class="intro-reporters-text">
         Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
       </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="avant-toute-chose">
+
+    <div class="avant-toute-chose-inner">
+
+      <div class="avant-title-wrap">
+        <h2 class="avant-title">Avant toute chose.</h2>
+        <div class="avant-title-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="avant-cards">
+
+        <article class="avant-card">
+
+          <img
+            class="avant-card-image"
+            src="71000-00750_LRPTR-VS002_objet-défini-index.webp"
+            alt="Illustration de l’objet défini"
+          >
+
+          <div class="avant-card-content">
+
+            <h3 class="avant-card-title">Objet défini.</h3>
+
+            <p class="avant-card-text">
+              Le fonctionnement de la communauté en ligne <span class="no-break">« Le train du ras-le-bol »</span> et des activités qui lui sont associées nécessite la mise à disposition de moyens techniques, matériels et humains. Leur coût est assumé par les dirigeants des sociétés à l’origine de la communauté. Cette mise à disposition répond à un objet défini, qui justifie les moyens engagés. Cet objet prévoit notamment la mise en place et le maintien de la communauté en ligne <span class="no-break">« Le train du ras-le-bol »</span> afin de porter un intérêt aux manquements en matière de mobilités ferroviaires publiques et de contribuer à leur amélioration, leur recadrage et leur développement.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="avant-card">
+
+          <img
+            class="avant-card-image"
+            src="71000-00750_LRPTR-VS003_politique-danimation-index.webp"
+            alt="Illustration de la politique d’animation"
+          >
+
+          <div class="avant-card-content">
+
+            <h3 class="avant-card-title">Politique d’animation.</h3>
+
+            <p class="avant-card-text">
+              Nos groupes WhatsApp <span class="no-break">« Les reporters »</span> sont animés par des salariés mis à disposition sur leur temps de travail, selon les priorités liées à l’activité de la société qui les emploie. Appelés <span class="no-break">« équipiers du train du ras-le-bol »</span>, ils sont formés aux particularités des échanges au sein des groupes et veillent à favoriser des échanges directs, à mieux comprendre les réalités relatées et à apporter des éclairages lorsque cela est nécessaire. Selon les groupes WhatsApp <span class="no-break">« Les reporters »</span>, les équipiers sont généralement connectés du lundi au vendredi de 6 h à 22 h et le week-end de 14 h à 22 h.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="avant-card">
+
+          <img
+            class="avant-card-image"
+            src="71000-00750_LRPTR-VS004_cadre-de-fonctionnement-index.webp"
+            alt="Illustration du cadre légal"
+          >
+
+          <div class="avant-card-content">
+
+            <h3 class="avant-card-title">Cadre légal.</h3>
+
+            <p class="avant-card-text">
+              Les équipiers du train du ras-le-bol agissent en maîtrisant leur périmètre de compétences et leur champ d’intervention. Ils ne sont pas habilités à fournir des informations sur le trafic, commerciales ou à vous renseigner sur la sécurité ferroviaire. Lorsque la situation le nécessite, ils vous orientent systématiquement vers les services compétents. En cas de danger sur le réseau ferroviaire ou d’un fait de sûreté, merci de prévenir les services compétents en lieu et place de prévenir l’équipage. Enfin, <span class="no-break">« Le train du ras-le-bol »</span> est indépendant des autorités organisatrices et des sociétés de transport ferroviaire et n’agit ni sous leur responsabilité ni sous leurs ordres.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
 
     </div>
 
