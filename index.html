@@ -177,17 +177,16 @@
        ================================================== */
 
     .header-transition {
-      width: auto;
-      height: 3px;
-
-      margin-left: var(--page-margin);
-      margin-right: var(--page-margin);
-
-      background: #ffce3e;
-
-      box-shadow:
-        0 2px 3px rgba(0, 0, 0, 0.30),
-        0 4px 8px rgba(0, 0, 0, 0.16);
+  display: block;
+  width: calc(100% - (2 * var(--page-margin)));
+  height: 5px;
+  margin: 0 auto;
+  background: #ffce3e;
+  box-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.30),
+    0 4px 8px rgba(0, 0, 0, 0.16);
+      
+}
     }
 
     /* ==================================================
