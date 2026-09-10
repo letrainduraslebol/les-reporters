@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Les reporters — Le train du ras-le-bol</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bleu: #002b59;
+      --jaune: #ffce3e;
+      --blanc: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bleu);
+    }
+
+    /* ===== ENTÊTE GÉNÉRAL ===== */
+
+    .site-header {
+      width: 100%;
+      min-height: 92px;
+      background: var(--bleu);
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+
+      padding: 14px 42px;
+    }
+
+    /* ===== LOGO GAUCHE ===== */
+
+    .header-home {
+      justify-self: start;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .header-home img {
+      display: block;
+      width: 185px;
+      height: auto;
+    }
+
+    /* ===== LES REPORTERS AU CENTRE ===== */
+
+    .header-reporters {
+      justify-self: center;
+
+      position: relative;
+      top: -3px;
+
+      display: inline-flex;
+      align-items: center;
+
+      text-decoration: none;
+
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+
+      white-space: nowrap;
+    }
+
+    .header-reporters .les {
+      color: var(--blanc);
+    }
+
+    .header-reporters .reporters {
+      color: var(--jaune);
+      margin-left: 8px;
+    }
+
+    /* ===== ESPACE DROIT RÉSERVÉ ===== */
+
+    .header-right {
+      justify-self: end;
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 768px) {
+
+      .site-header {
+        min-height: 78px;
+        padding: 12px 18px;
+      }
+
+      .header-home img {
+        width: 135px;
+      }
+
+      .header-reporters {
+        font-size: 22px;
+        top: -2px;
+      }
+
+      .header-reporters .reporters {
+        margin-left: 6px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .site-header {
+        min-height: 70px;
+        padding: 10px 12px;
+      }
+
+      .header-home img {
+        width: 105px;
+      }
+
+      .header-reporters {
+        font-size: 18px;
+      }
+
+      .header-reporters .reporters {
+        margin-left: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <!-- LOGO LE TRAIN DU RAS-LE-BOL -->
+    <a
+      class="header-home"
+      href="https://accueil.letrainduraslebol.fr/"
+      aria-label="Accueil Le train du ras-le-bol"
+    >
+      <img
+        src="20260608_logo-ecrit.webp"
+        alt="Le train du ras-le-bol"
+      >
+    </a>
+
+    <!-- LES REPORTERS -->
+    <a
+      class="header-reporters"
+      href="https://lesreporters.letrainduraslebol.fr/"
+      aria-label="Accueil Les reporters"
+    >
+      <span class="les">LES</span>
+      <span class="reporters">REPORTERS</span>
+    </a>
+
+    <!-- ESPACE RÉSERVÉ AU FUTUR BOUTON -->
+    <div class="header-right"></div>
+
+  </header>
+
+</body>
+
+</html>
