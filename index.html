@@ -63,25 +63,19 @@
     }
 
     /* ===== BANNIÈRE HERO ===== */
-    .hero {
-      margin-top: 26px;
-      animation: slideDown 0.6s ease-out;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--ombre-moyen);
-    }
+.hero {
+  margin-top: 26px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--ombre-moyen);
+}
 
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease-out;
-      aspect-ratio: 16/6;
-      object-fit: cover;
-    }
-
-    .hero:hover img {
-      transform: scale(1.02);
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/6;
+  object-fit: cover;
     }
 
     /* ===== BLOC 1 - INTRODUCTION ===== */
@@ -466,7 +460,7 @@
 <body>
 
   <!-- BANNIÈRE HERO -->
-  <header class="hero site-wrap" role="banner">
+  <header class="hero" role="banner">
     <img
       src="71000-00750_LRPTR-VS001_bannière-index.webp"
       alt="Bannière Les Reporters — Le train du ras-le-bol"
