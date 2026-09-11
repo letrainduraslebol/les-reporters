@@ -45,6 +45,22 @@
        ENTÊTE GÉNÉRALE
        ================================================== */
 
+    .header-shell {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+
+      transform: translateY(0);
+
+      transition: transform 0.28s ease;
+
+      will-change: transform;
+    }
+
+    .header-shell.is-hidden {
+      transform: translateY(-100%);
+    }
+
     .site-header {
       width: 100%;
       background: var(--bleu);
@@ -325,6 +341,12 @@
       border-radius: 5px;
 
       font-weight: 700;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .header-shell {
+        transition: none;
+      }
     }
 
     /* ==================================================
@@ -783,6 +805,8 @@
 
 <body>
 
+  <div class="header-shell">
+
   <header class="site-header">
 
     <!-- GAUCHE -->
@@ -888,6 +912,8 @@
 
 
   <div class="header-transition" aria-hidden="true"></div>
+
+  </div>
 
 
   <section class="intro-reporters">
@@ -1007,8 +1033,33 @@
 
 
   <script>
+    const headerShell = document.querySelector(".header-shell");
     const menuToggle = document.querySelector(".menu-toggle");
     const mobileMenu = document.querySelector(".mobile-menu");
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateHeader() {
+      const currentScrollY = window.scrollY;
+      const menuIsOpen = mobileMenu.classList.contains("is-open");
+
+      if (menuIsOpen || currentScrollY <= 12 || currentScrollY < lastScrollY) {
+        headerShell.classList.remove("is-hidden");
+      } else if (currentScrollY > lastScrollY) {
+        headerShell.classList.add("is-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
 
     menuToggle.addEventListener("click", function () {
       const isOpen = mobileMenu.classList.toggle("is-open");
@@ -1017,6 +1068,7 @@
       menuToggle.setAttribute("aria-expanded", isOpen);
 
       if (isOpen) {
+        headerShell.classList.remove("is-hidden");
         menuToggle.setAttribute("aria-label", "Fermer le menu");
       } else {
         menuToggle.setAttribute("aria-label", "Ouvrir le menu");
