@@ -229,10 +229,12 @@
       display: grid;
       grid-template-columns: minmax(0, 900px) clamp(190px, 18vw, 240px);
       grid-template-areas:
+        "signature signature"
         "copy visual";
-      align-items: end;
+      align-items: stretch;
       justify-content: center;
       column-gap: clamp(42px, 5vw, 72px);
+      row-gap: 38px;
 
       width: 100%;
       max-width: 1240px;
@@ -249,8 +251,9 @@
     }
 
     .intro-signature {
+      grid-area: signature;
       text-align: center;
-      margin-bottom: 36px;
+      margin: 0;
     }
 
     .intro-signature img {
@@ -287,15 +290,17 @@
       grid-area: visual;
 
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
-      align-self: end;
+      align-self: stretch;
+      min-height: 0;
     }
 
     .intro-reporters-visual img {
       display: block;
-      width: min(100%, 220px);
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
 
       filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.20));
     }
@@ -340,11 +345,12 @@
       .intro-reporters-layout {
         grid-template-columns: minmax(0, 1fr) minmax(180px, 220px);
         column-gap: 32px;
+        row-gap: 32px;
         padding-inline: 28px;
       }
 
       .intro-signature {
-        margin-bottom: 32px;
+        margin: 0;
       }
 
       .intro-signature img {
@@ -357,7 +363,8 @@
       }
 
       .intro-reporters-visual img {
-        width: min(100%, 200px);
+        width: 100%;
+        height: 100%;
       }
 
       .brand-main,
@@ -537,9 +544,10 @@
       .intro-reporters-layout {
         grid-template-columns: 1fr;
         grid-template-areas:
+          "signature"
           "copy"
           "visual";
-        row-gap: 30px;
+        row-gap: 28px;
 
         padding-inline: 14px;
       }
@@ -550,7 +558,7 @@
 
       .intro-signature {
         text-align: center;
-        margin-bottom: 28px;
+        margin: 0;
       }
 
       .intro-signature img {
@@ -572,11 +580,14 @@
 
       .intro-reporters-visual {
         width: min(100%, 220px);
+        height: auto;
         margin: 0 auto;
+        align-self: auto;
       }
 
       .intro-reporters-visual img {
         width: min(100%, 200px);
+        height: auto;
       }
     }
 
@@ -885,14 +896,14 @@
 
       <div class="intro-reporters-layout">
 
-        <div class="intro-reporters-copy">
+        <div class="intro-signature">
+          <img
+            src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
+            alt="Tout commence avec vous."
+          >
+        </div>
 
-          <div class="intro-signature">
-            <img
-              src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
-              alt="Tout commence avec vous."
-            >
-          </div>
+        <div class="intro-reporters-copy">
 
           <p class="intro-reporters-text">
             Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
