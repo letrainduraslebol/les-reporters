@@ -39,6 +39,10 @@
     body {
       font-family: "Poppins", sans-serif;
       background: var(--bleu);
+
+      /* L'entête est fixe : le contenu commence juste dessous,
+         puis défile derrière lui. */
+      padding-top: 115px;
     }
 
     /* ==================================================
@@ -46,14 +50,13 @@
        ================================================== */
 
     .header-shell {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+
+      width: 100%;
       z-index: 2000;
-
-      --header-shift: 0px;
-      transform: translate3d(0, var(--header-shift), 0);
-
-      will-change: transform;
     }
 
     .site-header {
@@ -405,6 +408,10 @@
 
       :root {
         --page-margin: 18px;
+      }
+
+      body {
+        padding-top: 85px;
       }
 
       .site-header {
@@ -1022,55 +1029,8 @@
 
 
   <script>
-    const headerShell = document.querySelector(".header-shell");
     const menuToggle = document.querySelector(".menu-toggle");
     const mobileMenu = document.querySelector(".mobile-menu");
-
-    let lastScrollY = window.scrollY;
-    let headerOffset = 0;
-    let ticking = false;
-
-    function getHeaderHeight() {
-      return headerShell.offsetHeight;
-    }
-
-    function applyHeaderOffset() {
-      headerShell.style.setProperty("--header-shift", `-${headerOffset}px`);
-    }
-
-    function updateHeader() {
-      const currentScrollY = Math.max(window.scrollY, 0);
-      const delta = currentScrollY - lastScrollY;
-      const menuIsOpen = mobileMenu.classList.contains("is-open");
-
-      if (menuIsOpen || currentScrollY <= 0) {
-        headerOffset = 0;
-      } else {
-        const headerHeight = getHeaderHeight();
-
-        headerOffset = Math.min(
-          headerHeight,
-          Math.max(0, headerOffset + delta)
-        );
-      }
-
-      applyHeaderOffset();
-
-      lastScrollY = currentScrollY;
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", function () {
-      if (!ticking) {
-        window.requestAnimationFrame(updateHeader);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    window.addEventListener("resize", function () {
-      headerOffset = Math.min(headerOffset, getHeaderHeight());
-      applyHeaderOffset();
-    });
 
     menuToggle.addEventListener("click", function () {
       const isOpen = mobileMenu.classList.toggle("is-open");
@@ -1079,11 +1039,8 @@
       menuToggle.setAttribute("aria-expanded", isOpen);
 
       if (isOpen) {
-        headerOffset = 0;
-        applyHeaderOffset();
         menuToggle.setAttribute("aria-label", "Fermer le menu");
       } else {
-        lastScrollY = Math.max(window.scrollY, 0);
         menuToggle.setAttribute("aria-label", "Ouvrir le menu");
       }
     });
