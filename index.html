@@ -50,15 +50,10 @@
       top: 0;
       z-index: 2000;
 
-      transform: translateY(0);
-
-      transition: transform 0.28s ease;
+      --header-shift: 0px;
+      transform: translate3d(0, var(--header-shift), 0);
 
       will-change: transform;
-    }
-
-    .header-shell.is-hidden {
-      transform: translateY(-100%);
     }
 
     .site-header {
@@ -341,12 +336,6 @@
       border-radius: 5px;
 
       font-weight: 700;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .header-shell {
-        transition: none;
-      }
     }
 
     /* ==================================================
@@ -1038,17 +1027,34 @@
     const mobileMenu = document.querySelector(".mobile-menu");
 
     let lastScrollY = window.scrollY;
+    let headerOffset = 0;
     let ticking = false;
 
+    function getHeaderHeight() {
+      return headerShell.offsetHeight;
+    }
+
+    function applyHeaderOffset() {
+      headerShell.style.setProperty("--header-shift", `-${headerOffset}px`);
+    }
+
     function updateHeader() {
-      const currentScrollY = window.scrollY;
+      const currentScrollY = Math.max(window.scrollY, 0);
+      const delta = currentScrollY - lastScrollY;
       const menuIsOpen = mobileMenu.classList.contains("is-open");
 
-      if (menuIsOpen || currentScrollY <= 12 || currentScrollY < lastScrollY) {
-        headerShell.classList.remove("is-hidden");
-      } else if (currentScrollY > lastScrollY) {
-        headerShell.classList.add("is-hidden");
+      if (menuIsOpen || currentScrollY <= 0) {
+        headerOffset = 0;
+      } else {
+        const headerHeight = getHeaderHeight();
+
+        headerOffset = Math.min(
+          headerHeight,
+          Math.max(0, headerOffset + delta)
+        );
       }
+
+      applyHeaderOffset();
 
       lastScrollY = currentScrollY;
       ticking = false;
@@ -1061,6 +1067,11 @@
       }
     }, { passive: true });
 
+    window.addEventListener("resize", function () {
+      headerOffset = Math.min(headerOffset, getHeaderHeight());
+      applyHeaderOffset();
+    });
+
     menuToggle.addEventListener("click", function () {
       const isOpen = mobileMenu.classList.toggle("is-open");
 
@@ -1068,9 +1079,11 @@
       menuToggle.setAttribute("aria-expanded", isOpen);
 
       if (isOpen) {
-        headerShell.classList.remove("is-hidden");
+        headerOffset = 0;
+        applyHeaderOffset();
         menuToggle.setAttribute("aria-label", "Fermer le menu");
       } else {
+        lastScrollY = Math.max(window.scrollY, 0);
         menuToggle.setAttribute("aria-label", "Ouvrir le menu");
       }
     });
