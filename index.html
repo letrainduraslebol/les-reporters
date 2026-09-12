@@ -60,94 +60,100 @@
     }
 
     .site-header {
-      width: 100%;
-      background: var(--bleu);
-
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-
-      min-height: 110px;
-      padding: 20px 42px;
-      gap: 40px;
-    }
-
-    /* ==================================================
-       BLOCS DE L'ENTÊTE
-       ================================================== */
-
-    .header-link {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-    }
-
-    .header-left {
-      justify-content: flex-start;
-    }
-
-    .header-center {
-      justify-content: center;
-    }
-
-    .header-right {
-      justify-content: flex-end;
-    }
-
-    /* ==================================================
-       CADRE COMMUN
-       ================================================== */
-
-    .header-brand {
       position: relative;
 
-      display: inline-flex;
+      width: 100%;
+      min-height: 110px;
+
+      display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 13px 13px;
+      padding: 20px 28px;
 
-      white-space: nowrap;
+      background: var(--bleu);
     }
 
-    .header-brand::before,
-    .header-brand::after {
+    /* ==================================================
+       MENU PRINCIPAL — 6 BOUTONS SVG ÉGAUX
+       ================================================== */
+
+    .desktop-menu {
+      width: 100%;
+      max-width: 1800px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      align-items: center;
+    }
+
+    .desktop-menu-item {
+      position: relative;
+
+      min-width: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+    }
+
+    .desktop-menu-item:not(:last-child)::after {
       content: "";
 
       position: absolute;
-      left: 0;
+      top: 50%;
       right: 0;
 
-      height: 4px;
-      background: #ffffff;
+      width: 2px;
+      height: clamp(12px, 1vw, 15px);
+
+      background: #ffce3e;
+
+      transform: translateY(-50%);
 
       box-shadow:
-        0 2px 3px rgba(0, 0, 0, 0.34),
-        0 4px 8px rgba(0, 0, 0, 0.18);
+        0 2px 3px rgba(0, 0, 0, 0.30);
     }
 
-    .header-brand::before {
-      top: 0;
+    .menu-button-svg {
+      display: block;
+
+      width: min(100%, 250px);
+      height: auto;
+      aspect-ratio: 250 / 56;
+
+      overflow: visible;
+
+      filter:
+        drop-shadow(0 2px 2px rgba(0, 0, 0, 0.34))
+        drop-shadow(0 3px 4px rgba(0, 0, 0, 0.18));
+
+      transition:
+        transform 0.20s ease,
+        filter 0.20s ease;
     }
 
-    .header-brand::after {
-      bottom: 0;
+    .desktop-menu-item:hover .menu-button-svg,
+    .desktop-menu-item:focus-visible .menu-button-svg {
+      transform: translateY(-1px);
+
+      filter:
+        brightness(1.06)
+        drop-shadow(0 2px 2px rgba(0, 0, 0, 0.34))
+        drop-shadow(0 3px 4px rgba(0, 0, 0, 0.18));
     }
 
-    /* ==================================================
-       TYPOGRAPHIE ENTÊTE
-       ================================================== */
+    .desktop-menu-item:focus-visible {
+      outline: 2px solid #ffce3e;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
 
-    .header-text {
-      font-family: "Poppins", sans-serif;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0.35px;
-
-      text-shadow:
-        1px 2px 0 rgba(0, 0, 0, 0.58),
-        2px 3px 3px rgba(0, 0, 0, 0.28);
+    .mobile-home-link {
+      display: none;
     }
 
     .white {
@@ -160,30 +166,6 @@
 
     .yellow-header {
       color: var(--jaune-entete);
-    }
-
-    .brand-main {
-      font-size: 15px;
-    }
-
-    .brand-reporters {
-      font-size: 25px;
-      letter-spacing: 0.5px;
-    }
-
-    .brand-contact {
-      font-size: 15px;
-    }
-
-    .header-link .header-brand {
-      transition:
-        transform 0.2s ease,
-        filter 0.2s ease;
-    }
-
-    .header-link:hover .header-brand {
-      transform: translateY(-1px);
-      filter: brightness(1.06);
     }
 
     /* ==================================================
@@ -352,8 +334,11 @@
       }
 
       .site-header {
-        padding: 18px 24px;
-        gap: 20px;
+        padding: 18px 14px;
+      }
+
+      .desktop-menu {
+        max-width: 100%;
       }
 
       .intro-reporters-layout {
@@ -381,23 +366,6 @@
         height: 100%;
       }
 
-      .brand-main,
-      .brand-contact {
-        font-size: 12px;
-      }
-
-      .brand-reporters {
-        font-size: 21px;
-      }
-
-      .header-brand {
-        padding: 11px 9px;
-      }
-
-      .header-brand::before,
-      .header-brand::after {
-        height: 3px;
-      }
     }
 
     /* ==================================================
@@ -417,32 +385,33 @@
       .site-header {
         position: relative;
 
-        grid-template-columns: 1fr;
-
-        min-height: auto;
-        padding: 18px;
-        gap: 0;
+        min-height: 80px;
+        padding: 12px 62px 12px 18px;
       }
 
-      /* GAUCHE ET DROITE MASQUÉS SUR MOBILE */
-
-      .header-left,
-      .header-right {
+      .desktop-menu {
         display: none;
       }
 
-      /* LES REPORTERS RESTE CENTRÉ */
-
-      .header-center {
+      .mobile-home-link {
+        display: flex;
+        align-items: center;
         justify-content: center;
+
+        width: min(100%, 250px);
+        margin: 0 auto;
+
+        text-decoration: none;
       }
 
-      .brand-reporters {
-        font-size: 22px;
-      }
+      .mobile-home-svg {
+        display: block;
+        width: min(100%, 210px);
+        height: auto;
 
-      .header-brand {
-        padding: 11px 12px;
+        filter:
+          drop-shadow(0 2px 2px rgba(0, 0, 0, 0.34))
+          drop-shadow(0 3px 4px rgba(0, 0, 0, 0.18));
       }
 
       /* BOUTON HAMBURGER */
@@ -615,13 +584,8 @@
 
     @media (max-width: 380px) {
 
-      .brand-main,
-      .brand-contact {
-        font-size: 11px;
-      }
-
-      .brand-reporters {
-        font-size: 19px;
+      .mobile-home-svg {
+        width: min(100%, 190px);
       }
 
       .menu-toggle {
@@ -805,59 +769,215 @@
 
   <header class="site-header">
 
-    <!-- GAUCHE -->
+    <!-- MENU DESKTOP : 6 ZONES STRICTEMENT ÉGALES -->
+
+    <nav class="desktop-menu" aria-label="Navigation principale">
+
+      <!-- 1. ACCUEIL -->
+      <a
+        class="desktop-menu-item"
+        href="index.html"
+        aria-label="Accueil"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffce3e">ACCUEIL</tspan></text>
+        </svg>
+      </a>
+
+      <!-- 2. AVANT TOUTE CHOSE -->
+      <a
+        class="desktop-menu-item"
+        href="avant-toute-chose.html"
+        aria-label="Avant toute chose"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffffff">AVANT </tspan><tspan fill="#ffce3e">TOUTE CHOSE</tspan></text>
+        </svg>
+      </a>
+
+      <!-- 3. DE QUOI S’AGIT-IL ? -->
+      <a
+        class="desktop-menu-item"
+        href="de-quoi-sagit-il.html"
+        aria-label="De quoi s’agit-il ?"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffffff">DE </tspan><tspan fill="#ffce3e">QUOI </tspan><tspan fill="#ffffff">S’</tspan><tspan fill="#ffce3e">AGIT</tspan><tspan fill="#ffffff">-IL ?</tspan></text>
+        </svg>
+      </a>
+
+      <!-- 4. NOS SOLUTIONS -->
+      <a
+        class="desktop-menu-item"
+        href="nos-solutions.html"
+        aria-label="Nos solutions"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffffff">NOS </tspan><tspan fill="#ffce3e">SOLUTIONS</tspan></text>
+        </svg>
+      </a>
+
+      <!-- 5. LE TRAIN DU RAS-LE-BOL -->
+      <a
+        class="desktop-menu-item"
+        href="https://accueil.letrainduraslebol.fr/"
+        aria-label="Le train du ras-le-bol"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffffff">LE </tspan><tspan fill="#ffce3e">TRAIN </tspan><tspan fill="#ffffff">DU </tspan><tspan fill="#ffce3e">RAS</tspan><tspan fill="#ffffff">-LE-</tspan><tspan fill="#ffce3e">BOL</tspan></text>
+        </svg>
+      </a>
+
+      <!-- 6. NOUS CONTACTER -->
+      <a
+        class="desktop-menu-item"
+        href="https://contact.letrainduraslebol.fr/"
+        aria-label="Nous contacter"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffffff">NOUS </tspan><tspan fill="#ffcd3c">CONTACTER</tspan></text>
+        </svg>
+      </a>
+
+    </nav>
+
+
+    <!-- ACCUEIL VISIBLE SUR MOBILE -->
 
     <a
-      class="header-link header-left"
-      href="https://accueil.letrainduraslebol.fr/"
-      aria-label="Accueil Le train du ras-le-bol"
+      class="mobile-home-link"
+      href="index.html"
+      aria-label="Accueil"
     >
-      <div class="header-brand">
-        <div class="header-text brand-main">
+      <svg
+        class="mobile-home-svg"
+        viewBox="0 0 250 56"
+        role="img"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+        <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
 
-          <span class="white">LE</span>
-          <span class="yellow">TRAIN</span>
-          <span class="white">DU</span>
-          <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
-
-        </div>
-      </div>
-    </a>
-
-
-    <!-- CENTRE -->
-
-    <a
-      class="header-link header-center"
-      href="https://lesreporters.letrainduraslebol.fr/"
-      aria-label="Accueil Les reporters"
-    >
-      <div class="header-brand">
-        <div class="header-text brand-reporters">
-
-          <span class="white">LES</span>
-          <span class="yellow-header">REPORTERS</span>
-
-        </div>
-      </div>
-    </a>
-
-
-    <!-- DROITE -->
-
-    <a
-      class="header-link header-right"
-      href="https://contact.letrainduraslebol.fr/"
-      aria-label="Nous contacter"
-    >
-      <div class="header-brand">
-        <div class="header-text brand-contact">
-
-          <span class="white">NOUS</span>
-          <span class="yellow-header">CONTACTER</span>
-
-        </div>
-      </div>
+        <text
+          x="125"
+          y="34"
+          text-anchor="middle"
+          font-family="Poppins, sans-serif"
+          font-size="15"
+          font-weight="800"
+          letter-spacing="0.35"
+          fill="#ffce3e"
+        >ACCUEIL</text>
+      </svg>
     </a>
 
 
@@ -884,20 +1004,34 @@
       aria-label="Menu mobile"
     >
 
-      <a
-        class="mobile-menu-link"
-        href="https://accueil.letrainduraslebol.fr/"
-      >
+      <a class="mobile-menu-link" href="index.html">
+        <span class="yellow">ACCUEIL</span>
+      </a>
+
+      <a class="mobile-menu-link" href="avant-toute-chose.html">
+        <span class="white">AVANT</span>
+        <span class="yellow">TOUTE CHOSE</span>
+      </a>
+
+      <a class="mobile-menu-link" href="de-quoi-sagit-il.html">
+        <span class="white">DE</span>
+        <span class="yellow">QUOI</span>
+        <span class="white">S’</span><span class="yellow">AGIT</span><span class="white">-IL ?</span>
+      </a>
+
+      <a class="mobile-menu-link" href="nos-solutions.html">
+        <span class="white">NOS</span>
+        <span class="yellow">SOLUTIONS</span>
+      </a>
+
+      <a class="mobile-menu-link" href="https://accueil.letrainduraslebol.fr/">
         <span class="white">LE</span>
         <span class="yellow">TRAIN</span>
         <span class="white">DU</span>
         <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
       </a>
 
-      <a
-        class="mobile-menu-link"
-        href="https://contact.letrainduraslebol.fr/"
-      >
+      <a class="mobile-menu-link" href="https://contact.letrainduraslebol.fr/">
         <span class="white">NOUS</span>
         <span class="yellow-header">CONTACTER</span>
       </a>
