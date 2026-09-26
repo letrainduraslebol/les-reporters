@@ -75,7 +75,7 @@
     }
 
     /* ==================================================
-       MENU PRINCIPAL — 6 BOUTONS SVG ÉGAUX
+       MENU PRINCIPAL — 5 BOUTONS SVG ÉGAUX
        ================================================== */
 
     .desktop-menu {
@@ -84,7 +84,7 @@
       margin: 0 auto;
 
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       align-items: center;
     }
 
@@ -769,7 +769,7 @@
 
   <header class="site-header">
 
-    <!-- MENU DESKTOP : 6 ZONES STRICTEMENT ÉGALES -->
+    <!-- MENU DESKTOP : 5 ZONES STRICTEMENT ÉGALES -->
 
     <nav class="desktop-menu" aria-label="Navigation principale">
 
@@ -831,40 +831,11 @@
         </svg>
       </a>
 
-      <!-- 3. DE QUOI S’AGIT-IL ? -->
-      <a
-        class="desktop-menu-item"
-        href="de-quoi-sagit-il.html"
-        aria-label="De quoi s’agit-il ?"
-      >
-        <svg
-          class="menu-button-svg"
-          viewBox="0 0 250 56"
-          role="img"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
-
-          <text
-            x="125"
-            y="34"
-            text-anchor="middle"
-            xml:space="preserve"
-            font-family="Poppins, sans-serif"
-            font-size="15"
-            font-weight="800"
-            letter-spacing="0.35"
-          ><tspan fill="#ffffff">DE </tspan><tspan fill="#ffce3e">QUOI </tspan><tspan fill="#ffffff">S’</tspan><tspan fill="#ffce3e">AGIT</tspan><tspan fill="#ffffff">-IL ?</tspan></text>
-        </svg>
-      </a>
-
-      <!-- 4. NOS SOLUTIONS -->
+      <!-- 3. NOTRE CONCEPT -->
       <a
         class="desktop-menu-item"
         href="nos-solutions.html"
-        aria-label="Nos solutions"
+        aria-label="Notre concept"
       >
         <svg
           class="menu-button-svg"
@@ -885,9 +856,40 @@
             font-size="15"
             font-weight="800"
             letter-spacing="0.35"
-          ><tspan fill="#ffffff">NOS </tspan><tspan fill="#ffce3e">SOLUTIONS</tspan></text>
+          ><tspan fill="#ffffff">NOTRE </tspan><tspan fill="#ffce3e">CONCEPT</tspan></text>
         </svg>
       </a>
+
+
+      <!-- 4. NOUS REJOINDRE -->
+      <a
+        class="desktop-menu-item"
+        href="nous-rejoindre.html"
+        aria-label="Nous rejoindre"
+      >
+        <svg
+          class="menu-button-svg"
+          viewBox="0 0 250 56"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+          <text
+            x="125"
+            y="34"
+            text-anchor="middle"
+            xml:space="preserve"
+            font-family="Poppins, sans-serif"
+            font-size="15"
+            font-weight="800"
+            letter-spacing="0.35"
+          ><tspan fill="#ffffff">NOUS </tspan><tspan fill="#ffce3e">REJOINDRE</tspan></text>
+        </svg>
+      </a>
+
 
       <!-- 5. LE TRAIN DU RAS-LE-BOL -->
       <a
@@ -915,35 +917,6 @@
             font-weight="800"
             letter-spacing="0.35"
           ><tspan fill="#ffffff">LE </tspan><tspan fill="#ffce3e">TRAIN </tspan><tspan fill="#ffffff">DU </tspan><tspan fill="#ffce3e">RAS</tspan><tspan fill="#ffffff">-LE-</tspan><tspan fill="#ffce3e">BOL</tspan></text>
-        </svg>
-      </a>
-
-      <!-- 6. NOUS CONTACTER -->
-      <a
-        class="desktop-menu-item"
-        href="https://contact.letrainduraslebol.fr/"
-        aria-label="Nous contacter"
-      >
-        <svg
-          class="menu-button-svg"
-          viewBox="0 0 250 56"
-          role="img"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
-
-          <text
-            x="125"
-            y="34"
-            text-anchor="middle"
-            xml:space="preserve"
-            font-family="Poppins, sans-serif"
-            font-size="15"
-            font-weight="800"
-            letter-spacing="0.35"
-          ><tspan fill="#ffffff">NOUS </tspan><tspan fill="#ffcd3c">CONTACTER</tspan></text>
         </svg>
       </a>
 
@@ -1013,15 +986,14 @@
         <span class="yellow">TOUTE CHOSE</span>
       </a>
 
-      <a class="mobile-menu-link" href="de-quoi-sagit-il.html">
-        <span class="white">DE</span>
-        <span class="yellow">QUOI</span>
-        <span class="white">S’</span><span class="yellow">AGIT</span><span class="white">-IL ?</span>
+      <a class="mobile-menu-link" href="nos-solutions.html">
+        <span class="white">NOTRE</span>
+        <span class="yellow">CONCEPT</span>
       </a>
 
-      <a class="mobile-menu-link" href="nos-solutions.html">
-        <span class="white">NOS</span>
-        <span class="yellow">SOLUTIONS</span>
+      <a class="mobile-menu-link" href="nous-rejoindre.html">
+        <span class="white">NOUS</span>
+        <span class="yellow">REJOINDRE</span>
       </a>
 
       <a class="mobile-menu-link" href="https://accueil.letrainduraslebol.fr/">
@@ -1029,11 +1001,6 @@
         <span class="yellow">TRAIN</span>
         <span class="white">DU</span>
         <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
-      </a>
-
-      <a class="mobile-menu-link" href="https://contact.letrainduraslebol.fr/">
-        <span class="white">NOUS</span>
-        <span class="yellow-header">CONTACTER</span>
       </a>
 
     </nav>
