@@ -204,28 +204,27 @@
     .hero-main {
       width: 100%;
       background: #002b59;
-      padding: clamp(34px, 4.4vw, 72px) clamp(32px, 4.5vw, 86px);
+      padding: clamp(38px, 4vw, 68px) clamp(36px, 4.2vw, 80px);
     }
 
     .hero-main-inner {
       width: 100%;
-      max-width: 1780px;
+      max-width: 1880px;
       margin: 0 auto;
 
       display: grid;
-      grid-template-columns: minmax(0, 57fr) minmax(0, 43fr);
-      column-gap: clamp(34px, 3.6vw, 68px);
+      grid-template-columns: minmax(0, 49fr) minmax(0, 51fr);
+      column-gap: clamp(42px, 4vw, 78px);
       align-items: stretch;
     }
 
-    /* La hauteur de la rangée est déterminée par le contenu de gauche.
-       La zone visuelle de droite reçoit exactement la même hauteur. */
+    /* Les deux colonnes partagent exactement la même hauteur de rangée. */
     .hero-copy {
       min-width: 0;
 
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
 
       color: #ffffff;
     }
@@ -262,31 +261,29 @@
 
     .hero-signature {
       width: 100%;
-      margin: clamp(15px, 1.7vw, 28px) 0 clamp(16px, 1.7vw, 28px);
+      margin: clamp(18px, 1.9vw, 30px) 0 0;
     }
 
     .hero-signature img {
       display: block;
 
-      /* Signature volontairement plus petite que le titre principal.
-         Son bord gauche reste strictement aligné avec « Groupes WhatsApp »
-         et « LES REPORTERS ». */
-      width: min(100%, 560px);
+      /* Aligné à gauche sur le même axe que les titres. */
+      width: min(100%, 760px);
       height: auto;
       margin: 0;
     }
 
     .hero-concept {
-      width: min(100%, 560px);
-      margin-top: clamp(8px, 0.9vw, 16px);
+      width: 100%;
+      margin-top: clamp(22px, 2.5vw, 42px);
 
-      text-align: center;
+      text-align: left;
     }
 
     .hero-concept-title {
       display: inline-block;
 
-      margin: 0 0 clamp(22px, 2.2vw, 34px);
+      margin: 0 0 clamp(13px, 1.3vw, 20px);
       padding: 5px 11px 6px;
 
       background: #ffce3e;
@@ -301,17 +298,12 @@
 
     .hero-concept-items {
       width: 100%;
-      margin: 0 auto;
+      margin: 0;
 
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        8px
-        minmax(0, 1fr)
-        8px
-        minmax(0, 1fr);
-      align-items: center;
-      column-gap: clamp(14px, 1.7vw, 28px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: clamp(10px, 1vw, 16px);
     }
 
     .hero-concept-item {
@@ -319,9 +311,9 @@
 
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
 
-      text-align: center;
+      text-align: left;
     }
 
     .hero-concept-item span {
@@ -342,35 +334,36 @@
     }
 
     .hero-concept-divider {
-      width: 8px;
-      height: clamp(40px, 3.4vw, 58px);
-
-      background: #ffce3e;
+      display: none;
     }
 
-    /* La colonne de gauche fixe la hauteur de la rangée.
-       La zone visuelle de droite reçoit exactement la même hauteur.
-       Le SVG est contenu dans cette zone : aucune partie ne peut être coupée. */
+    /* Le SVG conserve son intégralité. Sa mise à l'échelle compense uniquement
+       les marges transparentes internes du fichier afin que l'illustration visible
+       ait sensiblement la même hauteur que le bloc de texte de gauche. */
     .hero-visual {
       position: relative;
       min-width: 0;
       min-height: 0;
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       overflow: visible;
     }
 
     .hero-visual img {
-      position: absolute;
-      inset: 0;
-
       display: block;
       width: 100%;
       height: 100%;
-      max-width: 100%;
-      max-height: 100%;
+      max-width: none;
+      max-height: none;
 
       object-fit: contain;
       object-position: center center;
+
+      transform: translateX(-5%) scale(1.55);
+      transform-origin: center center;
     }
 
     /* ==================================================
@@ -500,6 +493,7 @@
       }
 
       .hero-main-inner {
+        grid-template-columns: minmax(0, 50fr) minmax(0, 50fr);
         column-gap: 30px;
       }
 
@@ -517,7 +511,11 @@
       }
 
       .hero-concept-divider {
-        width: 6px;
+        display: none;
+      }
+
+      .hero-visual img {
+        transform: translateX(-4%) scale(1.35);
       }
 
       .hero-stats-grid {
@@ -717,6 +715,7 @@
       .hero-concept {
         width: min(100%, 580px);
         margin: 18px auto 0;
+        text-align: center;
       }
 
       .hero-concept-title {
@@ -724,8 +723,13 @@
       }
 
       .hero-concept-items {
-        grid-template-columns: 1fr;
-        row-gap: 13px;
+        align-items: center;
+        gap: 13px;
+      }
+
+      .hero-concept-item {
+        justify-content: center;
+        text-align: center;
       }
 
       .hero-concept-item span {
@@ -733,9 +737,7 @@
       }
 
       .hero-concept-divider {
-        width: 48px;
-        height: 5px;
-        margin: 0 auto;
+        display: none;
       }
 
       .hero-visual {
@@ -750,9 +752,6 @@
       }
 
       .hero-visual img {
-        position: static;
-        inset: auto;
-
         display: block;
         width: min(100%, 650px);
         height: auto;
@@ -761,6 +760,8 @@
 
         object-fit: contain;
         object-position: center;
+
+        transform: none;
       }
 
       .hero-separator {
@@ -1190,7 +1191,7 @@
             >
           </div>
 
-          <div class="stat-value">4,12 </div>
+          <div class="stat-value">4,12/5</div>
           <div class="stat-label">Moyenne de modération</div>
         </article>
 
