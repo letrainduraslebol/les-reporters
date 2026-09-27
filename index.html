@@ -197,52 +197,46 @@
 
     .home-hero {
       width: 100%;
+      overflow: hidden;
       background: #002b59;
-      color: #ffffff;
     }
 
     .hero-main {
       width: 100%;
-      min-height: clamp(590px, 69vh, 735px);
-
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-
       background: #002b59;
+      padding: clamp(34px, 4.4vw, 72px) clamp(32px, 4.5vw, 86px);
     }
 
     .hero-main-inner {
       width: 100%;
-      max-width: 1900px;
+      max-width: 1780px;
       margin: 0 auto;
 
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(430px, 0.92fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: clamp(42px, 5vw, 92px);
       align-items: stretch;
-      gap: clamp(36px, 4vw, 86px);
-
-      padding:
-        clamp(44px, 5vh, 64px)
-        clamp(46px, 5vw, 96px)
-        clamp(38px, 4.5vh, 58px);
     }
 
+    /* La hauteur de la rangée est déterminée par le contenu de gauche.
+       La zone visuelle de droite reçoit exactement la même hauteur. */
     .hero-copy {
       min-width: 0;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      color: #ffffff;
     }
 
     .hero-kicker {
-      margin: 0 0 8px;
+      margin: 0 0 6px;
 
-      font-family: "Poppins", sans-serif;
-      font-size: clamp(27px, 2.2vw, 42px);
+      font-size: clamp(25px, 2.05vw, 40px);
       font-weight: 800;
-      line-height: 1.12;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
 
       color: #ffffff;
     }
@@ -250,94 +244,92 @@
     .hero-title {
       margin: 0;
 
-      font-family: "Poppins", sans-serif;
-      font-size: clamp(58px, 5.3vw, 100px);
+      font-size: clamp(52px, 5.15vw, 94px);
       font-weight: 800;
-      line-height: 0.98;
-      letter-spacing: -0.025em;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
 
+      white-space: nowrap;
+    }
+
+    .hero-title-white {
       color: #ffffff;
     }
 
-    .hero-title .hero-title-yellow {
+    .hero-title-yellow {
       color: #ffce3e;
     }
 
     .hero-signature {
-      width: min(100%, 720px);
-      margin-top: clamp(22px, 2.6vh, 34px);
+      width: 100%;
+      margin: clamp(15px, 1.7vw, 28px) 0 clamp(16px, 1.7vw, 28px);
     }
 
     .hero-signature img {
       display: block;
-      width: 100%;
+      width: min(100%, 860px);
       height: auto;
+      margin: 0;
     }
 
-    .hero-tagline {
-      margin:
-        clamp(28px, 3.4vh, 44px)
-        0
-        0;
+    .hero-lead {
+      margin: 0;
 
-      max-width: 980px;
-
-      font-family: "Poppins", sans-serif;
-      font-size: clamp(18px, 1.35vw, 27px);
+      font-size: clamp(17px, 1.35vw, 25px);
       font-weight: 400;
       line-height: 1.55;
 
       color: #ffffff;
-    }
 
-    /* ==================================================
-       NOTRE CONCEPT
-       ================================================== */
+      /* Aucun retour à la ligne artificiel : le navigateur
+         conserve la phrase entière tant que l'espace le permet. */
+      text-wrap: pretty;
+    }
 
     .hero-concept {
       width: 100%;
-      max-width: 980px;
-      margin-top: clamp(34px, 4vh, 52px);
+      margin-top: clamp(26px, 2.7vw, 46px);
 
       text-align: center;
     }
 
-    .hero-concept-heading {
+    .hero-concept-title {
       display: inline-block;
 
-      margin: 0 0 24px;
-      padding: 4px 9px 5px;
+      margin: 0 0 clamp(22px, 2.2vw, 34px);
+      padding: 5px 11px 6px;
 
-      font-size: clamp(18px, 1.25vw, 24px);
-      font-weight: 800;
-      line-height: 1.15;
-
-      color: #002b59;
       background: #ffce3e;
+      color: #002b59;
 
       border-radius: 3px;
+
+      font-size: clamp(16px, 1.28vw, 23px);
+      font-weight: 800;
+      line-height: 1.15;
     }
 
     .hero-concept-items {
       width: 100%;
+      margin: 0 auto;
 
       display: grid;
       grid-template-columns:
         minmax(0, 1fr)
-        9px
-        minmax(0, 1.45fr)
-        9px
-        minmax(0, 1.35fr);
+        8px
+        minmax(0, 1fr)
+        8px
+        minmax(0, 1fr);
       align-items: center;
-      column-gap: clamp(18px, 2vw, 36px);
+      column-gap: clamp(14px, 1.7vw, 28px);
     }
 
     .hero-concept-item {
       min-width: 0;
 
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
       text-align: center;
     }
@@ -345,66 +337,66 @@
     .hero-concept-item span {
       display: inline-block;
 
-      padding: 3px 7px 4px;
+      padding: 5px 8px 6px;
 
-      font-size: clamp(16px, 1.12vw, 22px);
-      font-weight: 800;
-      line-height: 1.15;
-      white-space: nowrap;
-
-      color: #002b59;
       background: #ffffff;
+      color: #002b59;
 
       border-radius: 3px;
+
+      font-size: clamp(13px, 1.02vw, 18px);
+      font-weight: 800;
+      line-height: 1.15;
+
+      white-space: nowrap;
     }
 
-    .hero-concept-separator {
-      width: 9px;
-      height: clamp(48px, 5.5vh, 70px);
+    .hero-concept-divider {
+      width: 8px;
+      height: clamp(40px, 3.4vw, 58px);
 
       background: #ffce3e;
     }
 
-    /* ==================================================
-       ILLUSTRATION PRINCIPALE À DROITE
-       ================================================== */
-
+    /* Le SVG de droite ne participe pas au calcul de la hauteur :
+       la colonne de gauche fixe la hauteur de la rangée.
+       Le conteneur de droite possède donc exactement cette hauteur. */
     .hero-visual {
+      position: relative;
       min-width: 0;
-      min-height: 0;
-      height: 100%;
+      min-height: 100%;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
     }
 
     .hero-visual img {
-      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
 
-      width: 100%;
-      height: 100%;
-      max-width: 820px;
-      max-height: 100%;
+      /* Le fichier SVG contient de l'espace transparent autour du dessin.
+         Cette hauteur compense uniquement cet espace sans modifier le SVG. */
+      height: 154%;
+      width: auto;
+      max-width: none;
+
+      transform: translate(-50%, -50%);
 
       object-fit: contain;
-
-      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.18));
     }
 
     /* ==================================================
        SÉPARATION ENTRE LES DEUX ZONES
        ================================================== */
 
-    .hero-zone-separator {
+    .hero-separator {
       width: 100%;
-      height: clamp(12px, 1.15vw, 19px);
-
+      height: clamp(12px, 1.15vw, 20px);
       background: #ffce3e;
     }
 
     /* ==================================================
-       HERO D'ACCUEIL — ZONE SECONDAIRE / CHIFFRES CLÉS
+       HERO D'ACCUEIL — ZONE SECONDAIRE / CHIFFRES
        ================================================== */
 
     .hero-stats {
@@ -412,176 +404,146 @@
       background: #002b59;
 
       padding:
-        clamp(46px, 4.4vw, 62px)
-        clamp(28px, 4vw, 76px)
-        clamp(24px, 2.6vw, 38px);
+        clamp(62px, 5.4vw, 88px)
+        clamp(28px, 3.6vw, 70px)
+        clamp(28px, 2.8vw, 44px);
     }
 
     .hero-stats-grid {
       width: 100%;
-      max-width: 1840px;
+      max-width: 1780px;
       margin: 0 auto;
 
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(22px, 3.2vw, 62px);
+      gap: clamp(30px, 3.2vw, 60px);
+      align-items: stretch;
     }
 
-    .hero-stat-card {
+    .stat-card {
       position: relative;
-
       min-width: 0;
-      min-height: 126px;
+      min-height: 190px;
 
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: 1fr auto;
       align-items: center;
-      justify-content: flex-start;
 
-      padding: 48px 16px 16px;
+      padding: 54px 24px 20px;
 
       background: #002b59;
+
       border: 3px solid #ffffff;
-      border-radius: 11px;
+      border-radius: 13px;
     }
 
-    .hero-stat-medallion {
+    .stat-medallion {
       position: absolute;
       top: 0;
       left: 50%;
 
-      transform: translate(-50%, -50%);
-
-      width: clamp(68px, 5vw, 84px);
+      width: clamp(82px, 6vw, 104px);
       aspect-ratio: 1 / 1;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 8px;
+      transform: translate(-50%, -50%);
 
       background: #002b59;
-      border: 5px solid #ffce3e;
+      border: 6px solid #ffce3e;
       border-radius: 50%;
     }
 
-    .hero-stat-medallion img {
+    .stat-medallion img {
       display: block;
-
-      width: 100%;
-      height: 100%;
+      width: 68%;
+      height: 68%;
 
       object-fit: contain;
     }
 
-    .hero-stat-value {
-      width: min(92%, 330px);
-      min-height: 50px;
+    .stat-value {
+      width: 100%;
+      min-height: 64px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 5px 12px;
+      padding: 6px 16px;
 
-      font-size: clamp(27px, 2.5vw, 50px);
+      background: #ffce3e;
+      color: #002b59;
+
+      border-radius: 12px;
+
+      font-size: clamp(38px, 3.4vw, 64px);
       font-weight: 800;
       line-height: 1;
 
-      color: #002b59;
-      background: #ffce3e;
-
-      border-radius: 9px;
+      text-align: center;
+      white-space: nowrap;
     }
 
-    .hero-stat-label {
-      margin-top: 14px;
-
-      font-size: clamp(14px, 1.1vw, 21px);
-      font-weight: 800;
-      line-height: 1.25;
-      text-align: center;
+    .stat-label {
+      margin-top: 17px;
 
       color: #ffffff;
+
+      font-size: clamp(15px, 1.28vw, 22px);
+      font-weight: 800;
+      line-height: 1.2;
+
+      text-align: center;
+      white-space: nowrap;
     }
 
     /* ==================================================
-       TABLETTE
+       TABLETTE / ÉCRANS INTERMÉDIAIRES
        ================================================== */
 
-    @media (max-width: 1180px) {
+    @media (max-width: 1200px) {
+      .hero-main {
+        padding-inline: 34px;
+      }
 
       .hero-main-inner {
-        grid-template-columns: minmax(0, 1fr) minmax(350px, 0.82fr);
-        gap: 34px;
-        padding-inline: 36px;
+        column-gap: 30px;
+      }
+
+      .hero-title {
+        font-size: clamp(48px, 5.4vw, 68px);
+      }
+
+      .hero-lead {
+        font-size: 17px;
       }
 
       .hero-concept-items {
-        column-gap: 14px;
+        column-gap: 10px;
       }
 
       .hero-concept-item span {
-        font-size: 15px;
-      }
-    }
-
-    @media (max-width: 1000px) {
-
-      .site-header {
-        padding: 18px 14px;
+        font-size: 13px;
+        padding-inline: 6px;
       }
 
-      .desktop-menu {
-        max-width: 100%;
-      }
-
-      .hero-main {
-        min-height: auto;
-      }
-
-      .hero-main-inner {
-        grid-template-columns: 1fr;
-        gap: 34px;
-
-        padding:
-          48px
-          30px
-          42px;
-      }
-
-      .hero-copy {
-        align-items: center;
-        text-align: center;
-      }
-
-      .hero-signature {
-        width: min(100%, 640px);
-      }
-
-      .hero-tagline {
-        max-width: 850px;
-      }
-
-      .hero-concept {
-        max-width: 860px;
-      }
-
-      .hero-visual {
-        width: min(100%, 720px);
-        min-height: 390px;
-        margin: 0 auto;
-      }
-
-      .hero-visual img {
-        height: auto;
-        max-height: 520px;
+      .hero-concept-divider {
+        width: 6px;
       }
 
       .hero-stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 66px;
+        gap: 22px;
+      }
+
+      .stat-card {
+        padding-inline: 16px;
+      }
+
+      .stat-label {
+        font-size: 15px;
       }
     }
 
@@ -589,8 +551,7 @@
        MOBILE
        ================================================== */
 
-    @media (max-width: 700px) {
-
+    @media (max-width: 800px) {
       body {
         padding-top: 85px;
       }
@@ -736,44 +697,51 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.24);
       }
 
-      /* HERO MOBILE */
+      .hero-main {
+        padding: 38px 20px 42px;
+      }
 
       .hero-main-inner {
-        gap: 28px;
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+      }
 
-        padding:
-          38px
-          20px
-          34px;
+      .hero-copy {
+        text-align: center;
       }
 
       .hero-kicker {
-        font-size: clamp(22px, 7vw, 30px);
+        font-size: clamp(23px, 7vw, 31px);
       }
 
       .hero-title {
-        font-size: clamp(48px, 14vw, 74px);
-        line-height: 1;
+        font-size: clamp(43px, 12vw, 67px);
+        white-space: normal;
       }
 
       .hero-signature {
-        width: min(100%, 520px);
-        margin-top: 20px;
+        margin: 14px 0 15px;
       }
 
-      .hero-tagline {
-        margin-top: 26px;
+      .hero-signature img {
+        width: min(100%, 580px);
+        margin: 0 auto;
+      }
 
-        font-size: 17px;
+      .hero-lead {
+        max-width: 680px;
+        margin: 0 auto;
+
+        font-size: clamp(16px, 4vw, 20px);
         line-height: 1.55;
       }
 
       .hero-concept {
-        margin-top: 32px;
+        margin-top: 30px;
       }
 
-      .hero-concept-heading {
-        margin-bottom: 18px;
+      .hero-concept-title {
+        font-size: 17px;
       }
 
       .hero-concept-items {
@@ -781,57 +749,69 @@
         row-gap: 13px;
       }
 
-      .hero-concept-separator {
-        width: min(72%, 230px);
+      .hero-concept-item span {
+        font-size: 15px;
+      }
+
+      .hero-concept-divider {
+        width: 48px;
         height: 5px;
         margin: 0 auto;
       }
 
-      .hero-concept-item span {
-        font-size: 16px;
-        white-space: normal;
-      }
-
       .hero-visual {
+        position: relative;
         min-height: 0;
-        width: min(100%, 560px);
+        height: auto;
+        overflow: visible;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .hero-visual img {
-        width: 100%;
+        position: static;
+
+        display: block;
+        width: min(100%, 650px);
         height: auto;
-        max-height: none;
+        max-width: 100%;
+
+        transform: none;
       }
 
-      .hero-zone-separator {
+      .hero-separator {
         height: 12px;
       }
 
       .hero-stats {
-        padding:
-          48px
-          18px
-          28px;
+        padding: 62px 20px 30px;
       }
 
       .hero-stats-grid {
-        grid-template-columns: 1fr;
-        gap: 64px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 66px 18px;
       }
 
-      .hero-stat-card {
-        width: min(100%, 430px);
-        min-height: 128px;
-        margin: 0 auto;
+      .stat-card {
+        min-height: 165px;
+        padding: 48px 14px 17px;
       }
 
-      .hero-stat-value {
-        width: min(88%, 330px);
-        font-size: 38px;
+      .stat-medallion {
+        width: 78px;
+        border-width: 5px;
       }
 
-      .hero-stat-label {
-        font-size: 17px;
+      .stat-value {
+        min-height: 56px;
+        font-size: clamp(34px, 8vw, 48px);
+      }
+
+      .stat-label {
+        font-size: 13px;
+        white-space: normal;
       }
     }
 
@@ -839,8 +819,7 @@
        PETITS ÉCRANS
        ================================================== */
 
-    @media (max-width: 380px) {
-
+    @media (max-width: 460px) {
       .mobile-home-svg {
         width: min(100%, 190px);
       }
@@ -849,15 +828,21 @@
         right: 14px;
       }
 
-      .hero-main-inner {
-        padding-inline: 15px;
+      .hero-main {
+        padding-inline: 16px;
       }
 
-      .hero-title {
-        font-size: 45px;
+      .hero-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 64px;
+      }
+
+      .stat-card {
+        width: 100%;
+        max-width: 390px;
+        margin: 0 auto;
       }
     }
-
   </style>
 </head>
 
@@ -865,20 +850,168 @@
 
   <div class="header-shell">
 
-  <header class="site-header">
+    <header class="site-header">
 
-    <!-- MENU DESKTOP : 5 ZONES STRICTEMENT ÉGALES -->
+      <!-- MENU DESKTOP : 5 ZONES STRICTEMENT ÉGALES -->
 
-    <nav class="desktop-menu" aria-label="Navigation principale">
+      <nav class="desktop-menu" aria-label="Navigation principale">
 
-      <!-- 1. ACCUEIL -->
+        <!-- 1. ACCUEIL -->
+        <a
+          class="desktop-menu-item"
+          href="index.html"
+          aria-label="Accueil"
+        >
+          <svg
+            class="menu-button-svg"
+            viewBox="0 0 250 56"
+            role="img"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+            <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+            <text
+              x="125"
+              y="34"
+              text-anchor="middle"
+              xml:space="preserve"
+              font-family="Poppins, sans-serif"
+              font-size="15"
+              font-weight="800"
+              letter-spacing="0.35"
+            ><tspan fill="#ffce3e">ACCUEIL</tspan></text>
+          </svg>
+        </a>
+
+        <!-- 2. AVANT TOUTE CHOSE -->
+        <a
+          class="desktop-menu-item"
+          href="avant-toute-chose.html"
+          aria-label="Avant toute chose"
+        >
+          <svg
+            class="menu-button-svg"
+            viewBox="0 0 250 56"
+            role="img"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+            <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+            <text
+              x="125"
+              y="34"
+              text-anchor="middle"
+              xml:space="preserve"
+              font-family="Poppins, sans-serif"
+              font-size="15"
+              font-weight="800"
+              letter-spacing="0.35"
+            ><tspan fill="#ffffff">AVANT </tspan><tspan fill="#ffce3e">TOUTE CHOSE</tspan></text>
+          </svg>
+        </a>
+
+        <!-- 3. NOTRE CONCEPT -->
+        <a
+          class="desktop-menu-item"
+          href="nos-solutions.html"
+          aria-label="Notre concept"
+        >
+          <svg
+            class="menu-button-svg"
+            viewBox="0 0 250 56"
+            role="img"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+            <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+            <text
+              x="125"
+              y="34"
+              text-anchor="middle"
+              xml:space="preserve"
+              font-family="Poppins, sans-serif"
+              font-size="15"
+              font-weight="800"
+              letter-spacing="0.35"
+            ><tspan fill="#ffffff">NOTRE </tspan><tspan fill="#ffce3e">CONCEPT</tspan></text>
+          </svg>
+        </a>
+
+        <!-- 4. NOUS REJOINDRE -->
+        <a
+          class="desktop-menu-item"
+          href="nous-rejoindre.html"
+          aria-label="Nous rejoindre"
+        >
+          <svg
+            class="menu-button-svg"
+            viewBox="0 0 250 56"
+            role="img"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+            <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+            <text
+              x="125"
+              y="34"
+              text-anchor="middle"
+              xml:space="preserve"
+              font-family="Poppins, sans-serif"
+              font-size="15"
+              font-weight="800"
+              letter-spacing="0.35"
+            ><tspan fill="#ffffff">NOUS </tspan><tspan fill="#ffce3e">REJOINDRE</tspan></text>
+          </svg>
+        </a>
+
+        <!-- 5. LE TRAIN DU RAS-LE-BOL -->
+        <a
+          class="desktop-menu-item"
+          href="https://accueil.letrainduraslebol.fr/"
+          aria-label="Le train du ras-le-bol"
+        >
+          <svg
+            class="menu-button-svg"
+            viewBox="0 0 250 56"
+            role="img"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
+            <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+
+            <text
+              x="125"
+              y="34"
+              text-anchor="middle"
+              xml:space="preserve"
+              font-family="Poppins, sans-serif"
+              font-size="15"
+              font-weight="800"
+              letter-spacing="0.35"
+            ><tspan fill="#ffffff">LE </tspan><tspan fill="#ffce3e">TRAIN </tspan><tspan fill="#ffffff">DU </tspan><tspan fill="#ffce3e">RAS</tspan><tspan fill="#ffffff">-LE-</tspan><tspan fill="#ffce3e">BOL</tspan></text>
+          </svg>
+        </a>
+
+      </nav>
+
+      <!-- ACCUEIL VISIBLE SUR MOBILE -->
+
       <a
-        class="desktop-menu-item"
+        class="mobile-home-link"
         href="index.html"
         aria-label="Accueil"
       >
         <svg
-          class="menu-button-svg"
+          class="mobile-home-svg"
           viewBox="0 0 250 56"
           role="img"
           aria-hidden="true"
@@ -891,225 +1024,70 @@
             x="125"
             y="34"
             text-anchor="middle"
-            xml:space="preserve"
             font-family="Poppins, sans-serif"
             font-size="15"
             font-weight="800"
             letter-spacing="0.35"
-          ><tspan fill="#ffce3e">ACCUEIL</tspan></text>
+            fill="#ffce3e"
+          >ACCUEIL</text>
         </svg>
       </a>
 
-      <!-- 2. AVANT TOUTE CHOSE -->
-      <a
-        class="desktop-menu-item"
-        href="avant-toute-chose.html"
-        aria-label="Avant toute chose"
+      <!-- BOUTON HAMBURGER MOBILE -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
       >
-        <svg
-          class="menu-button-svg"
-          viewBox="0 0 250 56"
-          role="img"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-          <text
-            x="125"
-            y="34"
-            text-anchor="middle"
-            xml:space="preserve"
-            font-family="Poppins, sans-serif"
-            font-size="15"
-            font-weight="800"
-            letter-spacing="0.35"
-          ><tspan fill="#ffffff">AVANT </tspan><tspan fill="#ffce3e">TOUTE CHOSE</tspan></text>
-        </svg>
-      </a>
+      <!-- MENU MOBILE -->
 
-      <!-- 3. NOTRE CONCEPT -->
-      <a
-        class="desktop-menu-item"
-        href="nos-solutions.html"
-        aria-label="Notre concept"
+      <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Menu mobile"
       >
-        <svg
-          class="menu-button-svg"
-          viewBox="0 0 250 56"
-          role="img"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
 
-          <text
-            x="125"
-            y="34"
-            text-anchor="middle"
-            xml:space="preserve"
-            font-family="Poppins, sans-serif"
-            font-size="15"
-            font-weight="800"
-            letter-spacing="0.35"
-          ><tspan fill="#ffffff">NOTRE </tspan><tspan fill="#ffce3e">CONCEPT</tspan></text>
-        </svg>
-      </a>
+        <a class="mobile-menu-link" href="index.html">
+          <span class="yellow">ACCUEIL</span>
+        </a>
 
+        <a class="mobile-menu-link" href="avant-toute-chose.html">
+          <span class="white">AVANT</span>
+          <span class="yellow">TOUTE CHOSE</span>
+        </a>
 
-      <!-- 4. NOUS REJOINDRE -->
-      <a
-        class="desktop-menu-item"
-        href="nous-rejoindre.html"
-        aria-label="Nous rejoindre"
-      >
-        <svg
-          class="menu-button-svg"
-          viewBox="0 0 250 56"
-          role="img"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+        <a class="mobile-menu-link" href="nos-solutions.html">
+          <span class="white">NOTRE</span>
+          <span class="yellow">CONCEPT</span>
+        </a>
 
-          <text
-            x="125"
-            y="34"
-            text-anchor="middle"
-            xml:space="preserve"
-            font-family="Poppins, sans-serif"
-            font-size="15"
-            font-weight="800"
-            letter-spacing="0.35"
-          ><tspan fill="#ffffff">NOUS </tspan><tspan fill="#ffce3e">REJOINDRE</tspan></text>
-        </svg>
-      </a>
+        <a class="mobile-menu-link" href="nous-rejoindre.html">
+          <span class="white">NOUS</span>
+          <span class="yellow">REJOINDRE</span>
+        </a>
 
+        <a class="mobile-menu-link" href="https://accueil.letrainduraslebol.fr/">
+          <span class="white">LE</span>
+          <span class="yellow">TRAIN</span>
+          <span class="white">DU</span>
+          <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
+        </a>
 
-      <!-- 5. LE TRAIN DU RAS-LE-BOL -->
-      <a
-        class="desktop-menu-item"
-        href="https://accueil.letrainduraslebol.fr/"
-        aria-label="Le train du ras-le-bol"
-      >
-        <svg
-          class="menu-button-svg"
-          viewBox="0 0 250 56"
-          role="img"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-          <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
+      </nav>
 
-          <text
-            x="125"
-            y="34"
-            text-anchor="middle"
-            xml:space="preserve"
-            font-family="Poppins, sans-serif"
-            font-size="15"
-            font-weight="800"
-            letter-spacing="0.35"
-          ><tspan fill="#ffffff">LE </tspan><tspan fill="#ffce3e">TRAIN </tspan><tspan fill="#ffffff">DU </tspan><tspan fill="#ffce3e">RAS</tspan><tspan fill="#ffffff">-LE-</tspan><tspan fill="#ffce3e">BOL</tspan></text>
-        </svg>
-      </a>
+    </header>
 
-    </nav>
-
-
-    <!-- ACCUEIL VISIBLE SUR MOBILE -->
-
-    <a
-      class="mobile-home-link"
-      href="index.html"
-      aria-label="Accueil"
-    >
-      <svg
-        class="mobile-home-svg"
-        viewBox="0 0 250 56"
-        role="img"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <rect x="14" y="5" width="222" height="4" rx="2" fill="#ffffff"/>
-        <rect x="14" y="47" width="222" height="4" rx="2" fill="#ffffff"/>
-
-        <text
-          x="125"
-          y="34"
-          text-anchor="middle"
-          font-family="Poppins, sans-serif"
-          font-size="15"
-          font-weight="800"
-          letter-spacing="0.35"
-          fill="#ffce3e"
-        >ACCUEIL</text>
-      </svg>
-    </a>
-
-
-    <!-- BOUTON HAMBURGER MOBILE -->
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-
-    <!-- MENU MOBILE -->
-
-    <nav
-      class="mobile-menu"
-      id="mobile-menu"
-      aria-label="Menu mobile"
-    >
-
-      <a class="mobile-menu-link" href="index.html">
-        <span class="yellow">ACCUEIL</span>
-      </a>
-
-      <a class="mobile-menu-link" href="avant-toute-chose.html">
-        <span class="white">AVANT</span>
-        <span class="yellow">TOUTE CHOSE</span>
-      </a>
-
-      <a class="mobile-menu-link" href="nos-solutions.html">
-        <span class="white">NOTRE</span>
-        <span class="yellow">CONCEPT</span>
-      </a>
-
-      <a class="mobile-menu-link" href="nous-rejoindre.html">
-        <span class="white">NOUS</span>
-        <span class="yellow">REJOINDRE</span>
-      </a>
-
-      <a class="mobile-menu-link" href="https://accueil.letrainduraslebol.fr/">
-        <span class="white">LE</span>
-        <span class="yellow">TRAIN</span>
-        <span class="white">DU</span>
-        <span class="yellow">RAS</span><span class="white">-LE-</span><span class="yellow">BOL</span>
-      </a>
-
-    </nav>
-
-  </header>
-
-
-  <div class="header-transition" aria-hidden="true"></div>
+    <div class="header-transition" aria-hidden="true"></div>
 
   </div>
-
 
   <!-- ==================================================
        HERO D'ACCUEIL
@@ -1118,7 +1096,6 @@
   <main class="home-hero">
 
     <!-- ZONE PRINCIPALE -->
-
     <section class="hero-main" aria-labelledby="hero-title">
 
       <div class="hero-main-inner">
@@ -1128,24 +1105,23 @@
           <p class="hero-kicker">Groupes WhatsApp</p>
 
           <h1 class="hero-title" id="hero-title">
-            LES <span class="hero-title-yellow">REPORTERS</span>
+            <span class="hero-title-white">LES </span><span class="hero-title-yellow">REPORTERS</span>
           </h1>
 
           <div class="hero-signature">
             <img
               src="31000-00750_LRPTR_toutcommenceavecvous-index.svg"
               alt="Tout commence avec vous."
-              fetchpriority="high"
             >
           </div>
 
-          <p class="hero-tagline">
+          <p class="hero-lead">
             Inscrivez-vous dans une démarche utile et donnez du sens à votre ras-le-bol.
           </p>
 
           <div class="hero-concept" aria-label="Notre concept">
 
-            <p class="hero-concept-heading">Notre concept est:</p>
+            <div class="hero-concept-title">Notre concept est:</div>
 
             <div class="hero-concept-items">
 
@@ -1153,13 +1129,13 @@
                 <span>Utile à tous</span>
               </div>
 
-              <div class="hero-concept-separator" aria-hidden="true"></div>
+              <div class="hero-concept-divider" aria-hidden="true"></div>
 
               <div class="hero-concept-item">
                 <span>Différent des autres</span>
               </div>
 
-              <div class="hero-concept-separator" aria-hidden="true"></div>
+              <div class="hero-concept-divider" aria-hidden="true"></div>
 
               <div class="hero-concept-item">
                 <span>Complet et solidaire</span>
@@ -1171,12 +1147,10 @@
 
         </div>
 
-
         <div class="hero-visual" aria-hidden="true">
           <img
             src="31000-00750_LRPTR_pictures-index.svg"
             alt=""
-            fetchpriority="high"
           >
         </div>
 
@@ -1184,75 +1158,60 @@
 
     </section>
 
+    <!-- SÉPARATION JAUNE -->
+    <div class="hero-separator" aria-hidden="true"></div>
 
-    <!-- BANDE DE SÉPARATION -->
-
-    <div class="hero-zone-separator" aria-hidden="true"></div>
-
-
-    <!-- ZONE SECONDAIRE / CHIFFRES CLÉS -->
-
+    <!-- ZONE SECONDAIRE -->
     <section class="hero-stats" aria-label="Les Reporters en chiffres">
 
       <div class="hero-stats-grid">
 
-        <article class="hero-stat-card">
-
-          <div class="hero-stat-medallion" aria-hidden="true">
+        <article class="stat-card">
+          <div class="stat-medallion" aria-hidden="true">
             <img
               src="31000-00750_LRPTR_icone-whatsapp-index.svg"
               alt=""
             >
           </div>
 
-          <div class="hero-stat-value">62</div>
-          <div class="hero-stat-label">Groupes WhatsApp</div>
-
+          <div class="stat-value">62</div>
+          <div class="stat-label">Groupes WhatsApp</div>
         </article>
 
-
-        <article class="hero-stat-card">
-
-          <div class="hero-stat-medallion" aria-hidden="true">
+        <article class="stat-card">
+          <div class="stat-medallion" aria-hidden="true">
             <img
               src="31000-00750_LRPTR_icone-membres-index.svg"
               alt=""
             >
           </div>
 
-          <div class="hero-stat-value">3 963</div>
-          <div class="hero-stat-label">Membres</div>
-
+          <div class="stat-value">3&nbsp;963</div>
+          <div class="stat-label">Membres</div>
         </article>
 
-
-        <article class="hero-stat-card">
-
-          <div class="hero-stat-medallion" aria-hidden="true">
+        <article class="stat-card">
+          <div class="stat-medallion" aria-hidden="true">
             <img
               src="31000-00750_LRPTR_icone-commentaires-index.svg"
               alt=""
             >
           </div>
 
-          <div class="hero-stat-value">9 400</div>
-          <div class="hero-stat-label">Commentaires par jour</div>
-
+          <div class="stat-value">9&nbsp;400</div>
+          <div class="stat-label">Commentaires par jour</div>
         </article>
 
-
-        <article class="hero-stat-card">
-
-          <div class="hero-stat-medallion" aria-hidden="true">
+        <article class="stat-card">
+          <div class="stat-medallion" aria-hidden="true">
             <img
               src="31000-00750_LRPTR_icone-note-index.svg"
               alt=""
             >
           </div>
 
-          <div class="hero-stat-value">4,12/5</div>
-          <div class="hero-stat-label">Moyenne de modération</div>
-
+          <div class="stat-value">4,12/5</div>
+          <div class="stat-label">Moyenne de modération</div>
         </article>
 
       </div>
@@ -1260,7 +1219,6 @@
     </section>
 
   </main>
-
 
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
