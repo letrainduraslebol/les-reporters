@@ -197,7 +197,7 @@
 
     .home-hero {
       width: 100%;
-      overflow: hidden;
+      overflow-x: clip;
       background: #002b59;
     }
 
@@ -213,8 +213,8 @@
       margin: 0 auto;
 
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      column-gap: clamp(42px, 5vw, 92px);
+      grid-template-columns: minmax(0, 57fr) minmax(0, 43fr);
+      column-gap: clamp(34px, 3.6vw, 68px);
       align-items: stretch;
     }
 
@@ -275,15 +275,14 @@
     .hero-lead {
       margin: 0;
 
-      font-size: clamp(17px, 1.35vw, 25px);
+      font-size: clamp(17px, 1.08vw, 21px);
       font-weight: 400;
       line-height: 1.55;
 
       color: #ffffff;
 
-      /* Aucun retour à la ligne artificiel : le navigateur
-         conserve la phrase entière tant que l'espace le permet. */
-      text-wrap: pretty;
+      /* Sur ordinateur, la phrase reste volontairement sur une seule ligne. */
+      white-space: nowrap;
     }
 
     .hero-concept {
@@ -358,31 +357,29 @@
       background: #ffce3e;
     }
 
-    /* Le SVG de droite ne participe pas au calcul de la hauteur :
-       la colonne de gauche fixe la hauteur de la rangée.
-       Le conteneur de droite possède donc exactement cette hauteur. */
+    /* La colonne de gauche fixe la hauteur de la rangée.
+       La zone visuelle de droite reçoit exactement la même hauteur.
+       Le SVG est contenu dans cette zone : aucune partie ne peut être coupée. */
     .hero-visual {
       position: relative;
       min-width: 0;
-      min-height: 100%;
+      min-height: 0;
 
-      overflow: hidden;
+      overflow: visible;
     }
 
     .hero-visual img {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      inset: 0;
 
-      /* Le fichier SVG contient de l'espace transparent autour du dessin.
-         Cette hauteur compense uniquement cet espace sans modifier le SVG. */
-      height: 154%;
-      width: auto;
-      max-width: none;
-
-      transform: translate(-50%, -50%);
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
 
       object-fit: contain;
+      object-position: center center;
     }
 
     /* ==================================================
@@ -458,10 +455,12 @@
 
     .stat-medallion img {
       display: block;
-      width: 68%;
-      height: 68%;
+      width: 64%;
+      height: 64%;
 
       object-fit: contain;
+      object-position: center;
+      background: transparent;
     }
 
     .stat-value {
@@ -518,7 +517,8 @@
       }
 
       .hero-lead {
-        font-size: 17px;
+        font-size: 16px;
+        white-space: normal;
       }
 
       .hero-concept-items {
@@ -772,13 +772,16 @@
 
       .hero-visual img {
         position: static;
+        inset: auto;
 
         display: block;
         width: min(100%, 650px);
         height: auto;
         max-width: 100%;
+        max-height: none;
 
-        transform: none;
+        object-fit: contain;
+        object-position: center;
       }
 
       .hero-separator {
@@ -1169,8 +1172,9 @@
         <article class="stat-card">
           <div class="stat-medallion" aria-hidden="true">
             <img
-              src="31000-00750_LRPTR_icone-whatsapp-index.svg"
+              src="31000-00750_LRPTR_icone-whatsapp-index.svg?v=20260927-03"
               alt=""
+              onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/letrainduraslebol/les-reporters/main/31000-00750_LRPTR_icone-whatsapp-index.svg?v=20260927-03';"
             >
           </div>
 
@@ -1181,8 +1185,9 @@
         <article class="stat-card">
           <div class="stat-medallion" aria-hidden="true">
             <img
-              src="31000-00750_LRPTR_icone-membres-index.svg"
+              src="31000-00750_LRPTR_icone-membres-index.svg?v=20260927-03"
               alt=""
+              onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/letrainduraslebol/les-reporters/main/31000-00750_LRPTR_icone-membres-index.svg?v=20260927-03';"
             >
           </div>
 
