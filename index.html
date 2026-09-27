@@ -281,22 +281,24 @@
       width: min(100%, 570px);
       margin-top: clamp(34px, 3vw, 52px);
 
-      text-align: left;
+      /* Le bloc est centré précisément sous le SVG de 570 px. */
+      text-align: center;
     }
 
     .hero-concept-title {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
 
-      margin: 0 0 clamp(18px, 1.6vw, 26px);
-      padding: 7px 14px 8px;
+      margin: 0 0 clamp(18px, 1.5vw, 24px);
+      padding: 8px 17px 9px;
 
       background: #ffce3e;
       color: #002b59;
 
       border-radius: 4px;
 
-      font-size: clamp(17px, 1.15vw, 22px);
+      font-size: clamp(18px, 1.18vw, 23px);
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.015em;
@@ -308,8 +310,8 @@
 
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: clamp(12px, 1vw, 16px);
+      align-items: center;
+      gap: clamp(10px, 0.85vw, 14px);
     }
 
     .hero-concept-item {
@@ -317,24 +319,25 @@
 
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
 
-      text-align: left;
+      text-align: center;
     }
 
     .hero-concept-item span {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
 
-      min-height: 38px;
-      padding: 7px 12px 8px;
+      min-height: 40px;
+      padding: 8px 17px 9px;
 
       background: #ffffff;
       color: #002b59;
 
       border-radius: 4px;
 
-      font-size: clamp(14px, 0.95vw, 18px);
+      font-size: clamp(15px, 1vw, 19px);
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.01em;
