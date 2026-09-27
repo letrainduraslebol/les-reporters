@@ -204,18 +204,22 @@
     .hero-main {
       width: 100%;
       background: #002b59;
-      padding: clamp(38px, 4vw, 68px) clamp(36px, 4.2vw, 80px);
+      padding: clamp(38px, 3.7vw, 76px) clamp(36px, 3.8vw, 78px);
     }
 
     .hero-main-inner {
       width: 100%;
-      max-width: 1880px;
+      max-width: 1920px;
       margin: 0 auto;
 
       display: grid;
       grid-template-columns: minmax(0, 49fr) minmax(0, 51fr);
-      column-gap: clamp(42px, 4vw, 78px);
+      column-gap: clamp(36px, 2.75vw, 56px);
       align-items: stretch;
+
+      /* À 2048 px, la zone utile fait environ 594 px de haut,
+         comme sur la maquette fournie. */
+      min-height: clamp(540px, 29vw, 594px);
     }
 
     /* Les deux colonnes partagent exactement la même hauteur de rangée. */
@@ -303,7 +307,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: clamp(10px, 1vw, 16px);
+      gap: clamp(14px, 1.1vw, 22px);
     }
 
     .hero-concept-item {
@@ -326,7 +330,7 @@
 
       border-radius: 3px;
 
-      font-size: clamp(13px, 1.02vw, 18px);
+      font-size: clamp(14px, 1vw, 20px);
       font-weight: 800;
       line-height: 1.15;
 
@@ -337,33 +341,31 @@
       display: none;
     }
 
-    /* Le SVG conserve son intégralité. Sa mise à l'échelle compense uniquement
-       les marges transparentes internes du fichier afin que l'illustration visible
-       ait sensiblement la même hauteur que le bloc de texte de gauche. */
+    /* Visuel de droite : aucune déformation et aucun recadrage.
+       Le SVG d'origine contient des marges transparentes importantes ;
+       sa largeur d'affichage est donc réglée indépendamment de la colonne
+       pour que l'illustration réellement visible ait la même présence
+       verticale que le bloc de texte de gauche. */
     .hero-visual {
       position: relative;
       min-width: 0;
       min-height: 0;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       overflow: visible;
     }
 
     .hero-visual img {
+      position: absolute;
+      top: 50%;
+      left: 47.5%;
+
       display: block;
-      width: 100%;
-      height: 100%;
+      width: clamp(780px, 50vw, 1040px);
+      height: auto;
       max-width: none;
       max-height: none;
 
-      object-fit: contain;
-      object-position: center center;
-
-      transform: translateX(-5%) scale(1.55);
-      transform-origin: center center;
+      transform: translate(-50%, -50%);
     }
 
     /* ==================================================
@@ -495,6 +497,7 @@
       .hero-main-inner {
         grid-template-columns: minmax(0, 50fr) minmax(0, 50fr);
         column-gap: 30px;
+        min-height: 500px;
       }
 
       .hero-title {
@@ -515,7 +518,8 @@
       }
 
       .hero-visual img {
-        transform: translateX(-4%) scale(1.35);
+        left: 48%;
+        width: clamp(600px, 54vw, 720px);
       }
 
       .hero-stats-grid {
@@ -688,6 +692,7 @@
       .hero-main-inner {
         grid-template-columns: 1fr;
         row-gap: 28px;
+        min-height: 0;
       }
 
       .hero-copy {
@@ -752,14 +757,15 @@
       }
 
       .hero-visual img {
+        position: static;
+        top: auto;
+        left: auto;
+
         display: block;
         width: min(100%, 650px);
         height: auto;
         max-width: 100%;
         max-height: none;
-
-        object-fit: contain;
-        object-position: center;
 
         transform: none;
       }
