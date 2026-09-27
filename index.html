@@ -19,11 +19,7 @@
     :root {
       --bleu: #002b59;
       --jaune: #ffce3e;
-      --jaune-entete: #ffcd3c;
       --blanc: #ffffff;
-
-      /* MARGES DES BLOCS SOUS L'ENTÊTE */
-      --page-margin: clamp(42px, 7vw, 140px);
     }
 
     * {
@@ -164,10 +160,6 @@
       color: var(--jaune);
     }
 
-    .yellow-header {
-      color: var(--jaune-entete);
-    }
-
     /* ==================================================
        MENU HAMBURGER
        MASQUÉ SUR PC
@@ -200,138 +192,342 @@
     }
 
     /* ==================================================
-       BLOC INTRODUCTION
+       HERO D'ACCUEIL — ZONE PRINCIPALE
        ================================================== */
 
-    .intro-reporters {
-      background: #ffffff;
-
-      padding-right: var(--page-margin);
-      padding-left: var(--page-margin);
-    }
-
-    .intro-reporters-inner {
+    .home-hero {
       width: 100%;
-      max-width: none;
-      margin: 0 auto;
-
       background: #002b59;
-
-      padding-top: 72px;
-      padding-bottom: 52px;
-    }
-
-    .intro-reporters-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 900px) clamp(190px, 18vw, 240px);
-      grid-template-areas:
-        "signature signature"
-        "copy visual";
-      align-items: stretch;
-      justify-content: center;
-      column-gap: clamp(42px, 5vw, 72px);
-      row-gap: 38px;
-
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-
-      padding-inline: clamp(28px, 3.5vw, 56px);
-    }
-
-    .intro-reporters-copy {
-      grid-area: copy;
-      min-width: 0;
-      width: 100%;
-      max-width: 900px;
-    }
-
-    .intro-signature {
-      grid-area: signature;
-      text-align: center;
-      margin: 0;
-    }
-
-    .intro-signature img {
-      display: block;
-      width: min(100%, 480px);
-      height: auto;
-      margin: 0 auto;
-    }
-
-    .intro-reporters-text {
-      width: 100%;
-      margin: 0;
-      padding-inline: 0;
-
-      font-family: "Poppins", sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.76;
-
       color: #ffffff;
-
-      text-align: left;
-      text-wrap: pretty;
-
-      hyphens: none;
-      -webkit-hyphens: none;
-      -ms-hyphens: none;
-
-      word-break: normal;
-      overflow-wrap: normal;
     }
 
-    .intro-reporters-visual {
-      grid-area: visual;
+    .hero-main {
+      width: 100%;
+      min-height: clamp(590px, 69vh, 735px);
 
       display: flex;
       align-items: stretch;
       justify-content: center;
-      align-self: stretch;
-      min-height: 0;
+
+      background: #002b59;
     }
 
-    .intro-reporters-visual img {
+    .hero-main-inner {
+      width: 100%;
+      max-width: 1900px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(430px, 0.92fr);
+      align-items: stretch;
+      gap: clamp(36px, 4vw, 86px);
+
+      padding:
+        clamp(44px, 5vh, 64px)
+        clamp(46px, 5vw, 96px)
+        clamp(38px, 4.5vh, 58px);
+    }
+
+    .hero-copy {
+      min-width: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-kicker {
+      margin: 0 0 8px;
+
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(27px, 2.2vw, 42px);
+      font-weight: 800;
+      line-height: 1.12;
+
+      color: #ffffff;
+    }
+
+    .hero-title {
+      margin: 0;
+
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(58px, 5.3vw, 100px);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+
+      color: #ffffff;
+    }
+
+    .hero-title .hero-title-yellow {
+      color: #ffce3e;
+    }
+
+    .hero-signature {
+      width: min(100%, 720px);
+      margin-top: clamp(22px, 2.6vh, 34px);
+    }
+
+    .hero-signature img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: contain;
-
-      filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.20));
+      height: auto;
     }
 
-    .intro-reporters-text strong {
-      font-weight: 700;
+    .hero-tagline {
+      margin:
+        clamp(28px, 3.4vh, 44px)
+        0
+        0;
+
+      max-width: 980px;
+
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(18px, 1.35vw, 27px);
+      font-weight: 400;
+      line-height: 1.55;
+
+      color: #ffffff;
     }
 
-    .no-break,
-    .stat-capsule {
-      white-space: nowrap;
+    /* ==================================================
+       NOTRE CONCEPT
+       ================================================== */
+
+    .hero-concept {
+      width: 100%;
+      max-width: 980px;
+      margin-top: clamp(34px, 4vh, 52px);
+
+      text-align: center;
     }
 
-    .stat-capsule {
+    .hero-concept-heading {
       display: inline-block;
 
-      padding: 2px 8px;
+      margin: 0 0 24px;
+      padding: 4px 9px 5px;
+
+      font-size: clamp(18px, 1.25vw, 24px);
+      font-weight: 800;
+      line-height: 1.15;
+
+      color: #002b59;
+      background: #ffce3e;
+
+      border-radius: 3px;
+    }
+
+    .hero-concept-items {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        9px
+        minmax(0, 1.45fr)
+        9px
+        minmax(0, 1.35fr);
+      align-items: center;
+      column-gap: clamp(18px, 2vw, 36px);
+    }
+
+    .hero-concept-item {
+      min-width: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    .hero-concept-item span {
+      display: inline-block;
+
+      padding: 3px 7px 4px;
+
+      font-size: clamp(16px, 1.12vw, 22px);
+      font-weight: 800;
+      line-height: 1.15;
+      white-space: nowrap;
+
+      color: #002b59;
+      background: #ffffff;
+
+      border-radius: 3px;
+    }
+
+    .hero-concept-separator {
+      width: 9px;
+      height: clamp(48px, 5.5vh, 70px);
 
       background: #ffce3e;
+    }
+
+    /* ==================================================
+       ILLUSTRATION PRINCIPALE À DROITE
+       ================================================== */
+
+    .hero-visual {
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+      max-width: 820px;
+      max-height: 100%;
+
+      object-fit: contain;
+
+      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.18));
+    }
+
+    /* ==================================================
+       SÉPARATION ENTRE LES DEUX ZONES
+       ================================================== */
+
+    .hero-zone-separator {
+      width: 100%;
+      height: clamp(12px, 1.15vw, 19px);
+
+      background: #ffce3e;
+    }
+
+    /* ==================================================
+       HERO D'ACCUEIL — ZONE SECONDAIRE / CHIFFRES CLÉS
+       ================================================== */
+
+    .hero-stats {
+      width: 100%;
+      background: #002b59;
+
+      padding:
+        clamp(46px, 4.4vw, 62px)
+        clamp(28px, 4vw, 76px)
+        clamp(24px, 2.6vw, 38px);
+    }
+
+    .hero-stats-grid {
+      width: 100%;
+      max-width: 1840px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(22px, 3.2vw, 62px);
+    }
+
+    .hero-stat-card {
+      position: relative;
+
+      min-width: 0;
+      min-height: 126px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      padding: 48px 16px 16px;
+
+      background: #002b59;
+      border: 3px solid #ffffff;
+      border-radius: 11px;
+    }
+
+    .hero-stat-medallion {
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: clamp(68px, 5vw, 84px);
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 8px;
+
+      background: #002b59;
+      border: 5px solid #ffce3e;
+      border-radius: 50%;
+    }
+
+    .hero-stat-medallion img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .hero-stat-value {
+      width: min(92%, 330px);
+      min-height: 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 5px 12px;
+
+      font-size: clamp(27px, 2.5vw, 50px);
+      font-weight: 800;
+      line-height: 1;
+
       color: #002b59;
+      background: #ffce3e;
 
-      border-radius: 5px;
+      border-radius: 9px;
+    }
 
-      font-weight: 700;
+    .hero-stat-label {
+      margin-top: 14px;
+
+      font-size: clamp(14px, 1.1vw, 21px);
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+
+      color: #ffffff;
     }
 
     /* ==================================================
        TABLETTE
        ================================================== */
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1180px) {
 
-      :root {
-        --page-margin: 24px;
+      .hero-main-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(350px, 0.82fr);
+        gap: 34px;
+        padding-inline: 36px;
       }
+
+      .hero-concept-items {
+        column-gap: 14px;
+      }
+
+      .hero-concept-item span {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 1000px) {
 
       .site-header {
         padding: 18px 14px;
@@ -341,31 +537,52 @@
         max-width: 100%;
       }
 
-      .intro-reporters-layout {
-        grid-template-columns: minmax(0, 1fr) minmax(180px, 220px);
-        column-gap: 32px;
-        row-gap: 32px;
-        padding-inline: 28px;
+      .hero-main {
+        min-height: auto;
       }
 
-      .intro-signature {
-        margin: 0;
+      .hero-main-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+
+        padding:
+          48px
+          30px
+          42px;
       }
 
-      .intro-signature img {
-        width: min(100%, 430px);
+      .hero-copy {
+        align-items: center;
+        text-align: center;
       }
 
-      .intro-reporters-text {
-        font-size: 16px;
-        line-height: 1.76;
+      .hero-signature {
+        width: min(100%, 640px);
       }
 
-      .intro-reporters-visual img {
-        width: 100%;
-        height: 100%;
+      .hero-tagline {
+        max-width: 850px;
       }
 
+      .hero-concept {
+        max-width: 860px;
+      }
+
+      .hero-visual {
+        width: min(100%, 720px);
+        min-height: 390px;
+        margin: 0 auto;
+      }
+
+      .hero-visual img {
+        height: auto;
+        max-height: 520px;
+      }
+
+      .hero-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 66px;
+      }
     }
 
     /* ==================================================
@@ -373,10 +590,6 @@
        ================================================== */
 
     @media (max-width: 700px) {
-
-      :root {
-        --page-margin: 18px;
-      }
 
       body {
         padding-top: 85px;
@@ -523,58 +736,102 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.24);
       }
 
-      .intro-reporters-inner {
-        padding-top: 50px;
-        padding-bottom: 42px;
+      /* HERO MOBILE */
+
+      .hero-main-inner {
+        gap: 28px;
+
+        padding:
+          38px
+          20px
+          34px;
       }
 
-      .intro-reporters-layout {
+      .hero-kicker {
+        font-size: clamp(22px, 7vw, 30px);
+      }
+
+      .hero-title {
+        font-size: clamp(48px, 14vw, 74px);
+        line-height: 1;
+      }
+
+      .hero-signature {
+        width: min(100%, 520px);
+        margin-top: 20px;
+      }
+
+      .hero-tagline {
+        margin-top: 26px;
+
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .hero-concept {
+        margin-top: 32px;
+      }
+
+      .hero-concept-heading {
+        margin-bottom: 18px;
+      }
+
+      .hero-concept-items {
         grid-template-columns: 1fr;
-        grid-template-areas:
-          "signature"
-          "copy"
-          "visual";
-        row-gap: 28px;
-
-        padding-inline: 14px;
+        row-gap: 13px;
       }
 
-      .intro-reporters-copy {
-        max-width: none;
-      }
-
-      .intro-signature {
-        text-align: center;
-        margin: 0;
-      }
-
-      .intro-signature img {
-        width: min(100%, 390px);
+      .hero-concept-separator {
+        width: min(72%, 230px);
+        height: 5px;
         margin: 0 auto;
       }
 
-      .intro-reporters-text {
-        font-size: 14px;
-        line-height: 1.75;
-        padding-inline: 0;
-        text-align: left;
-
-        hyphens: none;
-        -webkit-hyphens: none;
-        word-break: normal;
-        overflow-wrap: normal;
+      .hero-concept-item span {
+        font-size: 16px;
+        white-space: normal;
       }
 
-      .intro-reporters-visual {
-        width: min(100%, 220px);
+      .hero-visual {
+        min-height: 0;
+        width: min(100%, 560px);
+      }
+
+      .hero-visual img {
+        width: 100%;
         height: auto;
+        max-height: none;
+      }
+
+      .hero-zone-separator {
+        height: 12px;
+      }
+
+      .hero-stats {
+        padding:
+          48px
+          18px
+          28px;
+      }
+
+      .hero-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 64px;
+      }
+
+      .hero-stat-card {
+        width: min(100%, 430px);
+        min-height: 128px;
         margin: 0 auto;
-        align-self: auto;
       }
 
-      .intro-reporters-visual img {
-        width: min(100%, 200px);
-        height: auto;
+      .hero-stat-value {
+        width: min(88%, 330px);
+        font-size: 38px;
+      }
+
+      .hero-stat-label {
+        font-size: 17px;
       }
     }
 
@@ -591,172 +848,13 @@
       .menu-toggle {
         right: 14px;
       }
-    }
 
-    /* ==================================================
-       AVANT TOUTE CHOSE
-       ================================================== */
-
-    .avant-toute-chose {
-      background: #ffffff;
-
-      padding-right: var(--page-margin);
-      padding-left: var(--page-margin);
-    }
-
-    .avant-toute-chose-inner {
-      width: 100%;
-      max-width: none;
-      margin: 0 auto;
-
-      background: #002b59;
-
-      padding-top: 64px;
-      padding-bottom: 60px;
-    }
-
-    .avant-title-wrap {
-      text-align: center;
-
-      padding: 18px 24px;
-      margin-bottom: 42px;
-
-      background: #ffce3e;
-    }
-
-    .avant-title {
-      margin: 0;
-
-      font-family: "Poppins", sans-serif;
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1.2;
-
-      color: #002b59;
-    }
-
-    .avant-title-line {
-      display: none;
-    }
-
-    .avant-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 26px;
-
-      padding-inline: clamp(18px, 2.5vw, 42px);
-    }
-
-    .avant-card {
-      display: grid;
-      grid-template-columns: minmax(240px, 30%) 1fr;
-      align-items: center;
-
-      background: #ffffff;
-
-     border-radius: 8px;
-      border: 4px solid #ffce3e;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 10px 24px rgba(0, 0, 0, 0.16),
-        0 3px 8px rgba(0, 0, 0, 0.10);
-    }
-
-    .avant-card-image {
-      display: block;
-
-      width: 100%;
-      height: auto;
-
-      align-self: center;
-    }
-
-    .avant-card-content {
-      padding: 22px 22px 24px;
-
-      border-left: 5px solid #ffce3e;
-    }
-
-    .avant-card-title {
-      display: inline-block;
-
-      margin: -6px 0 14px 0;
-      padding: 4px 10px;
-
-      font-family: "Poppins", sans-serif;
-      font-size: 21px;
-      font-weight: 700;
-      line-height: 1.2;
-
-      color: #ffce3e;
-      background: #002b59;
-
-      border-radius: 6px;
-    }
-
-    .avant-card-text {
-      margin: 0;
-
-      font-family: "Poppins", sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.75;
-
-      color: #002b59;
-
-      text-align: left;
-
-      hyphens: none;
-      -webkit-hyphens: none;
-      -ms-hyphens: none;
-
-      word-break: normal;
-      overflow-wrap: normal;
-    }
-
-    @media (max-width: 700px) {
-
-      .avant-toute-chose-inner {
-        padding-top: 44px;
-        padding-bottom: 42px;
+      .hero-main-inner {
+        padding-inline: 15px;
       }
 
-      .avant-title-wrap {
-        padding: 16px 18px;
-        margin-bottom: 32px;
-      }
-
-      .avant-title {
-        font-size: 28px;
-      }
-
-      .avant-cards {
-        gap: 20px;
-        padding-inline: 14px;
-      }
-
-      .avant-card {
-        grid-template-columns: 1fr;
-      }
-
-      .avant-card-image {
-        width: 100%;
-        height: auto;
-      }
-
-      .avant-card-content {
-        padding: 18px 18px 20px;
-      }
-
-      .avant-card-title {
-        font-size: 19px;
-      }
-
-      .avant-card-text {
-        font-size: 14px;
-        line-height: 1.75;
+      .hero-title {
+        font-size: 45px;
       }
     }
 
@@ -1013,120 +1111,155 @@
   </div>
 
 
-  <section class="intro-reporters">
+  <!-- ==================================================
+       HERO D'ACCUEIL
+       ================================================== -->
 
-    <div class="intro-reporters-inner">
+  <main class="home-hero">
 
-      <div class="intro-reporters-layout">
+    <!-- ZONE PRINCIPALE -->
 
-        <div class="intro-signature">
-          <img
-            src="71000-00750_LRPTR-VS001_toutcommenceavecvous-index.svg"
-            alt="Tout commence avec vous."
-          >
-        </div>
+    <section class="hero-main" aria-labelledby="hero-title">
 
-        <div class="intro-reporters-copy">
+      <div class="hero-main-inner">
 
-          <p class="intro-reporters-text">
-            Inscrivez-vous dans une démarche utile en <strong>donnant un sens à votre ras-le-bol</strong>. Avec nos groupes WhatsApp <span class="no-break">« Les reporters »</span>, <strong>tout commence avec vous</strong>, et avec les <span class="stat-capsule">3 700 membres</span> <span class="no-break">« reporters »</span> présents dans les <span class="stat-capsule">59 groupes WhatsApp</span> répartis sur l’ensemble du Grand-sud, du Centre et du Grand-ouest. Participez en relatant <strong>votre quotidien</strong> et en témoignant de <strong>votre réalité</strong>. Les équipiers du train du ras-le-bol se chargent de l’<strong>animation</strong> des groupes, de la <strong>coordination</strong> des actions de soutien et d’accompagnement et du <strong>recueil</strong> de vos participations afin de communiquer <strong>en faveur</strong> de l’amélioration des mobilités ferroviaires publiques dans l’intérêt de tous.
+        <div class="hero-copy">
+
+          <p class="hero-kicker">Groupes WhatsApp</p>
+
+          <h1 class="hero-title" id="hero-title">
+            LES <span class="hero-title-yellow">REPORTERS</span>
+          </h1>
+
+          <div class="hero-signature">
+            <img
+              src="31000-00750_LRPTR_toutcommenceavecvous-index.svg"
+              alt="Tout commence avec vous."
+              fetchpriority="high"
+            >
+          </div>
+
+          <p class="hero-tagline">
+            Inscrivez-vous dans une démarche utile et donnez du sens à votre ras-le-bol.
           </p>
 
+          <div class="hero-concept" aria-label="Notre concept">
+
+            <p class="hero-concept-heading">Notre concept est:</p>
+
+            <div class="hero-concept-items">
+
+              <div class="hero-concept-item">
+                <span>Utile à tous</span>
+              </div>
+
+              <div class="hero-concept-separator" aria-hidden="true"></div>
+
+              <div class="hero-concept-item">
+                <span>Différent des autres</span>
+              </div>
+
+              <div class="hero-concept-separator" aria-hidden="true"></div>
+
+              <div class="hero-concept-item">
+                <span>Complet et solidaire</span>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="intro-reporters-visual" aria-hidden="true">
+
+        <div class="hero-visual" aria-hidden="true">
           <img
-            src="71000-00750_LRPTR-VS001_pictures-index.svg"
+            src="31000-00750_LRPTR_pictures-index.svg"
             alt=""
+            fetchpriority="high"
           >
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
+    <!-- BANDE DE SÉPARATION -->
 
-  <section class="avant-toute-chose">
+    <div class="hero-zone-separator" aria-hidden="true"></div>
 
-    <div class="avant-toute-chose-inner">
 
-      <div class="avant-title-wrap">
-        <h2 class="avant-title">Avant toute chose</h2>
-        <div class="avant-title-line" aria-hidden="true"></div>
-      </div>
+    <!-- ZONE SECONDAIRE / CHIFFRES CLÉS -->
 
-      <div class="avant-cards">
+    <section class="hero-stats" aria-label="Les Reporters en chiffres">
 
-        <article class="avant-card">
+      <div class="hero-stats-grid">
 
-          <img
-            class="avant-card-image"
-            src="71000-00750_LRPTR-VS002_objet-défini-index.webp"
-            alt="Illustration de l’objet défini"
-          >
+        <article class="hero-stat-card">
 
-          <div class="avant-card-content">
-
-            <h3 class="avant-card-title">Objet défini</h3>
-
-            <p class="avant-card-text">
-              Le fonctionnement de la communauté en ligne <span class="no-break">« Le train du ras-le-bol »</span> et des activités qui lui sont associées nécessite la mise à disposition de moyens techniques, matériels et humains. Leur coût est assumé par les dirigeants des sociétés à l’origine de la communauté. Cette mise à disposition répond à un objet défini, qui justifie les moyens engagés. Cet objet prévoit notamment la mise en place et le maintien de la communauté en ligne <span class="no-break">« Le train du ras-le-bol »</span> afin de porter un intérêt aux manquements en matière de mobilités ferroviaires publiques et de contribuer à leur amélioration, leur recadrage et leur développement.
-            </p>
-
+          <div class="hero-stat-medallion" aria-hidden="true">
+            <img
+              src="31000-00750_LRPTR_icone-whatsapp-index.svg"
+              alt=""
+            >
           </div>
+
+          <div class="hero-stat-value">62</div>
+          <div class="hero-stat-label">Groupes WhatsApp</div>
 
         </article>
 
 
-        <article class="avant-card">
+        <article class="hero-stat-card">
 
-          <img
-            class="avant-card-image"
-            src="71000-00750_LRPTR-VS003_politique-danimation-index.webp"
-            alt="Illustration de la politique d’animation"
-          >
-
-          <div class="avant-card-content">
-
-            <h3 class="avant-card-title">Politique d’animation</h3>
-
-            <p class="avant-card-text">
-              Nos groupes WhatsApp <span class="no-break">« Les reporters »</span> sont animés par des salariés mis à disposition sur leur temps de travail, selon les priorités liées à l’activité de la société qui les emploie. Appelés <span class="no-break">« équipiers du train du ras-le-bol »</span>, ils sont formés aux particularités des échanges au sein des groupes et veillent à favoriser des échanges directs, à mieux comprendre les réalités relatées et à apporter des éclairages lorsque cela est nécessaire. Selon les groupes WhatsApp <span class="no-break">« Les reporters »</span>, les équipiers sont généralement connectés du lundi au vendredi de 6 h à 22 h et le week-end de 14 h à 22 h.
-            </p>
-
+          <div class="hero-stat-medallion" aria-hidden="true">
+            <img
+              src="31000-00750_LRPTR_icone-membres-index.svg"
+              alt=""
+            >
           </div>
+
+          <div class="hero-stat-value">3 963</div>
+          <div class="hero-stat-label">Membres</div>
 
         </article>
 
 
-        <article class="avant-card">
+        <article class="hero-stat-card">
 
-          <img
-            class="avant-card-image"
-            src="71000-00750_LRPTR-VS004_cadre-de-fonctionnement-index.webp"
-            alt="Illustration du cadre légal"
-          >
-
-          <div class="avant-card-content">
-
-            <h3 class="avant-card-title">Cadre légal</h3>
-
-            <p class="avant-card-text">
-              Les équipiers du train du ras-le-bol agissent en maîtrisant leur périmètre de compétences et leur champ d’intervention. Ils ne sont pas habilités à fournir des informations sur le trafic, commerciales ou à vous renseigner sur la sécurité ferroviaire. Lorsque la situation le nécessite, ils vous orientent systématiquement vers les services compétents. En cas de danger sur le réseau ferroviaire ou d’un fait de sûreté, merci de prévenir les services compétents en lieu et place de prévenir l’équipage. Enfin, <span class="no-break">« Le train du ras-le-bol »</span> est indépendant des autorités organisatrices et des sociétés de transport ferroviaire et n’agit ni sous leur responsabilité ni sous leurs ordres.
-            </p>
-
+          <div class="hero-stat-medallion" aria-hidden="true">
+            <img
+              src="31000-00750_LRPTR_icone-commentaires-index.svg"
+              alt=""
+            >
           </div>
+
+          <div class="hero-stat-value">9 400</div>
+          <div class="hero-stat-label">Commentaires par jour</div>
+
+        </article>
+
+
+        <article class="hero-stat-card">
+
+          <div class="hero-stat-medallion" aria-hidden="true">
+            <img
+              src="31000-00750_LRPTR_icone-note-index.svg"
+              alt=""
+            >
+          </div>
+
+          <div class="hero-stat-value">4,12/5</div>
+          <div class="hero-stat-label">Moyenne de modération</div>
 
         </article>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </main>
 
 
   <script>
